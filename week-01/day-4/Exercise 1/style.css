@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+  font-family: "Times New Roman", serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  width: 240px;
+  height: 70px;
+  color: #da1b00;
+  font-size: 30px;
+  padding: 16px;
+  margin-top: 14px;
+  background-color: #ffff00;
+  border: solid 4px #000000;
+}

@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+  font-family: "Times New Roman", serif;
+}
+
+body {
+  margin: 35px;
+}
+
+h1,
+h2 {
+  color: #007e05;
+  font-weight: 700;
+  margin-bottom: 35px;
+}
+
+h1 {
+  font-size: 21px;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  font-style: italic;
+}
+
+p {
+  font-size: 12px;
+  margin-bottom: 35px;
+}
+
+p::first-letter {
+  color: #b72c03;
+}
+
+pre {
+  font-family: "Arial", sans-serif;
+}

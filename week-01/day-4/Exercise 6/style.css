@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+  font-family: "Times New Roman", serif;
+}
+
+body {
+  width: 320px;
+  margin: 35px;
+}
+
+h1 {
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 12px;
+  padding-left: 21px;
+  margin-bottom: 10px;
+  border-left: 2px solid #000000;
+}

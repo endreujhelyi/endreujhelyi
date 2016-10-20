@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+  font-family: "Times New Roman", serif;
+}
+
+body {
+  margin: 35px;
+}
+
+h1,
+h2 {
+  font-weight: 600;
+  margin-bottom: 35px;
+}
+
+h1 {
+  font-size: 21px;
+  color: #0500f5;
+}
+
+h2 {
+  font-size: 16px;
+  color: #e49b32;
+}
+
+p {
+  font-size: 12px;
+  margin-bottom: 35px;
+}
+
+li {
+  margin: 2px;
+}
+
+
+/* Classes */
+
+.storage {
+  list-style-type: square;
+}
+
+.storage > li {
+  color: #0500f5;
+}
+
+.fruits {
+  list-style-type: disc;
+}
+
+.fruits li:first-child {
+  color: #ab2d14;
+}

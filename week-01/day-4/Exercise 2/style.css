@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  font-family: "Times New Roman", serif;
+}
+
+.list {
+  width: 284px;
+  height: 244px;
+  margin-top: 16px;
+  margin-left: 15px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 20px;
+  background-color: #008001;
+  margin: 0;
+}
+
+li {
+  width: 240px;
+  height: 70px;
+  color: #1500aa;
+  font-size: 30px;
+  padding: 16px;
+  margin: 0;
+  background-color: #ffff00;
+  border: solid 4px #000000;
+}
