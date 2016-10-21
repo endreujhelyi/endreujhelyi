@@ -19,11 +19,9 @@ header {
   margin-bottom: 70px;
 }
 
-
 h1, h2, h3 {
   font-weight: 400;
 }
-
 
 h1 {
   font-family: "Abril Fatface", cursive, serif;
@@ -94,7 +92,7 @@ blockquote {
 }
 
 blockquote:before {
-  content: '“' "";
+  content: '“';
   position: absolute;
   left: 0;
   top: 24px;
