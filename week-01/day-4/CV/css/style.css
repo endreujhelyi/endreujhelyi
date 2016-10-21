@@ -10,10 +10,11 @@ body {
 }
 
 header {
-  position: relative;
-  width: 1280px;
-  height: 400px;
-  margin: 0 auto;
+  background-image: url("../img/cover_photo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 240px 0 35px;
   border-top: 4px solid #000;
   margin-bottom: 70px;
 }
@@ -26,12 +27,12 @@ h1, h2, h3 {
 
 h1 {
   font-family: "Abril Fatface", cursive, serif;
-  position: absolute;
+  width: 700px;
   color: #222;
   line-height: 1.5em;
   font-size: 36px;
-  top: 240px;
-  left: 290px;
+  margin: 0 auto;
+  padding-top: 0;
 }
 
 h1 span {
@@ -133,6 +134,10 @@ img {
 .first-content p,
 .first-content li {
   font-size: 20px;
+}
+
+.first-content p {
+  margin-bottom: 1em;
 }
 
 .quote2 {
