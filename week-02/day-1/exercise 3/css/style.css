@@ -1,0 +1,73 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  margin: 0;
+  flex-wrap: wrap;
+  height: 500px;
+}
+
+
+
+/******** CONTENT *********/
+
+header {
+  display: block;
+  background-color: #0ff;
+  height: 100px;
+  width: 100%;
+}
+
+.main-container {
+  justify-content: space-between;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+aside {
+  flex: 1 auto;
+  background-color: #fefefe;
+  max-width: 100px;
+}
+
+main {
+  position: relative;
+  flex: 3 auto;
+  background-color: #fe0000;
+  height: 100%;
+  margin: 0 20px;
+}
+
+div aside:first-child {
+  background-color: #fea500;
+}
+
+main + aside {
+  background-color: #81007f;
+}
+
+footer {
+  display: block;
+  background-color: #0000fe;
+  height: 100px;
+  width: 100%;
+}
+
+span {
+  position: absolute;
+  background-color: #000;
+  width: 50px;
+  height: 50px;
+  right: 20px;
+  bottom: 20px;
+}

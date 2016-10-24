@@ -1,0 +1,44 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  margin: 20px auto;
+  width: 600px;
+  height: 480px;
+  display: flex;
+  background-color: #808080;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+
+
+/******* CONTENT ********/
+
+body div {
+  width: 186px;
+  height: 154px;
+  background-color: #ff6347;
+  border: 5px solid #000;
+}
+
+p {
+  font-family: arial;
+  text-align: center;
+  font-size: 27px;
+  padding-top: 25px;
+}
+
+body div:nth-child(5) {
+  position: relative;
+  top: 10px;
+  left: 18px;
+}

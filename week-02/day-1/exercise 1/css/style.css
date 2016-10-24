@@ -1,0 +1,37 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  width: 300px;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+
+
+/******* CONTENT *********/
+
+article {
+  text-align: justify;
+  padding-bottom: 5px;
+  margin-top: 5px;
+  border-bottom: 2px solid #000;
+}
+
+img {
+  float: left;
+  padding-right: 12px;
+  padding-bottom: 12px;
+}
+
+article + article img {
+  float: right;
+}
