@@ -22,7 +22,6 @@ header {
   height: 100px;
   width: 100%;
   background: #00fefe;
-  position: relative;
   z-index: 100;
   position: fixed;
 }
