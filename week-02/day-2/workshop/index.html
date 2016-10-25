@@ -31,7 +31,7 @@
 
           <div>
             <h2 class="star">Név</h2>
-            <input type="text" id="name" name="user_name" autofocus="">
+            <input type="text" id="name" name="user_name" autofocus="" required>
           </div>
 
           <div class="year-gender">
@@ -126,10 +126,10 @@
           <h1>Kapcsolat</h1>
 
           <h2 class="star">Telefonszám</h2>
-          <input type="number" id="phone" name="user_phone" placeholder="+36 -- --- ----" />
+          <input type="number" id="phone" name="user_phone" maxlength="12" placeholder="+36 -- --- ----" required />
 
           <h2 class="star">E-mail cím</h2>
-          <input type="email" id="email" name="user_email" placeholder="name@domain.hu" />
+          <input type="email" id="email" name="user_email" placeholder="name@domain.hu" required />
 
           <h2>Facebook profilod</h2>
           <input type="text" id="facebook" name="user_facebook" placeholder="http://facebook.com/..." />
@@ -159,7 +159,7 @@
         <section>
 
           <h2 class="star">Bemutatkozás</h2>
-          <textarea id="intro" name="textarea" placeholder="Írj magadrol pár mondtatot!"></textarea>
+          <textarea id="intro" name="textarea" placeholder="Írj magadrol pár mondtatot!" required></textarea>
 
           <h2>CV feltöltése</h2>
           <button>File kiválasztása</button>
