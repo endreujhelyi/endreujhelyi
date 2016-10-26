@@ -55,6 +55,10 @@ a {
   border-radius: 10%;
 }
 
+.active {
+  background-color: #fff;
+}
+
 a:hover {
   background-color: #fff;
   transition: 0.2s;
