@@ -78,7 +78,8 @@ section > h1 {
   height: 37px;
 }
 
-input {
+input[type="checkbox"]:hover,
+input[type="radio"]:hover {
   cursor: pointer;
 }
 
@@ -94,6 +95,12 @@ select {
   border-radius: 2px;
 }
 
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="number"]:hover {
+  cursor: text;
+}
+
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="number"]:focus,
@@ -103,6 +110,10 @@ textarea:focus {
   background-color: #ffebe8;
   transition: 0.2s;
   outline: none;
+}
+
+select:hover {
+  cursor: pointer;
 }
 
 .year-gender {
@@ -201,6 +212,7 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background: linear-gradient(90deg, rgba(60,54,79,1) 0%, rgba(82,73,107,1) 100%);
+  cursor: pointer;
 }
 
 input[type="reset"]:hover,
@@ -245,6 +257,10 @@ input[name="terms"] {
 .secondary input[type="checkbox"] {
   width: 18px;
   height: 18px;
+}
+
+label:hover {
+  cursor: pointer;
 }
 
 label a {
