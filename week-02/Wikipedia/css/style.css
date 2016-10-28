@@ -28,6 +28,10 @@ em {
   font-style: italic;
 }
 
+strong {
+  font-weight: 600;
+}
+
 
 
 /******** TOP-NAVIGATION ********/
@@ -76,7 +80,7 @@ header aside li {
   display: inline-block;
   padding: 0 6px;
   float: left;
-  border-owidth: 0 1px 0 0;
+  border-width: 0 1px 0 0;
   border-style: solid;
   border-image: linear-gradient(to top, #a7d7f9, rgba(0, 0, 0, 0)) 1 100%;
 }
@@ -102,6 +106,15 @@ header a {
 
 form {
   display: inline-block;
+  position: relative;
+}
+
+form img {
+  position: absolute;
+  width: 22px;
+  opacity: 0.4;
+  top: 7px;
+  right: 2px;
 }
 
 input[type="search"] {
@@ -224,6 +237,24 @@ blockquote > div {
   font-size: 13px;
 }
 
+.references {   /* references */
+  margin-top: 14px;
+}
+
+.references ol {
+  list-style-type: decimal;
+  columns: 2;
+  margin-left: 22px;
+  column-gap: 50px;
+}
+
+.references ol li {
+  font-size: 12.6px;
+  padding-left: 2px;
+  line-height: 19px;
+  padding-right: 10px;
+}
+
 
 
 /********* BOXES **********/
@@ -322,6 +353,122 @@ blockquote > div {
 
 
 
+.links-table {    /* links table */
+  width: 100%;
+  padding: 3px;
+  margin-top: 16px;
+  border: 1px solid #aaa;
+  border-collapse: separate;
+  border-spacing: 2px;
+  line-height: 1.5em;
+}
+
+.links-table th,
+.links-table td {
+  margin: 1px;
+  padding-left: 5px;
+}
+
+.links-table thead th {
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #ccf;
+}
+
+.links-table tbody {
+  font-size: 12.32px;
+}
+
+.links-table tbody th {
+  background-color: #ddf;
+  font-size: 12px;
+  text-align: right;
+  padding-right: 12px;
+  font-weight: bold;
+  vertical-align: middle;
+  width: 150px;
+}
+
+.table--purple {
+  background-color: #e6e6ff;
+  text-align: right;
+  padding-right: 9px;
+  font-weight: bold;
+  width: 176px;
+}
+
+.table--grey {
+  background-color: #f7f7f7;
+}
+
+
+.authority-links {    /* authority-links */
+  border-width: 1px;
+  border-color: #aaa;
+  border-style: solid;
+  border-top: none;
+  padding: 5px;
+}
+
+.authority-links li {
+  display: inline-block;
+  font-size: 12px;
+}
+
+.authority-links li:first-child {
+  background-color: #ddf;
+  font-weight: bold;
+  padding: 8px;
+}
+
+
+
+.related-links {    /* related-links box */
+  width: 100%;
+  margin-top: 14px;
+  padding: 3px;
+  border: 1px solid #aaa;
+  text-align: left;
+}
+
+.related-links li {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 0 5px;
+  border-left: 1px solid #aaa;
+}
+
+.related-links li:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+
+
+/******** FOOTER FOOTER FOOTER ********/
+
+footer {
+  width: calc(100% - 176px);
+  float: right;
+  padding: 0 12px 0 16px;
+  margin: 24px 0;
+}
+
+footer p {
+  font-size: 11px;
+  line-height: 1.6em;
+}
+
+footer li {
+  font-size: 11px;
+  line-height: 22px;
+  display: inline-block;
+  padding-right: 10px;
+}
+
+
+
 /******** LEFT NAV STYLES ********/
 
 .main-nav {
@@ -339,7 +486,10 @@ blockquote > div {
 }
 
 .main-nav nav~ nav {
-  border-top: 2px solid #d8d8d8;
+  border-width: 2px 0 0 0;
+  border-style: solid;
+  border-image: linear-gradient(to right, rgba(216,216,216,0) 0%, rgba(216,216,216,1) 25%, rgba(216,216,216,1) 50%, rgba(216,216,216,1) 75%, rgba(216,216,216,0) 100%) 1;
+  /*border-top: 2px solid #d8d8d8;*/
 }
 
 .main-nav li {
@@ -365,4 +515,35 @@ blockquote > div {
   max-width: 130px;
   min-width: 116px;
   padding-bottom: 20px;
+}
+
+
+@media only screen and (max-width: 961px) {
+
+.references ol {
+  columns: 1;
+}
+
+}
+
+@media only screen and (max-width: 981px) {
+
+header {
+  width: calc(100% - 160px);
+}
+
+.container {
+  width: calc(100% - 160px);
+}
+
+footer {
+  width: calc(100% - 160px);
+}
+
+.main-nav {
+  max-width: 160px;
+}
+
+
+
 }
