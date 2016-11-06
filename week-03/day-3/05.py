@@ -11,7 +11,7 @@ class Stack():
 
     def size (self):
         aldi_stock = 0
-        for x in aldi_storage:
+        for x in self.aldi_storage:
             aldi_stock += 1
         return aldi_stock
 
@@ -20,8 +20,7 @@ class Stack():
 
     def pop (self):
         last_item = self.aldi_storage[-1]
-        last_added = self.aldi_storage[:-1]
-        self.aldi_storage = last_added
+        self.aldi_storage = self.aldi_storage[:-1]
         return last_item
 
 
