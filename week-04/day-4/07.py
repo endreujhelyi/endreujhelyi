@@ -13,3 +13,22 @@ def coder(text):
         return text[0] + coder(text[1:])
 
 print (coder(text))
+
+
+
+## aniko version
+
+def replace_x(string):
+    print (string)
+    if string == '':
+        return ''
+    else:
+        return check_letter(string[0]) + replace_x(string[1:])
+
+def check_letter(letter):
+    if letter == 'x':
+        return 'y'
+    else:
+        return letter
+
+replace_x(text)
