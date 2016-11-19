@@ -23,39 +23,38 @@ import art
 class Controller:
 
     def __init__(self):
-        self.command_list = ['-f', '-p', '-r']
-        self.is_running = True
+        #main commands
+        self.command_list = {'d': self.people_in, 'a': self.people_out, 'w': self.level_up, 's': self.level_down, 'q': self.quit_game}
 
+        self.is_running = True
         self.model = model_elevator.Model()
         self.display = view_elevator.Display()
         self.commands()
 
     def commands(self):
-
         while self.is_running:
-
             self.display.drawing(self.model.num_floors, self.model.position, self.model.people)
 
-            self.command = input(art.intro)
-            if self.command in self.command_list:
-                if self.command == self.command_list[0]:
-                    self.goal_floor()
-                elif self.command == self.command_list[1]:
-                    self.people_in()
-                elif self.command == self.command_list[2]:
-                    self.people_out()
+            #user input
+            command = input(art.intro)
+            if command in self.command_list:
+                self.command_list[command]()
 
+    #command functions to the Model & View
     def people_in(self):
-        self.people = int(input("How many\n"))
-        self.model.add_people(self.people)
+        self.model.add_people()
 
     def people_out(self):
-        self.people = int(input("Out?\n"))
-        self.model.remove_people(self.people)
+        self.model.remove_people()
 
-    def goal_floor(self):
-        self.floor = int(input("Say that number!\n"))
-        self.model.elevator_pos(self.floor)
+    def level_up(self):
+        self.model.elevator_up()
 
+    def level_down(self):
+        self.model.elevator_down()
 
-elevator = Controller()
+    def quit_game(self):
+        self.is_running = False
+        self.display.goodbye()
+
+elevator_start = Controller()

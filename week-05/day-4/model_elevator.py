@@ -15,14 +15,22 @@ class Model:
         self.position = 0
         self.people = 0
 
-    def add_people(self, add):
-        self.people += add
+    def add_people(self):
+        if self.people < 9:
+            self.people += 1
         return self.people
 
-    def remove_people(self, remove):
-        self.people -= remove
+    def remove_people(self):
+        if self.people > 0:
+            self.people -= 1
         return self.people
 
-    def elevator_pos(self, floor):
-        self.position = floor
+    def elevator_up(self):
+        if self.position < self.num_floors:
+            self.position += 1
+        return self.position
+
+    def elevator_down(self):
+        if self.position > 0:
+            self.position -= 1
         return self.position
