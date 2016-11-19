@@ -2,11 +2,6 @@ import sys, os
 import texts, todo_model, todo_view
 
 
-class User:
-
-    def __init__(self):
-        print (texts.intro)
-
 class CommandAndExecute:
 
     def __init__(self):
