@@ -12,5 +12,7 @@ building_parts = {
     "elem": "_"
 }
 
-
-intro = '\nElevator Commands\n=================\n\nw   Head to to the top!\ns   Head to the ground!\nd   People in\na   People out\n\n'
+texts = {
+'intro': '\n\n         ELEVATOR COMMANDS\n|=================================|\n|\n| W - Head to the top!\n| S - Head to the ground!\n| D - Increase population density\n| A - Decrease population density\n|\n| Q - Leave it behind\n|\n|=================================|\n\n',
+'outro': 'That\'s All Folks! See u on the next level\n'
+}
