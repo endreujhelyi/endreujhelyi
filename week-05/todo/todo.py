@@ -1,6 +1,7 @@
-import sys
-import os
+import sys, os
+import emoji
 import texts
+import todo_model
 
 
 class User:
@@ -32,7 +33,6 @@ class CommandAndExecute:
     def input_checker(self):
         self.elements = self.rw.todo_reader()
 
-
         if len(self.cdr) == 1 or (self.cdr[1] in self.command_list):
             if len(self.cdr) == 1:
                 os.system('cls' if os.name == 'nt' else 'clear')
@@ -40,43 +40,57 @@ class CommandAndExecute:
             elif self.cdr[1] == self.command_list[0]:
                 os.system('cls' if os.name == 'nt' else 'clear')
                 self.todo_listing()
+                print (texts.intro)
             elif self.cdr[1] == self.command_list[1]:
                 if len(self.cdr) == 3:
                     os.system('cls' if os.name == 'nt' else 'clear')
-                    self.rw.todo_writer()
+                    self.rw.todo_adder()
+                    self.todo_listing()
+                    print (texts.intro)
                 else:
                     os.system('cls' if os.name == 'nt' else 'clear')
                     print (texts.add['no_task'])
+                    print (texts.intro)
             elif self.cdr[1] == self.command_list[2]:
                 if len(self.cdr) == 2:
                     os.system('cls' if os.name == 'nt' else 'clear')
                     print (texts.remove['no_index'])
+                    print (texts.intro)
                 else:
                     try:
                         if int(self.cdr[2]) > len(self.elements):
                             os.system('cls' if os.name == 'nt' else 'clear')
                             print (texts.remove['out_of_bound'])
+                            print (texts.intro)
                         else:
                             os.system('cls' if os.name == 'nt' else 'clear')
                             self.rw.todo_remover()
+                            self.todo_listing()
+                            print (texts.intro)
                     except ValueError:
                         os.system('cls' if os.name == 'nt' else 'clear')
                         print (texts.remove['not_number'])
+                        print (texts.intro)
             elif self.cdr[1] == self.command_list[3]:
                 os.system('cls' if os.name == 'nt' else 'clear')
                 if len(self.cdr) == 2:
                     print (texts.remove['no_index'])
+                    print (texts.intro)
                 else:
                     try:
                         if int(self.cdr[2]) > len(self.elements):
                             os.system('cls' if os.name == 'nt' else 'clear')
                             print (texts.remove['out_of_bound'])
+                            print (texts.intro)
                         else:
                             os.system('cls' if os.name == 'nt' else 'clear')
                             self.rw.todo_checker()
+                            self.todo_listing()
+                            print (texts.intro)
                     except ValueError:
                         os.system('cls' if os.name == 'nt' else 'clear')
                         print (texts.remove['not_number'])
+                        print (texts.intro)
         else:
             os.system('cls' if os.name == 'nt' else 'clear')
             raise TypeError (texts.arg['unsupported'])
@@ -105,9 +119,9 @@ class FileModifier():
         f.close()
         return result
 
-    def todo_writer(self):
+    def todo_adder(self):
         f = open('todo_list.svg', 'a')
-        f.writelines("[ ] " + sys.argv[2] + "\n")
+        f.writelines("[  ] " + sys.argv[2] + "\n")
         f.close()
 
     def todo_remover(self):
@@ -127,10 +141,12 @@ class FileModifier():
         f = open('todo_list.svg', 'w')
         for i in range(len(lines)):
             if i == (int(self.cdr[2]) - 1):
-                f.write("[X]" + lines[i][3::])
+                if lines[i][:4] == "[  ]":
+                    f.write("[" + emoji.emojize(':thumbs_up_sign:') + " ]" + lines[i][4::])
+                else:
+                    f.write("[  ]" + lines[i][4::])
             else:
                 f.write(lines[i])
         f.close()
-
 
 todo = CommandAndExecute()
