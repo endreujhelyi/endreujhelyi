@@ -1,7 +1,6 @@
 
 import art
 import os
-import time
 
 class Display:
 
