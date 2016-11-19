@@ -1,7 +1,7 @@
 # Basic dictionary for todo.py
 
 # INTRO STRING
-intro = 'Python Todo application\n=======================\n\nCommand line arguments:\n-l   Lists all the tasks\n-a   Adds a new task\n-r   Removes an task\n-c   Completes an task\n\n'
+intro = '\nPython Todo application\n=======================\n\nCommand line arguments:\n-l   Lists all the tasks\n-a   Adds a new task\n-r   Removes an task\n-c   Completes an task\n\n'
 
 
 # ========================================
