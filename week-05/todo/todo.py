@@ -1,5 +1,5 @@
-import sys, os
-import texts, todo_model, todo_view
+import sys
+import todo_model, todo_view
 
 
 class CommandAndExecute:
@@ -22,7 +22,6 @@ class CommandAndExecute:
             self.rw.todo_file_creator()
         self.command_checker()
 
-    # checking commands
     def command_checker(self):
         if len(self.cdr) == 1:
             self.disp.intro()
@@ -31,18 +30,15 @@ class CommandAndExecute:
         else:
             self.disp.unsupported()
 
-    # listing of todo element(s)
     def lister(self):
         self.disp.listing(self.rw.todo_reader())
 
-    # adding a new element
     def adder(self):
         if len(self.cdr) == 3:
             self.rw.todo_adder()
         else:
             self.disp.invalid()
 
-    # removing of an element
     def remover(self):
         if len(self.cdr) == 2:
             self.disp.no_index()
@@ -55,7 +51,6 @@ class CommandAndExecute:
             except ValueError:
                 self.disp.exception()
 
-    # checking of an element
     def checker(self):
         if len(self.cdr) == 2:
             self.disp.no_index()

@@ -1,17 +1,16 @@
-import os
+
 import texts
 
 
 class Display:
 
     def __init__(self):
-        # os.system('cls' if os.name == 'nt' else 'clear')
         pass
 
     def intro(self):
         print (texts.intro)
 
-    # printin todo list
+    # printing todo list
     def listing(self, todos):
         if len(todos) > 0:
             for i in range(len(todos)):
@@ -34,6 +33,5 @@ class Display:
     def out_of(self):
         print (texts.remove['out_of_bound'])
 
-    # printing exceptions
     def exception(self):
         print (texts.remove['not_number'])
