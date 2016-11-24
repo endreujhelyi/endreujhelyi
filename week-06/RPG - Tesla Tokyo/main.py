@@ -29,6 +29,10 @@ class MainLoop:
         self.drawer('down')
         self.display.show()
 
+    def restart(self):
+        self.model.enemy_starting()
+        self.drawer('down')
+
     def drawer(self, direction):
         self.display.canvas.delete('all')
         self.display.map_builder(self.model.map)
@@ -71,9 +75,7 @@ class MainLoop:
         self.model.enemy_points = [['boss', 2 * self.model.map_lvl, self.model.map_lvl / 2, self.model.map_lvl], ['skeleton', 2 * self.model.map_lvl, self.model.map_lvl / 2, self.model.map_lvl], ['skeleton', 2 * self.model.map_lvl, self.model.map_lvl / 2, self.model.map_lvl], ['skeleton', 2 * self.model.map_lvl, self.model.map_lvl / 2, self.model.map_lvl]]
         self.model.is_key_have = False
         self.model.is_boss_dead = False
-        self.start()
-
-
+        self.restart()
 
 app = MainLoop()
 app.start()

@@ -10,7 +10,7 @@ class Display:
         self.tile_size = 60
         size_x = self.tile_size * 13
         size_y = self.tile_size * 11
-        self.canvas = Canvas(self.root, bg='#4b1223', width=size_x, height=size_y)
+        self.canvas = Canvas(self.root, bg='#15060a', width=size_x, height=size_y)
         self.canvas.pack()
         self.canvas.focus_set()
         self.images = images.GameImages()
@@ -39,12 +39,13 @@ class Display:
         self.canvas.create_image(position[1] * self.tile_size, position[2] * self.tile_size, image=self.enemies_list[position[0]], anchor=NW)
 
     def stat_printer(self, lvl, hero, map_lvl):
-        self.canvas.create_image(620, 75, image=self.dir_list['down'], anchor=NW)
+        self.canvas.create_image(602, 10, image=self.images.logo['tesla'], anchor=NW)
+        self.canvas.create_image(620, 195, image=self.dir_list['down'], anchor=NW)
 
-        level_number = self.canvas.create_text(10 * self.tile_size + 30, 10, fill="red", anchor=NW)
-        name_of_stat = self.canvas.create_text(10 * self.tile_size + 20, self.tile_size + 80, fill="#888", anchor=NW)
-        value_of_stat = self.canvas.create_text(10 * self.tile_size + 100, self.tile_size + 80, fill="#fff", anchor=NW)
-        instructions = self.canvas.create_text(10 * self.tile_size + 10, self.tile_size * 9, fill="#111", anchor=NW)
+        level_number = self.canvas.create_text(10 * self.tile_size + 30, 150, fill="red", anchor=NW)
+        name_of_stat = self.canvas.create_text(10 * self.tile_size + 20, self.tile_size + 200, fill="#888", anchor=NW)
+        value_of_stat = self.canvas.create_text(10 * self.tile_size + 100, self.tile_size + 200, fill="#fff", anchor=NW)
+        instructions = self.canvas.create_text(10 * self.tile_size + 10, self.tile_size * 9, fill="#ddd", anchor=NW)
 
         self.canvas.itemconfig(instructions, font=self.instructions, text="INSTRUCTIONS: Use the\narrow keys to move your\ncharacter on the map and press\nSPACE bar to kill the enemies\nwhen you are on the same\ntile. Find the key and\nkill the Ice king\nfor the next level.")
         self.canvas.itemconfig(level_number, font=self.level_font, text="STAGE {}".format(map_lvl))
@@ -52,18 +53,18 @@ class Display:
         self.canvas.itemconfig(value_of_stat, font=self.value_font, text="{}\n{}\n{}\n{}\n".format(lvl, hero[0], hero[1], hero[2]))
 
     def stat_printer_enemy(self, lvl, enemy):
-        self.canvas.create_image(620, 260, image=self.enemies_list[enemy[0]], anchor=NW)
+        self.canvas.create_image(620, 360, image=self.enemies_list[enemy[0]], anchor=NW)
 
         self.canvas.delete('value')
-        name_of_stat = self.canvas.create_text(10 * self.tile_size + 20, 3 * self.tile_size + 140, fill="#888", anchor=NW)
-        value_of_stat = self.canvas.create_text(10 * self.tile_size + 100, 3 * self.tile_size + 140, tag="value", fill="#fff", anchor=NW)
+        name_of_stat = self.canvas.create_text(10 * self.tile_size + 20, 3 * self.tile_size + 240, fill="#888", anchor=NW)
+        value_of_stat = self.canvas.create_text(10 * self.tile_size + 100, 3 * self.tile_size + 240, tag="value", fill="#fff", anchor=NW)
 
         self.canvas.itemconfig(name_of_stat, font=self.main_font, text="LEVEL\n       HP\n       DP\n       SP")
         self.canvas.itemconfig(value_of_stat, font=self.value_font, text="{}\n{}\n{}\n{}\n".format(lvl, enemy[1], enemy[2], enemy[3]))
 
     def key_drawer(self, have):
         if have == True:
-            self.canvas.create_image(630, 580, image=self.images.key['key'], anchor=NW)
+            self.canvas.create_image(615, self.tile_size * 8 - 20, image=self.images.key['key'], anchor=NW)
 
     def show(self):
         self.root.mainloop()

@@ -15,3 +15,4 @@ class GameImages:
         'boss': PhotoImage(file="imgs/boss.gif"),
         'skeleton': PhotoImage(file="imgs/skeleton.gif")}
         self.key = {'key': PhotoImage(file="imgs/key.gif")}
+        self.logo = {'tesla': PhotoImage(file="imgs/teslatokyo.gif")}
