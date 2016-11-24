@@ -28,7 +28,7 @@ class MainLoop:
     def drawer(self, direction):
         self.display.canvas.delete('all')
         self.display.map_builder(self.model.map)
-        self.display.key_drawer(self.model.is_key_have)
+        self.display.key_drawer(self.model.is_key_found)
         for i in range(len(self.model.enemies_position)):
             self.display.enemy_drawer(self.model.enemies_position[i])
         self.display.hero_drawer(self.model.hero_position, direction)
@@ -42,7 +42,7 @@ class MainLoop:
         char_code_list = {8124162: self.left_key, 8189699: self.right_key, 8320768: self.up_key, 8255233: self.down_key}
         char_code_list[event.keycode]()
         self.model.move_counter += 1
-        if self.model.is_key_have == True and self.model.is_boss_dead == True:
+        if self.model.is_key_found == True and self.model.is_boss_dead == True:
             self.leveling()
 
     def left_key(self):
@@ -78,7 +78,7 @@ class MainLoop:
         self.model.hero_position = [0, 0]
         self.model.enemies_position = [['boss', 1, 1], ['skeleton', 1, 1], ['skeleton', 1, 1], ['skeleton', 1, 1]]
         self.model.enemy_points = [['boss', 2 * self.model.map_lvl, self.model.map_lvl / 2, self.model.map_lvl], ['skeleton', 2 * self.model.map_lvl, self.model.map_lvl / 2, self.model.map_lvl], ['skeleton', 2 * self.model.map_lvl, self.model.map_lvl / 2, self.model.map_lvl], ['skeleton', 2 * self.model.map_lvl, self.model.map_lvl / 2, self.model.map_lvl]]
-        self.model.is_key_have = False
+        self.model.is_key_found = False
         self.model.is_boss_dead = False
         self.restart()
 

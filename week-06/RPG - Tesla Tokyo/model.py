@@ -15,7 +15,7 @@ class AreaStructure:
         self.hero_points = [20, 2, 5]
         self.enemy_points = [['boss', 2 * self.map_lvl, self.map_lvl / 2, self.map_lvl], ['skeleton', 2 * self.map_lvl, self.map_lvl / 2, self.map_lvl], ['skeleton', 2 * self.map_lvl, self.map_lvl / 2, self.map_lvl], ['skeleton', 2 * self.map_lvl, self.map_lvl / 2, self.map_lvl]]
         self.restart_enemy_points = self.enemy_points
-        self.is_key_have = False
+        self.is_key_found = False
         self.is_boss_dead = False
 
     # enemy attributions
@@ -68,7 +68,7 @@ class AreaStructure:
     ###### FEATURES FUNCTIONS ######
 
     def random_dice(self):
-        self.dice = random.randint(1, 7)
+        self.dice = random.randint(1, 6)
         return self.dice
 
     def random_points(self):
@@ -77,7 +77,7 @@ class AreaStructure:
         self.hero_points[1] *= dice
         self.hero_points[2] += dice
         for num in range(len(self.enemy_points)):
-            dice = random.randint(1, 7)
+            dice = random.randint(1, 6)
             if self.enemy_points[num][0] == 'boss':
                 self.enemy_points[num][1] *= dice + dice
                 self.enemy_points[num][2] *= dice + (dice // 2)
@@ -104,7 +104,7 @@ class AreaStructure:
             self.hero_lvl += 1
             self.hero_level_up()
             if len(self.enemy_points[enemy_id]) == 5:
-                self.is_key_have = True
+                self.is_key_found = True
             if self.enemy_points[enemy_id][0] == 'boss':
                 self.is_boss_dead = True
             del self.enemy_points[enemy_id]
