@@ -54,7 +54,6 @@ class AreaStructure:
         direction_list = {'left': lambda x, y: [x-1, y], 'right': lambda x, y: [x+1, y], 'up': lambda x, y: [x, y-1], 'down': lambda x, y: [x, y+1]}
         move_dir = direction_list[direction](self.hero_position[0], self.hero_position[1])
         check = self.movement_validator(direction, move_dir[0], move_dir[1])
-        print(check)
         if check == True:
             self.hero_position[0] = move_dir[0]
             self.hero_position[1] = move_dir[1]
@@ -65,7 +64,6 @@ class AreaStructure:
         elif (direction == 'left' or direction == 'up') and x >= 0 and y >= 0 and self.map[y][x] == 'f':
             return True
         return False
-
 
     ###### FEATURES FUNCTIONS ######
 

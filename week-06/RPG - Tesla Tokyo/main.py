@@ -1,4 +1,5 @@
 import model, view
+import sys
 from tkinter import *
 
 
@@ -12,16 +13,7 @@ class MainLoop:
         self.display.root.bind('<Up>', self.move)
         self.display.root.bind('<Down>', self.move)
         self.display.root.bind('<space>', self.fighting)
-
-    def move(self, event):
-        # keyboard events numeric values
-        if self.model.move_counter % 2 == 1:
-            self.model.enemy_mover()
-        char_code_list = {8124162: self.left_key, 8189699: self.right_key, 8320768: self.up_key, 8255233: self.down_key}
-        char_code_list[event.keycode]()
-        self.model.move_counter += 1
-        if self.model.is_key_have == True and self.model.is_boss_dead == True:
-            self.leveling()
+        self.display.root.bind('<Escape>', self.quit)
 
     def start(self):
         self.model.enemy_starting()
@@ -40,8 +32,18 @@ class MainLoop:
         for i in range(len(self.model.enemies_position)):
             self.display.enemy_drawer(self.model.enemies_position[i])
         self.display.hero_drawer(self.model.hero_position, direction)
-        # statistic on the right
+        # stat on the right side of the screen
         self.display.stat_printer(self.model.hero_lvl, self.model.hero_points, self.model.map_lvl)
+
+    def move(self, event):
+        if self.model.move_counter % 2 == 1:
+            self.model.enemy_mover()
+        # keyboard events numeric values
+        char_code_list = {8124162: self.left_key, 8189699: self.right_key, 8320768: self.up_key, 8255233: self.down_key}
+        char_code_list[event.keycode]()
+        self.model.move_counter += 1
+        if self.model.is_key_have == True and self.model.is_boss_dead == True:
+            self.leveling()
 
     def left_key(self):
         self.model.hero_mover('left')
@@ -67,6 +69,9 @@ class MainLoop:
         if len(enemy_id) > 0:
             self.display.stat_printer_enemy(self.model.map_lvl, self.model.enemy_points[enemy_id[0]])
             self.model.fighting_points_calc(enemy_id[0])
+
+    def quit(self, event):
+        sys.exit()
 
     def leveling(self):
         self.model.map_lvl += 1
