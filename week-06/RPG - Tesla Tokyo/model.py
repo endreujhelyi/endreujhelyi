@@ -68,8 +68,8 @@ class AreaStructure:
     ###### FEATURES FUNCTIONS ######
 
     def random_dice(self):
-        self.dice = random.randint(1, 6)
-        return self.dice
+        dice = random.randint(1, 6)
+        return dice
 
     def random_points(self):
         dice = self.random_dice()
