@@ -1,0 +1,53 @@
+import art
+import random
+
+class AreaStructure:
+
+    def __init__(self):
+        self.map = art.matrix
+        self.move_counter = 0
+        self.hero_position = [0, 0]
+        self.enemies_position = [['boss', 1, 1], ['skeleton', 1, 1], ['skeleton', 1, 1], ['skeleton', 1, 1]]
+
+    def enemy_starting(self):
+        for num in range(len(self.enemies_position)):
+            self.enemy_positioner(num)
+
+    def enemy_positioner(self, num):
+        random_x = random.randrange(0, 9)
+        random_y = random.randrange(0, 10)
+        check = self.movement_validator(random_x + 1, random_y + 1)
+        if check == True:
+            self.enemies_position[num][1] += random_x
+            self.enemies_position[num][2] += random_y
+        else:
+            self.enemy_positioner(num)
+
+    def move_left(self, id):
+        if id == "hero"
+        check = self.movement_validator(self.hero_position[0]-1, self.hero_position[1])
+        if self.hero_position[0] > 0 and check == True:
+            self.hero_position[0] -= 1
+        self.move_counter += 1
+
+    def move_right(self):
+        check = self.movement_validator(self.hero_position[0]+1, self.hero_position[1])
+        if self.hero_position[0] < 9 and check == True:
+            self.hero_position[0] += 1
+        self.move_counter += 1
+
+    def move_up(self):
+        check = self.movement_validator(self.hero_position[0], self.hero_position[1]-1)
+        if self.hero_position[1] > 0 and check == True:
+            self.hero_position[1] -= 1
+        self.move_counter += 1
+
+    def move_down(self):
+        check = self.movement_validator(self.hero_position[0], self.hero_position[1]+1)
+        if self.hero_position[1] < 10 and check == True:
+            self.hero_position[1] += 1
+        self.move_counter += 1
+
+    def movement_validator(self, x, y):
+        if self.map[y][x] == 'f':
+            return True
