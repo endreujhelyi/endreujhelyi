@@ -40,23 +40,23 @@ class MainLoop:
         for i in range(len(self.model.enemies_position)):
             self.display.enemy_drawer(self.model.enemies_position[i])
         self.display.hero_drawer(self.model.hero_position, direction)
-        # statistic printer
+        # statistic on the right
         self.display.stat_printer(self.model.hero_lvl, self.model.hero_points, self.model.map_lvl)
 
     def left_key(self):
-        self.model.move_left()
+        self.model.hero_mover('left')
         self.drawer('left')
 
     def right_key(self):
-        self.model.move_right()
+        self.model.hero_mover('right')
         self.drawer('right')
 
     def up_key(self):
-        self.model.move_up()
+        self.model.hero_mover('up')
         self.drawer('up')
 
     def down_key(self):
-        self.model.move_down()
+        self.model.hero_mover('down')
         self.drawer('down')
 
     def fighting(self, event):

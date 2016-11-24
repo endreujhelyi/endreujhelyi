@@ -50,26 +50,14 @@ class AreaStructure:
         else:
             self.enemy_mover_to(num, x, y)
 
-    # hero moving events
-    def move_left(self):
-        check = self.movement_validator('left', self.hero_position[0]-1, self.hero_position[1])
-        if self.hero_position[0] > 0 and check == True:
-            self.hero_position[0] -= 1
-
-    def move_right(self):
-        check = self.movement_validator('right', self.hero_position[0]+1, self.hero_position[1])
-        if self.hero_position[0] < 9 and check == True:
-            self.hero_position[0] += 1
-
-    def move_up(self):
-        check = self.movement_validator('up', self.hero_position[0], self.hero_position[1]-1)
-        if self.hero_position[1] > 0 and check == True:
-            self.hero_position[1] -= 1
-
-    def move_down(self):
-        check = self.movement_validator('down', self.hero_position[0], self.hero_position[1]+1)
-        if self.hero_position[1] < 10 and check == True:
-            self.hero_position[1] += 1
+    def hero_mover(self, direction):
+        direction_list = {'left': lambda x, y: [x-1, y], 'right': lambda x, y: [x+1, y], 'up': lambda x, y: [x, y-1], 'down': lambda x, y: [x, y+1]}
+        move_dir = direction_list[direction](self.hero_position[0], self.hero_position[1])
+        check = self.movement_validator(direction, move_dir[0], move_dir[1])
+        print(check)
+        if check == True:
+            self.hero_position[0] = move_dir[0]
+            self.hero_position[1] = move_dir[1]
 
     def movement_validator(self, direction, x, y):
         if (direction == 'down' or direction == 'right') and x <= 9 and y <= 10 and self.map[y][x] == 'f':
@@ -86,21 +74,20 @@ class AreaStructure:
         return self.dice
 
     def random_points(self):
-        self.dice = self.random_dice()
-        self.hero_points[0] += (3 * self.dice)
-        self.hero_points[1] *= self.dice
-        self.hero_points[2] += self.dice
+        dice = self.random_dice()
+        self.hero_points[0] += (3 * dice)
+        self.hero_points[1] *= dice
+        self.hero_points[2] += dice
         for num in range(len(self.enemy_points)):
-            self.dice = random.randint(1, 7)
+            dice = random.randint(1, 7)
             if self.enemy_points[num][0] == 'boss':
-                self.enemy_points[num][1] *= self.dice + self.dice
-                self.enemy_points[num][2] *= self.dice + (self.dice // 2)
-                self.enemy_points[num][3] *= self.dice + self.map_lvl
+                self.enemy_points[num][1] *= dice + dice
+                self.enemy_points[num][2] *= dice + (dice // 2)
+                self.enemy_points[num][3] *= dice + self.map_lvl
             else:
-                self.enemy_points[num][1] *= self.dice
-                self.enemy_points[num][2] *= self.dice
-                self.enemy_points[num][3] *= self.dice
-
+                self.enemy_points[num][1] *= dice
+                self.enemy_points[num][2] *= dice
+                self.enemy_points[num][3] *= dice
 
     ### FIGHTING ###
 
@@ -125,7 +112,6 @@ class AreaStructure:
             del self.enemy_points[enemy_id]
             del self.enemies_position[enemy_id]
 
-
     def is_alive(self, health):
         if health > 0:
             return True
@@ -135,7 +121,3 @@ class AreaStructure:
         self.hero_points[0] += self.random_dice()
         self.hero_points[1] += self.random_dice()
         self.hero_points[2] += self.random_dice()
-
-
-
-####

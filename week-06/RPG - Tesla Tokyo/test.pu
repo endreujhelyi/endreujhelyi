@@ -1,0 +1,32 @@
+def move_left(self):
+    check = self.movement_validator('left', self.hero_position[0]-1, self.hero_position[1])
+    if self.hero_position[0] > 0 and check == True:
+        self.hero_position[0] -= 1
+
+def move_right(self):
+    check = self.movement_validator('right', self.hero_position[0]+1, self.hero_position[1])
+    if self.hero_position[0] < 9 and check == True:
+        self.hero_position[0] += 1
+
+def move_up(self):
+    check = self.movement_validator('up', self.hero_position[0], self.hero_position[1]-1)
+    if self.hero_position[1] > 0 and check == True:
+        self.hero_position[1] -= 1
+
+def move_down(self):
+    check = self.movement_validator('down', self.hero_position[0], self.hero_position[1]+1)
+    if self.hero_position[1] < 10 and check == True:
+        self.hero_position[1] += 1
+
+
+
+        def enemy_mover_to(self, num, x, y):
+              move_list = {'left': lambda x, y: [x-1, y], 'right': lambda x, y: [x+1, y], 'up': lambda x, y: [x, y-1], 'down': lambda x, y: [x, y+1]}
+              randomizer = random.choice(list(move_list.items()))
+              random_move = randomizer[1](x, y)
+              check = self.movement_validator(randomizer[0], random_move[0], random_move[1])
+              if check == True:
+                  self.enemies_position[num][1] = random_move[0]
+                  self.enemies_position[num][2] = random_move[1]
+              else:
+                  self.enemy_mover_to(num, x, y)
