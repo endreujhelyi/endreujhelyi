@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import font
-import images
+import images, text
 
 class Display:
 
@@ -41,25 +41,21 @@ class Display:
     def stat_printer(self, lvl, hero, map_lvl):
         self.canvas.create_image(602, 10, image=self.images.logo['tesla'], anchor=NW)
         self.canvas.create_image(620, 195, image=self.dir_list['down'], anchor=NW)
-
         level_number = self.canvas.create_text(10 * self.tile_size + 30, 150, fill="red", anchor=NW)
         name_of_stat = self.canvas.create_text(10 * self.tile_size + 20, self.tile_size + 200, fill="#888", anchor=NW)
         value_of_stat = self.canvas.create_text(10 * self.tile_size + 100, self.tile_size + 200, fill="#fff", anchor=NW)
-        instructions = self.canvas.create_text(10 * self.tile_size + 10, self.tile_size * 9, fill="#ddd", anchor=NW)
-
-        self.canvas.itemconfig(instructions, font=self.instructions, text="INSTRUCTIONS: Use the\narrow keys to move your\ncharacter on the map and press\nSPACE bar to kill the enemies\nwhen you are on the same\ntile. Find the key and\nkill the Ice king\nfor the next level.")
+        instructions = self.canvas.create_text(10 * self.tile_size + 10, self.tile_size * 9 - 10, fill="#ddd", anchor=NW)
         self.canvas.itemconfig(level_number, font=self.level_font, text="STAGE {}".format(map_lvl))
-        self.canvas.itemconfig(name_of_stat, font=self.main_font, text="LEVEL\n       HP\n       DP\n       SP")
+        self.canvas.itemconfig(name_of_stat, font=self.main_font, text=text.statistic['main_stat'])
         self.canvas.itemconfig(value_of_stat, font=self.value_font, text="{}\n{}\n{}\n{}\n".format(lvl, hero[0], hero[1], hero[2]))
+        self.canvas.itemconfig(instructions, font=self.instructions, text=text.statistic['instructions'])
 
     def stat_printer_enemy(self, lvl, enemy):
         self.canvas.create_image(620, 360, image=self.enemies_list[enemy[0]], anchor=NW)
-
         self.canvas.delete('value')
         name_of_stat = self.canvas.create_text(10 * self.tile_size + 20, 3 * self.tile_size + 240, fill="#888", anchor=NW)
         value_of_stat = self.canvas.create_text(10 * self.tile_size + 100, 3 * self.tile_size + 240, tag="value", fill="#fff", anchor=NW)
-
-        self.canvas.itemconfig(name_of_stat, font=self.main_font, text="LEVEL\n       HP\n       DP\n       SP")
+        self.canvas.itemconfig(name_of_stat, font=self.main_font, text=text.statistic['main_stat'])
         self.canvas.itemconfig(value_of_stat, font=self.value_font, text="{}\n{}\n{}\n{}\n".format(lvl, enemy[1], enemy[2], enemy[3]))
 
     def key_drawer(self, have):
