@@ -4,19 +4,32 @@ import random
 class AreaStructure:
 
     def __init__(self):
-        self.map = art.matrix
+        self.map = []
         self.move_counter = 0
         self.hero_position = [0, 0]
-        self.enemies_position = [['boss', 1, 1], ['skeleton', 1, 1], ['skeleton', 1, 1], ['skeleton', 1, 1]]
+        self.enemies_position = [
+        ['boss', 1, 1],
+        ['skeleton', 1, 1],
+        ['skeleton', 1, 1],
+        ['skeleton', 1, 1]]
         self.restart_enemies_position = self.enemies_position
+
         #statistic
         self.map_lvl = 1
         self.hero_lvl = 1
         self.hero_points = [20, 2, 5]
-        self.enemy_points = [['boss', 2 * self.map_lvl, self.map_lvl / 2, self.map_lvl], ['skeleton', 2 * self.map_lvl, self.map_lvl / 2, self.map_lvl], ['skeleton', 2 * self.map_lvl, self.map_lvl / 2, self.map_lvl], ['skeleton', 2 * self.map_lvl, self.map_lvl / 2, self.map_lvl]]
+        self.enemy_points = [
+        ['boss', 2 * self.map_lvl, self.map_lvl / 2, self.map_lvl],
+        ['skeleton', 2 * self.map_lvl, self.map_lvl / 2, self.map_lvl],
+        ['skeleton', 2 * self.map_lvl, self.map_lvl / 2, self.map_lvl],
+        ['skeleton', 2 * self.map_lvl, self.map_lvl / 2, self.map_lvl]]
+
         self.restart_enemy_points = self.enemy_points
         self.is_key_found = False
         self.is_boss_dead = False
+
+    def random_map(self):
+        self.map = random.choice(art.matrix)
 
     # enemy attributions
     def enemy_starting(self):
@@ -27,6 +40,7 @@ class AreaStructure:
         random_x = random.randrange(0, 9)
         random_y = random.randrange(0, 10)
         check = self.movement_validator('down', random_x + 1, random_y + 1)
+
         if check == True:
             self.enemies_position[num][1] += random_x
             self.enemies_position[num][2] += random_y
@@ -40,10 +54,16 @@ class AreaStructure:
             self.enemy_mover_to(num, self.enemies_position[num][1], self.enemies_position[num][2])
 
     def enemy_mover_to(self, num, x, y):
-        move_list = {'left': lambda x, y: [x-1, y], 'right': lambda x, y: [x+1, y], 'up': lambda x, y: [x, y-1], 'down': lambda x, y: [x, y+1]}
+        move_list = {
+            'left': lambda x, y: [x-1, y],
+            'right': lambda x, y: [x+1, y],
+            'up': lambda x, y: [x, y-1],
+            'down': lambda x, y: [x, y+1]}
+
         randomizer = random.choice(list(move_list.items()))
         random_move = randomizer[1](x, y)
         check = self.movement_validator(randomizer[0], random_move[0], random_move[1])
+
         if check == True:
             self.enemies_position[num][1] = random_move[0]
             self.enemies_position[num][2] = random_move[1]
@@ -51,8 +71,14 @@ class AreaStructure:
             self.enemy_mover_to(num, x, y)
 
     def hero_mover(self, direction):
-        direction_list = {'left': lambda x, y: [x-1, y], 'right': lambda x, y: [x+1, y], 'up': lambda x, y: [x, y-1], 'down': lambda x, y: [x, y+1]}
+        direction_list = {
+            'left': lambda x, y: [x-1, y],
+            'right': lambda x, y: [x+1, y],
+            'up': lambda x, y: [x, y-1],
+            'down': lambda x, y: [x, y+1]
+        }
         move_dir = direction_list[direction](self.hero_position[0], self.hero_position[1])
+
         check = self.movement_validator(direction, move_dir[0], move_dir[1])
         if check == True:
             self.hero_position[0] = move_dir[0]
@@ -76,6 +102,7 @@ class AreaStructure:
         self.hero_points[0] += (3 * dice)
         self.hero_points[1] *= dice
         self.hero_points[2] += dice
+
         for num in range(len(self.enemy_points)):
             dice = random.randint(1, 6)
             if self.enemy_points[num][0] == 'boss':
@@ -95,6 +122,7 @@ class AreaStructure:
         enemy_strike = enemy[3] + self.random_dice() * 2
         hero_alive = self.is_alive(self.hero_points[0])
         enemy_alive = self.is_alive(enemy[1])
+
         if hero_alive == True and enemy_alive == True:
             if enemy_strike > self.hero_points[0]:
                 self.hero_points[0] -= enemy_strike
