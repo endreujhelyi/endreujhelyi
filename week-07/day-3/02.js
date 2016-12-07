@@ -4,11 +4,11 @@
 // that is the string 'apple'
 
 function apply(func) {
-  return appleWriter('alma');
+  return func;
 }
 
 function appleWriter(word) {
-  return word
+  return 'alma'
 }
 
-console.log(apply()) // should log apple
+console.log(apply(appleWriter())) // should log apple
