@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: EventListeners</title>
+</head>
+<body>
+  <ul>
+    <li>apple</li>
+    <li>balloon</li>
+    <li>cat</li>
+    <li>dolphin</li>
+  </ul>
+  <button>How many items are in the list?</button>
+  <p class="result">dunno :(</p>
+
+  <script>
+    // On the click of the button,
+    // Count the items in the list
+    // And display the result in the result element.
+
+    function listCounter() {
+      var coolList = document.querySelectorAll('li');
+      lengthOfList = 0
+
+      for (var i = 0; i < coolList.length; i++) {
+        lengthOfList++;
+      }
+      return lengthOfList;
+    };
+
+    var result = document.querySelector('.result');
+    var button = document.querySelector('button');
+
+    function textChanger() {
+      console.log(1);
+      result.textContent = listCounter();
+    };
+
+    button.addEventListener('click', textChanger);
+
+
+
+
+  </script>
+  <script src="events-2.js"></script>
+</body>
+</html>

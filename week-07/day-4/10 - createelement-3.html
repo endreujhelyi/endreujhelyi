@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: CreateElement</title>
+</head>
+<body>
+  <ul class="asteroids">
+    <li>The King</li>
+  </ul>
+
+  <script>
+    // Remove the king from the list.
+    var asteroidList = document.querySelector('.asteroids');
+    var theKing = asteroidList.querySelector('li');
+    asteroidList.removeChild(theKing);
+    // Add list items that have the following text contents:
+    // ['apple', 'bubble', 'cat', 'green fox']
+    var coolStuffs = ['apple', 'bubble', 'cat', 'green fox'];
+    for (var i = 0; i < coolStuffs.length; i++) {
+      var newStuff = document.createElement('li');
+      asteroidList.appendChild(newStuff);
+      newStuff.textContent = coolStuffs[i];
+    }
+  </script>
+  <script src="createelement-3.js"></script>
+</body>
+</html>
