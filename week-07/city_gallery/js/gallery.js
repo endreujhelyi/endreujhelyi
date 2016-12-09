@@ -1,43 +1,63 @@
-var gallery = [
-  {city: "Auckland,<br />New Zealand", link: "url('gallery/auckland.jpg')"},
-  {city: "Beirut,<br />Libanon", link: "url('gallery/beirut.jpg')"},
-  {city: "Bern,<br />Switzerland", link: "url('gallery/bern.jpg')"},
-  {city: "Manila,<br />Philippines", link: "url('gallery/manila.jpg')"},
-  {city: "New York,<br />USA", link: "url('gallery/new_york.jpg')"},
-  {city: "Sao Paulo,<br />Brazil", link: "url('gallery/sao_paulo.jpg')"},
-  {city: "Shanghai,<br />China", link: "url('gallery/shanghai.jpg')"},
-  {city: "Singapore,<br />Singapore", link: "url('gallery/singapore.jpg')"},
-  {city: "Tokyo,<br />Japan", link: "url('gallery/tokyo.jpg')"}
-];
 
-var thumb = document.querySelectorAll('.thumb');
+var thumbParent  = document.querySelectorAll('.thumb');
+var thumb = document.querySelectorAll('.thumb-img');
 var mainGallery = document.querySelector('.main-gallery');
 var leftArrow = document.querySelector('.left');
 var rightArrow = document.querySelector('.right');
+var infoBox = document.querySelector('.info-box');
+
+var infoBoxHeader = infoBox.querySelector('h1');
+var infoBoxParagraph = infoBox.querySelector('p');
+
 
 var backgroundImageIndex = 0;
 
+// Set starting images
 mainGallery.setAttribute('style', 'background-image: ' + gallery[0]['link'] + ';');
+thumbParent[0].classList.add('clicked');
 
+// Add thumbnails and their click events
 for (var i = 0; i < gallery.length; i++) {
   var background = 'background-image: ' + gallery[i]['link'] + ';';
   thumb[i].setAttribute('style', background);
   imageZoomer(i, background);
 }
 
+
 function imageZoomer(num, backgroundLink) {
   thumb[num].addEventListener('click', function() {
-    mainGallery.setAttribute('style', backgroundLink);
+    setTimeout(function(){ mainGallery.setAttribute('style', backgroundLink);
     backgroundImageIndex = num;
-    thumb.map(function(thumbnail) {
+    mainGallery.style.opacity = 1;
+    }, 300);
+    thumb.forEach(function(thumbnail) {
       thumbnail.classList.remove('active');
     });
-    console.log(thumb[num]);
+    mainGallery.style.opacity = .5;
     thumb[num].classList.add('active');
-    console.log(thumb[num]);
-  });
-}
+    thumbParent.forEach(function(thumbnail) {
+      thumbnail.classList.remove('clicked');
+    });
+    thumbParent[num].classList.add('clicked');
 
+    infoBoxRender(num);
+    infoBoxVisibler(num);
+  });
+};
+
+function infoBoxRender(num) {
+  infoBoxHeader.innerHTML = gallery[num]['city'];
+  infoBoxParagraph.innerHTML = gallery[num]['info'];
+};
+
+function infoBoxVisibler(num) {
+  setTimeout(function(){
+  infoBox.classList.add('hidden-box');
+  }, 400);
+  infoBox.classList.remove('hidden-box');
+};
+
+// adding event to left arrow
 leftArrow.addEventListener('click', function() {
   if (backgroundImageIndex > 0) {
     var background = 'background-image: ' + gallery[backgroundImageIndex - 1]['link'] + ';';
@@ -46,6 +66,7 @@ leftArrow.addEventListener('click', function() {
   }
 });
 
+// adding event to right arrow
 rightArrow.addEventListener('click', function() {
   if (backgroundImageIndex < gallery.length) {
     var background = 'background-image: ' + gallery[backgroundImageIndex + 1]['link'] + ';';
