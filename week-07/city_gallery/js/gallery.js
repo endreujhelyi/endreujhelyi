@@ -1,5 +1,15 @@
 
-var thumbParent  = document.querySelectorAll('.thumb');
+var thumbnailsContainer = document.querySelector('.thumbnails');
+// Main Loop
+for (var i = 0; i < gallery.length; i++) {
+  HTMLBuilder(i);
+}
+
+
+// Selectors
+var title = document.querySelector('.main-title');
+
+var thumbParent = document.querySelectorAll('.thumb');
 var thumb = document.querySelectorAll('.thumb-img');
 
 var mainGallery = document.querySelector('.main-gallery');
@@ -9,21 +19,29 @@ var infoBox = document.querySelector('.info-box');
 var infoBoxHeader = infoBox.querySelector('h1');
 var infoBoxParagraph = infoBox.querySelector('p');
 
-var title = document.querySelector('.main-title');
-
 
 // Set starting images
 mainGallery.style.backgroundImage = 'url("gallery/main_city.jpg")';
 setTimeout(function(){ title.classList.add('start-pos');}, 1000);
 
-var backgroundImageIndex = 0;
-
-
-// Main Loop
 for (var i = 0; i < gallery.length; i++) {
   var background = 'url("' + gallery[i]['link'] + '")';
   thumb[i].style.backgroundImage = background;
   imageZoomer(i, background);
+}
+
+var backgroundImageIndex = 0;
+
+
+function HTMLBuilder(num) {
+  var newDivTag = document.createElement('div');
+  var newH1Tag = document.createElement('h1');
+  var newH2Tag = document.createElement('h2');
+  thumbnailsContainer.appendChild(newDivTag).classList.add('thumb');
+  var newDivTag2 = document.createElement('div');
+  newDivTag.appendChild(newDivTag2).classList.add('thumb-img');
+  newDivTag.appendChild(newH1Tag).textContent = gallery[num]['city'];
+  newDivTag.appendChild(newH2Tag).textContent = gallery[num]['country'];
 }
 
 
@@ -55,12 +73,14 @@ function thumbBoxRefresher(num) {
 
 // Gallery Info Box Events Executing
 function infoBoxRender(num) {
-  infoBoxHeader.innerHTML = gallery[num]['city'];
+  setTimeout(function() {
+    infoBoxHeader.innerHTML = gallery[num]['city'] + ', ' + gallery[num]['country'];
+  }, 550);
   infoBoxParagraph.innerHTML = gallery[num]['info'];
 };
 
 function infoBoxVisibler(num) {
-  setTimeout(function(){
+  setTimeout(function() {
   infoBox.classList.add('hidden-box');
   }, 400);
   infoBox.classList.remove('hidden-box');
@@ -102,6 +122,6 @@ function mainImageShifter(background) {
 function eventRecaller(thumbIndex){
   thumbRefresher(thumbIndex);
   thumbBoxRefresher(thumbIndex);
-  infoBoxRender(thumbIndex);
   infoBoxVisibler(thumbIndex);
+  infoBoxRender(thumbIndex);
 }
