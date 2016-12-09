@@ -5,7 +5,7 @@ var mainGallery = document.querySelector('.main-gallery');
 var leftArrow = document.querySelector('.left');
 var rightArrow = document.querySelector('.right');
 var infoBox = document.querySelector('.info-box');
-
+var title = document.querySelector('.main-title');
 var infoBoxHeader = infoBox.querySelector('h1');
 var infoBoxParagraph = infoBox.querySelector('p');
 
@@ -13,8 +13,11 @@ var infoBoxParagraph = infoBox.querySelector('p');
 var backgroundImageIndex = 0;
 
 // Set starting images
-mainGallery.setAttribute('style', 'background-image: ' + gallery[0]['link'] + ';');
-thumbParent[0].classList.add('clicked');
+mainGallery.setAttribute('style', 'background-image: url("gallery/main_city.jpg");');
+setTimeout(function(){ title.classList.add('start-pos');
+}, 1000);
+
+
 
 // Add thumbnails and their click events
 for (var i = 0; i < gallery.length; i++) {
@@ -61,8 +64,25 @@ function infoBoxVisibler(num) {
 leftArrow.addEventListener('click', function() {
   if (backgroundImageIndex > 0) {
     var background = 'background-image: ' + gallery[backgroundImageIndex - 1]['link'] + ';';
-    mainGallery.setAttribute('style', background);
     backgroundImageIndex--;
+
+    setTimeout(function(){ mainGallery.setAttribute('style', background);
+    mainGallery.style.opacity = 1;
+    }, 300);
+
+    thumb.forEach(function(thumbnail) {
+      thumbnail.classList.remove('active');
+    });
+    mainGallery.style.opacity = .5;
+    thumb[backgroundImageIndex].classList.add('active');
+    thumbParent.forEach(function(thumbnail) {
+      thumbnail.classList.remove('clicked');
+    });
+    thumbParent[backgroundImageIndex].classList.add('clicked');
+
+    mainGallery.setAttribute('style', background);
+    infoBoxRender(backgroundImageIndex);
+    infoBoxVisibler(backgroundImageIndex);
   }
 });
 
@@ -70,7 +90,24 @@ leftArrow.addEventListener('click', function() {
 rightArrow.addEventListener('click', function() {
   if (backgroundImageIndex < gallery.length) {
     var background = 'background-image: ' + gallery[backgroundImageIndex + 1]['link'] + ';';
-    mainGallery.setAttribute('style', background);
     backgroundImageIndex++;
+
+    setTimeout(function(){ mainGallery.setAttribute('style', background);
+    mainGallery.style.opacity = 1;
+    }, 300);
+
+    thumb.forEach(function(thumbnail) {
+      thumbnail.classList.remove('active');
+    });
+    mainGallery.style.opacity = .5;
+    thumb[backgroundImageIndex].classList.add('active');
+    thumbParent.forEach(function(thumbnail) {
+      thumbnail.classList.remove('clicked');
+    });
+    thumbParent[backgroundImageIndex].classList.add('clicked');
+
+    mainGallery.setAttribute('style', background);
+    infoBoxRender(backgroundImageIndex);
+    infoBoxVisibler(backgroundImageIndex);
   }
 });
