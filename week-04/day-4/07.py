@@ -19,7 +19,6 @@ print (coder(text))
 ## aniko version
 
 def replace_x(string):
-    print (string)
     if string == '':
         return ''
     else:
@@ -31,4 +30,4 @@ def check_letter(letter):
     else:
         return letter
 
-replace_x(text)
+print(replace_x(text))

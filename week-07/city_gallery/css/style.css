@@ -44,6 +44,7 @@ body {
   position: relative;
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
 
   box-shadow: 8px -8px 13px #888;
   transition: opacity 0.3s ease;
@@ -54,13 +55,29 @@ body {
   background-position: center bottom;
 }
 
+.main-title {
+  font-size: 72px;
+  font-family: darleston;
+  font-style: oblique;
+
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 1s ease;
+
+  text-shadow: 2px 2px 5px #888;
+  color: #444;
+  position: relative;
+  bottom: 30px;
+}
+
 .info-box {
   width: 100%;
-  height: 80px;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0;
+  position: absolute;
   padding: 8px;
   color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  z-index: 1;
 
   transform: translateY(100%);
   transition: all .4s ease;
@@ -80,22 +97,20 @@ body {
 .info-box p {
   font-weight: 100;
   font-style: oblique;
+  padding-bottom: 8px;
 }
 
-#main-title {
-  font-size: 72px;
-  font-family: darleston;
-  font-style: oblique;
-
-  text-shadow: 2px 2px 5px #888;
-  color: #444;
-  opacity: 0.8;
-  position: relative;
-  bottom: 30px;
+.start-pos {
+  transform: translateY(0);
+  opacity: .8;
 }
 
+/* ARROWS */
 .arrow {
-  position: absolute;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .arrow img {
@@ -111,13 +126,18 @@ body {
   filter: drop-shadow(2px 2px 2px #fff);
 }
 
-.left {
+.arrow:active img {
+  width: 56px;
+  height: 56px;
+}
+
+.left,
+.right {
   top: 40%;
 }
 
 .right {
-  top: 40%;
-  right: 0;
+  align-self: flex-end;
 }
 
 

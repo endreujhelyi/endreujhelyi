@@ -5,6 +5,7 @@ from endre_work import anagramm, count_letters
 
 class TddTest(unittest.TestCase):
 
+
 # testing anagramm function -----------|
     def test_are_strings_anagramm(self):
         self.assertTrue(anagramm("section", "notices"))

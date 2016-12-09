@@ -5,7 +5,12 @@ import todo_model, todo_view
 class CommandAndExecute:
 
     def __init__(self):
-        self.command_list = {'-l': self.lister, '-a': self.adder, '-r': self.remover, '-c': self.checker}
+        self.command_list = {
+        '-l': self.lister,
+        '-a': self.adder,
+        '-r': self.remover,
+        '-c': self.checker}
+        
         self.is_running = True
         self.cdr = sys.argv
         self.rw = todo_model.FileModifier()

@@ -1,53 +1,59 @@
 
 var thumbParent  = document.querySelectorAll('.thumb');
 var thumb = document.querySelectorAll('.thumb-img');
+
 var mainGallery = document.querySelector('.main-gallery');
 var leftArrow = document.querySelector('.left');
 var rightArrow = document.querySelector('.right');
 var infoBox = document.querySelector('.info-box');
-var title = document.querySelector('.main-title');
 var infoBoxHeader = infoBox.querySelector('h1');
 var infoBoxParagraph = infoBox.querySelector('p');
 
+var title = document.querySelector('.main-title');
+
+
+// Set starting images
+mainGallery.style.backgroundImage = 'url("gallery/main_city.jpg")';
+setTimeout(function(){ title.classList.add('start-pos');}, 1000);
 
 var backgroundImageIndex = 0;
 
-// Set starting images
-mainGallery.setAttribute('style', 'background-image: url("gallery/main_city.jpg");');
-setTimeout(function(){ title.classList.add('start-pos');
-}, 1000);
 
-
-
-// Add thumbnails and their click events
+// Main Loop
 for (var i = 0; i < gallery.length; i++) {
-  var background = 'background-image: ' + gallery[i]['link'] + ';';
-  thumb[i].setAttribute('style', background);
+  var background = 'url("' + gallery[i]['link'] + '")';
+  thumb[i].style.backgroundImage = background;
   imageZoomer(i, background);
 }
 
 
-function imageZoomer(num, backgroundLink) {
+// Thumbnail Event Setter
+function imageZoomer(num, background) {
   thumb[num].addEventListener('click', function() {
-    setTimeout(function(){ mainGallery.setAttribute('style', backgroundLink);
+    mainImageShifter(background);
     backgroundImageIndex = num;
-    mainGallery.style.opacity = 1;
-    }, 300);
-    thumb.forEach(function(thumbnail) {
-      thumbnail.classList.remove('active');
-    });
-    mainGallery.style.opacity = .5;
-    thumb[num].classList.add('active');
-    thumbParent.forEach(function(thumbnail) {
-      thumbnail.classList.remove('clicked');
-    });
-    thumbParent[num].classList.add('clicked');
-
-    infoBoxRender(num);
-    infoBoxVisibler(num);
+    eventRecaller(num);
   });
 };
 
+
+// Thumbnail Events Executing
+function thumbRefresher(num) {
+  thumb.forEach(function(thumbnail) {
+    thumbnail.classList.remove('active');
+  });
+  thumb[num].classList.add('active');
+}
+
+function thumbBoxRefresher(num) {
+  thumbParent.forEach(function(thumbnail) {
+    thumbnail.classList.remove('clicked');
+  });
+  thumbParent[num].classList.add('clicked');
+}
+
+
+// Gallery Info Box Events Executing
 function infoBoxRender(num) {
   infoBoxHeader.innerHTML = gallery[num]['city'];
   infoBoxParagraph.innerHTML = gallery[num]['info'];
@@ -60,54 +66,42 @@ function infoBoxVisibler(num) {
   infoBox.classList.remove('hidden-box');
 };
 
-// adding event to left arrow
+
+// Adding Event To The Left Arrow
 leftArrow.addEventListener('click', function() {
   if (backgroundImageIndex > 0) {
-    var background = 'background-image: ' + gallery[backgroundImageIndex - 1]['link'] + ';';
+    var background = 'url("' + gallery[backgroundImageIndex - 1]['link'] + '")';
     backgroundImageIndex--;
-
-    setTimeout(function(){ mainGallery.setAttribute('style', background);
-    mainGallery.style.opacity = 1;
-    }, 300);
-
-    thumb.forEach(function(thumbnail) {
-      thumbnail.classList.remove('active');
-    });
-    mainGallery.style.opacity = .5;
-    thumb[backgroundImageIndex].classList.add('active');
-    thumbParent.forEach(function(thumbnail) {
-      thumbnail.classList.remove('clicked');
-    });
-    thumbParent[backgroundImageIndex].classList.add('clicked');
-
-    mainGallery.setAttribute('style', background);
-    infoBoxRender(backgroundImageIndex);
-    infoBoxVisibler(backgroundImageIndex);
+    mainImageShifter(background);
+    eventRecaller(backgroundImageIndex);
   }
 });
 
-// adding event to right arrow
+
+// Adding Event To Right Arrow
 rightArrow.addEventListener('click', function() {
   if (backgroundImageIndex < gallery.length) {
-    var background = 'background-image: ' + gallery[backgroundImageIndex + 1]['link'] + ';';
+    var background = 'url("' + gallery[backgroundImageIndex + 1]['link'] + '")';
     backgroundImageIndex++;
-
-    setTimeout(function(){ mainGallery.setAttribute('style', background);
-    mainGallery.style.opacity = 1;
-    }, 300);
-
-    thumb.forEach(function(thumbnail) {
-      thumbnail.classList.remove('active');
-    });
-    mainGallery.style.opacity = .5;
-    thumb[backgroundImageIndex].classList.add('active');
-    thumbParent.forEach(function(thumbnail) {
-      thumbnail.classList.remove('clicked');
-    });
-    thumbParent[backgroundImageIndex].classList.add('clicked');
-
-    mainGallery.setAttribute('style', background);
-    infoBoxRender(backgroundImageIndex);
-    infoBoxVisibler(backgroundImageIndex);
+    mainImageShifter(background);
+    eventRecaller(backgroundImageIndex);
   }
 });
+
+
+// Main Gallery Image Shifter
+function mainImageShifter(background) {
+  setTimeout(function() { mainGallery.style.backgroundImage = background;
+  mainGallery.style.opacity = 1;
+  }, 300);
+  mainGallery.style.opacity = .5;
+};
+
+
+// Updating thumbs & infobox
+function eventRecaller(thumbIndex){
+  thumbRefresher(thumbIndex);
+  thumbBoxRefresher(thumbIndex);
+  infoBoxRender(thumbIndex);
+  infoBoxVisibler(thumbIndex);
+}

@@ -19,13 +19,13 @@ class MainLoop:
 
         self.model.random_points()
         self.start()
+        self.music.music_player()
         self.display.show()
 
 
     def start(self):
         self.model.random_map()
         self.model.enemy_starting()
-        self.music.music_player()
         self.drawer('down')
 
 
@@ -104,8 +104,7 @@ class MainLoop:
 
         self.model.enemy_points = [
         ['boss', 2 * self.model.map_lvl, self.model.map_lvl / 2, self.model.map_lvl],
-        ['skeleton', 2 *
-        self.model.map_lvl, self.model.map_lvl / 2, self.model.map_lvl],
+        ['skeleton', 2 * self.model.map_lvl, self.model.map_lvl / 2, self.model.map_lvl],
         ['skeleton', 2 * self.model.map_lvl, self.model.map_lvl / 2, self.model.map_lvl],
         ['skeleton', 2 * self.model.map_lvl, self.model.map_lvl / 2, self.model.map_lvl]]
 
