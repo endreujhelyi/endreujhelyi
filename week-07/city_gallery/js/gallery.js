@@ -1,4 +1,5 @@
 
+var backgroundImageIndex = 0;
 var thumbnailsContainer = document.querySelector('.thumbnails');
 // Main Loop
 for (var i = 0; i < gallery.length; i++) {
@@ -22,7 +23,7 @@ var infoBoxParagraph = infoBox.querySelector('p');
 
 // Set starting images
 mainGallery.style.backgroundImage = 'url("gallery/main_city.jpg")';
-setTimeout(function(){ title.classList.add('start-pos');}, 1000);
+setTimeout(function(){ title.classList.add('main-title-fixed');}, 1000);
 
 for (var i = 0; i < gallery.length; i++) {
   var background = 'url("' + gallery[i]['link'] + '")';
@@ -30,7 +31,6 @@ for (var i = 0; i < gallery.length; i++) {
   imageZoomer(i, background);
 }
 
-var backgroundImageIndex = 0;
 
 
 function HTMLBuilder(num) {
@@ -43,14 +43,23 @@ function HTMLBuilder(num) {
   newDivTag.appendChild(newH1Tag).textContent = gallery[num]['city'];
   newDivTag.appendChild(newH2Tag).textContent = gallery[num]['country'];
 }
+arrowEnableChecker()
+
+
+// Magnet PNG creator
+var newImg = document.createElement('img');
+thumbnailsContainer.appendChild(newImg).id = 'magnet';
+newImg.setAttribute('src', 'imgs/magnet.png');
 
 
 // Thumbnail Event Setter
 function imageZoomer(num, background) {
   thumb[num].addEventListener('click', function() {
-    mainImageShifter(background);
-    backgroundImageIndex = num;
-    eventRecaller(num);
+    if (backgroundImageIndex != num) {
+      mainImageShifter(background);
+      backgroundImageIndex = num;
+      eventRecaller(num);
+    }
   });
 };
 
@@ -86,6 +95,19 @@ function infoBoxVisibler(num) {
   infoBox.classList.remove('hidden-box');
 };
 
+function arrowEnableChecker() {
+  if (backgroundImageIndex == 0) {
+    leftArrow.classList.remove('enable');
+  } else {
+    leftArrow.classList.add('enable');
+  }
+
+  if (backgroundImageIndex == gallery.length - 1) {
+    rightArrow.classList.remove('enable');
+  } else {
+    rightArrow.classList.add('enable');
+  }
+}
 
 // Adding Event To The Left Arrow
 leftArrow.addEventListener('click', function() {
@@ -98,7 +120,7 @@ leftArrow.addEventListener('click', function() {
 });
 
 
-// Adding Event To Right Arrow
+// Adding Event To The Right Arrow
 rightArrow.addEventListener('click', function() {
   if (backgroundImageIndex < gallery.length) {
     var background = 'url("' + gallery[backgroundImageIndex + 1]['link'] + '")';
@@ -124,4 +146,5 @@ function eventRecaller(thumbIndex){
   thumbBoxRefresher(thumbIndex);
   infoBoxVisibler(thumbIndex);
   infoBoxRender(thumbIndex);
+  arrowEnableChecker();
 }
