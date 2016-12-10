@@ -46,9 +46,10 @@ body {
   align-items: flex-end;
   justify-content: space-between;
 
-  box-shadow: 8px -8px 13px #888;
-  transition: opacity 0.3s ease;
+  box-shadow: inset 0 0 20px 0 #888;
+  opacity: 1;
   overflow: hidden;
+  transition: opacity .3s ease;
 
   background-color: #ddd;
   background-size: cover;
@@ -56,18 +57,47 @@ body {
 }
 
 .main-title {
-  font-size: 72px;
-  font-family: darleston;
-  font-style: oblique;
-
+  position: absolute;
+  display: block;
+  width: 100%;
+  text-align: center;
+  top: 30px;
   transform: translateY(100px);
   opacity: 0;
   transition: all 1s ease;
+}
 
-  text-shadow: 2px 2px 5px #888;
-  color: #444;
+.main-title-fixed {
+  transform: translateY(0);
+  opacity: .8;
+}
+
+.main-title > h1 {
   position: relative;
-  bottom: 30px;
+  font-size: 72px;
+  font-family: darleston;
+  font-style: oblique;
+  color: #444;
+  text-shadow: 2px 2px 5px #888;
+}
+
+.main-title > h1:before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 1px;
+  bottom: 10px;
+  left: 25%;
+  background-color: #444;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all .4s ease-in-out 0s;
+  transition-delay: .7s;
+}
+
+.main-title-fixed > h1:before {
+  visibility: visible;
+  transform: scaleX(1);
 }
 
 .info-box {
@@ -100,10 +130,7 @@ body {
   padding-bottom: 8px;
 }
 
-.start-pos {
-  transform: translateY(0);
-  opacity: .8;
-}
+
 
 /* ARROWS */
 .arrow {
@@ -117,16 +144,15 @@ body {
   width: 60px;
   height: 60px;
   opacity: .3;
-  filter: drop-shadow(0 0 0 #fff);
-  transition: all 0.5s ease;
+  transition: all .5s;
 }
 
-.arrow:hover img {
+.enable:hover img {
   opacity: .7;
   filter: drop-shadow(2px 2px 2px #fff);
 }
 
-.arrow:active img {
+.enable:active img {
   width: 56px;
   height: 56px;
 }
@@ -151,12 +177,34 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
+
+  transform: translateX(-50px);
+  transition: transform .3s ease-in;
+}
+
+.thumbnails:hover {
+  transform: translateX(0);
+}
+
+#magnet {
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  opacity: 1;
+  transform: translateX(60px);
+  transition: transform .3s ease-in, opacity .2s ease;
+}
+
+.thumbnails:hover #magnet {
+  opacity: 0;
+  transform: translateX(-200px);
 }
 
 .thumb {
   width: 60px;
   height: 60px;
   position: relative;
+  z-index: 999;
 }
 
 .thumb-img {
@@ -177,12 +225,12 @@ body {
 
 .thumbnails h1,
 .thumbnails h2 {
-  position: absolute;
-  left: 65px;
   width: 110px;
+  left: 65px;
+  padding-left: 4px;
+  position: absolute;
   transform: translateX(-150px);
   opacity: 0;
-
   box-shadow: 2px 2px 2px #888;
   z-index: -1;
 }
@@ -192,13 +240,14 @@ body {
   background-color: #edfdff;
   top: 10px;
   font-weight: bold;
-  transition: transform 0.3s ease, opacity 0.8s;
+  transition: transform 0.3s ease, opacity 0.8s ease, background-color 0.3s ease;
 }
 
 .thumbnails h2 {
   top: 30px;
+  background-color: #fff;
   font-style: oblique;
-  transition: transform 0.5s ease, opacity 0.6s;
+  transition: transform 0.5s ease, opacity 0.6s ease;
 }
 
 .thumb:hover {
@@ -207,12 +256,16 @@ body {
 
 .thumb:hover h1,
 .thumb:hover h2,
-.clicked h1,
-.clicked h2 {
+.thumbnails:hover .clicked h1,
+.thumbnails:hover .clicked h2 {
   transform: translateX(0);
   opacity: 1;
 }
 
 .clicked {
-  border-right: 2px solid #ff72a4;
+  border-right: 2px solid #ff72a4 !important;
+}
+
+.clicked h1 {
+  background-color: #ff72a4;
 }

@@ -1,5 +1,5 @@
 
-var backgroundImageIndex = 0;
+var backgroundImageIndex = -1;
 var thumbnailsContainer = document.querySelector('.thumbnails');
 // Main Loop
 for (var i = 0; i < gallery.length; i++) {
@@ -43,7 +43,22 @@ function HTMLBuilder(num) {
   newDivTag.appendChild(newH1Tag).textContent = gallery[num]['city'];
   newDivTag.appendChild(newH2Tag).textContent = gallery[num]['country'];
 }
+
 arrowEnableChecker()
+function arrowEnableChecker() {
+  if (backgroundImageIndex <= 0) {
+    leftArrow.classList.remove('enable');
+  } else {
+    leftArrow.classList.add('enable');
+  }
+
+  if (backgroundImageIndex == gallery.length - 1) {
+    rightArrow.classList.remove('enable');
+  } else {
+    rightArrow.classList.add('enable');
+  }
+}
+
 
 
 // Magnet PNG creator
@@ -95,19 +110,6 @@ function infoBoxVisibler(num) {
   infoBox.classList.remove('hidden-box');
 };
 
-function arrowEnableChecker() {
-  if (backgroundImageIndex == 0) {
-    leftArrow.classList.remove('enable');
-  } else {
-    leftArrow.classList.add('enable');
-  }
-
-  if (backgroundImageIndex == gallery.length - 1) {
-    rightArrow.classList.remove('enable');
-  } else {
-    rightArrow.classList.add('enable');
-  }
-}
 
 // Adding Event To The Left Arrow
 leftArrow.addEventListener('click', function() {
