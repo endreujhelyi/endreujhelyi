@@ -1,5 +1,6 @@
 
 var backgroundImageIndex = -1;
+var body = document.querySelector('body');
 var thumbnailsContainer = document.querySelector('.thumbnails');
 // Main Loop
 for (var i = 0; i < gallery.length; i++) {
@@ -17,6 +18,7 @@ var mainGallery = document.querySelector('.main-gallery');
 var leftArrow = document.querySelector('.left');
 var rightArrow = document.querySelector('.right');
 var infoBox = document.querySelector('.info-box');
+var clickArea = document.querySelector('.click-area');
 var infoBoxHeader = infoBox.querySelector('h1');
 var infoBoxParagraph = infoBox.querySelector('p');
 
@@ -44,14 +46,32 @@ function HTMLBuilder(num) {
   newDivTag.appendChild(newH2Tag).textContent = gallery[num]['country'];
 }
 
+clickArea.addEventListener('click', function() {
+  if (backgroundImageIndex >= 0) {
+    var newDivTag = document.createElement('div');
+    body.appendChild(newDivTag).classList.add('full-screen');
+    var newImgTag = document.createElement('img');
+    newDivTag.appendChild(newImgTag).classList.add('full-screen-img');
+    newImgTag.setAttribute('src', gallery[backgroundImageIndex]['link']);
+    var newSpanTag = document.createElement('span');
+    newDivTag.appendChild(newSpanTag).classList.add('close');
+    newSpanTag.innerHTML = 'close';
+    newSpanTag.addEventListener('click', function() {
+      body.removeChild(newDivTag);
+    });
+  };
+});
+
+
 arrowEnableChecker()
 function arrowEnableChecker() {
+  // Left Arrow
   if (backgroundImageIndex <= 0) {
     leftArrow.classList.remove('enable');
   } else {
     leftArrow.classList.add('enable');
   }
-
+  // Right Arrow
   if (backgroundImageIndex == gallery.length - 1) {
     rightArrow.classList.remove('enable');
   } else {
