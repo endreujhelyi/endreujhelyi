@@ -184,8 +184,8 @@ function thumbBoxRefresher(num) {
 function infoBoxRender(num) {
   setTimeout(function() {
     infoBoxHeader.innerHTML = gallery[num]['city'] + ', ' + gallery[num]['country'];
+    infoBoxParagraph.innerHTML = gallery[num]['info'];
   }, 550);
-  infoBoxParagraph.innerHTML = gallery[num]['info'];
 };
 
 function infoBoxVisibler(num) {
