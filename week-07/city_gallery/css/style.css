@@ -141,6 +141,7 @@ body {
   height: 60px;
   opacity: .3;
   transition: all .5s;
+  cursor: pointer;
 }
 
 .enable:hover img {
@@ -200,6 +201,7 @@ body {
   height: 60px;
   position: relative;
   z-index: 999;
+  cursor: pointer;
 }
 
 .thumb-img {
@@ -274,6 +276,7 @@ body {
   height: 100%;
   left: 60px;
   width: calc(100% - 120px);
+  cursor: pointer;
 }
 
 .full-screen {
@@ -308,6 +311,7 @@ body {
   letter-spacing: 1px;
   color: #888;
   transition: all .3s ease;
+  cursor: pointer;
 }
 
 .close:hover {
@@ -325,6 +329,7 @@ body {
   width: 30px;
   opacity: .4;
   transition: opacity .3s ease;
+  cursor: pointer;
 }
 
 .full-enable:hover {
@@ -337,36 +342,10 @@ body {
 
 .full-left {
   align-self: flex-start;
-  left: 20px
+  left: 1%;
 }
 
 .full-right {
   align-self: flex-end;
-  right: 20px;
+  right: 1%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/**/
