@@ -106,8 +106,10 @@ function rightArrowFullImage(arrow) {
 
 function fullScreenImgChanger(num) {
   var fullImg = document.querySelector('.full-screen-img');
+  var background = 'url("' + gallery[num]['link'] + '")';
   fullImg.setAttribute('src', gallery[num]['link']);
   arrowFullEnableChecker();
+  mainImageShifter(background);
 };
 
 function arrowFullEnableChecker() {
