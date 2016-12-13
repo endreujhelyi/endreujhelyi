@@ -1,0 +1,65 @@
+<!-- // Based on the previous example create an array of images taken from flickr
+// https://www.flickr.com/photos/jasontravis/26683911430/in/album-72157603258446753/
+// https://www.flickr.com/photos/jasontravis/16635664865/in/album-72157603258446753/
+// https://www.flickr.com/photos/jasontravis/14195441260/in/album-72157603258446753/
+
+// Display a progress bar while the images are loading
+// You can create your own or use the built in HTML5 version:
+// https://developer.mozilla.org/en/docs/Web/HTML/Element/progress -->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <style>
+      img { width: 70%; float: left; }
+      progress { width: 28%; float: right; margin-left: 2%;}
+      p { position: absolute; top: 20px; right: 20px; }
+    </style>
+
+    <progress value="" max="100"></progress>
+    <p></p>
+
+    <script>
+
+      var progress = document.querySelector('progress');
+      var paragraph = document.querySelector('p');
+      paragraph.innerHTML = "0% loaded";
+      var value = 0;
+
+      var images = [
+        'https://c7.staticflickr.com/8/7799/26683911430_c4662bf0ec_z.jpg',
+        'https://c2.staticflickr.com/9/8574/16635664865_9f5e9e2918_z.jpg',
+        'https://c5.staticflickr.com/3/2929/14195441260_7201745aaa_z.jpg'
+      ];
+
+      imageLoadingTimer(0);
+
+      function imageLoadingTimer(num) {
+        if (num < images.length) {
+
+          var newImg = document.createElement('img');
+          newImg.setAttribute('src', images[num]);
+
+          newImg.addEventListener('load', function() {
+            document.body.appendChild(newImg);
+            value += (100 / images.length);
+            progress.setAttribute('value', value);
+            paragraph.innerHTML = Math.round(value) + '% loaded';
+            imageLoadingTimer(num + 1);
+          });
+        }
+      };
+
+
+
+    </script>
+
+
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!-- create a function that starts a setTimeout with a 3 second delay.
+create a button with an event listener that can cancel the setTimeout -->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+
+    <script>
+
+
+    body = document.querySelector('body');
+    button = document.createElement('button');
+    body.appendChild(button).textContent = "Police is here!";
+
+
+    var timer = setTimeout(function() { window.alert("Let the party begin!"); }, 3000);
+
+    button.addEventListener('click', function() { clearTimeout(timer) });
+
+    </script>
+
+
+
+
+
+  </body>
+</html>

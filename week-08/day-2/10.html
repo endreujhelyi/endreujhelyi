@@ -1,0 +1,56 @@
+<!-- // Create a circle with 100px diameter (use border radius)
+//  - Make it move from left to right edge
+//  - use requestAnimationFrame -->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <style>
+      body { height: 100vh; background-color: #0ff1c3; }
+      div { width: 100px; height: 100px; background-color: tomato; border-radius: 50%; position: absolute;}
+
+    </style>
+
+    <script>
+
+      position = 0;
+      direction = 0
+
+      var newDiv = document.createElement('div');
+      document.body.appendChild(newDiv);
+
+      var makeMeMove = window.requestAnimationFrame;
+
+
+      function rollinRollinRollin() {
+        direction += 6;
+        position += 12;
+
+
+        newDiv.style.left = position + "px";
+        newDiv.style.top = direction + "px";
+
+        if (position > 1400 || direction > 900) {
+          position = -150;
+          direction = -150;
+        }
+
+        makeMeMove(rollinRollinRollin);
+      }
+      rollinRollinRollin();
+
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

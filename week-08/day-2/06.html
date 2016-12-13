@@ -1,0 +1,24 @@
+<!-- Add an event listener to the window and display the mouse's x, y coordinates -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <script>
+
+    window.addEventListener('mousemove', function(event) {
+      document.body.innerHTML = "<div>x: " + event.clientX + "</br>y: " + event.clientY + "</div>";
+    });
+
+
+
+    </script>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!-- // Embed the following file to a HTML document:
+//  - From the previous flickr example extract the .jpg link directly
+//  - Create an image tag in the with document.createElement
+//  - Add a 'load' event to the image and only show the image to the user when the image is loaded -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <script>
+
+      function setAttributes(elem, attrs) {
+        for(var key in attrs) {
+          elem.setAttribute(key, attrs[key]);
+        };
+      };
+
+      var newImg = document.createElement('img');
+
+      setAttributes(newImg, {
+        "src": "https://c7.staticflickr.com/8/7562/15584243094_b268a32192_h.jpg",
+        "height": "500px",
+        "width": "800px"
+        }
+      );
+
+      window.addEventListener('load', function() {
+        document.body.appendChild(newImg);
+      });
+
+
+
+
+    </script>
+
+
+
+  </body>
+</html>
