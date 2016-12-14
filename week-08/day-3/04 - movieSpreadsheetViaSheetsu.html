@@ -17,9 +17,9 @@
     </style>
 
     <form>
-      <input id="title" name="title" placeholder="Title">
-      <input id="rating" name="rating" placeholder="Rating">
-      <input id="name" name="name" placeholder="Name">
+      <input id="title" name="Movietitle" placeholder="Title">
+      <input id="rating" name="Rating" placeholder="Rating">
+      <input id="name" name="Userame" placeholder="Name">
       <button id="submit" type="submit">SEND</button>
     </form>
 
@@ -35,7 +35,7 @@
 
       // FORMS EVENTS
       sumbit.addEventListener('click' function() {
-        var movieData = { MovieTitle: title.value, Rating: rating.value, Username: name.value };
+        var movieData = { title.name: title.value, rating.name: rating.value, name.name: name.value };
         collectingDatas(movieData);
       });
 
@@ -45,7 +45,7 @@
         xhr.open('POST', https://sheetsu.com/apis/v1.0/7654fbe24554, true);
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send(JSON.stringify(movie));
-       }
+      }
     </script>
 
 
