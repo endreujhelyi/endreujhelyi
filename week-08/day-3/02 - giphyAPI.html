@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <style>
+      body { width: 100%; height: 100vh; background-color: #c0ffee; display: flex; justify-content: center; flex-wrap: wrap; overflow: hidden; }
+      div { width: 20%; height: 20%; margin: 1%; }
+      img { width: 100%; padding: 1px; height: 100%; border: 2px solid coral; }
+    </style>
+
+    <script>
+
+    let xhr = new XMLHttpRequest();
+      xhr.open('GET', 'http://api.giphy.com/v1/gifs/search?q=crying&api_key=dc6zaTOxFJmzC', true);
+      xhr.send(null);
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE ) {
+          var giphy = JSON.parse(xhr.response);
+          giphyLister(giphy);
+        }
+      };
+
+      function giphyLister(gifsData) {
+        for (var i = 0; i < 16; i++) {
+          var gifUrl = gifsData.data[i].images;
+          HTMLBuilder(i, gifUrl);
+        }
+      }
+
+      var body = document.querySelector('body');
+
+      function HTMLBuilder(num, url) {
+        var newDivTag = document.createElement('div');
+        var newImgTag = document.createElement('img');
+        newDivTag.appendChild(newImgTag);
+        newImgTag.setAttribute('src', url.downsized_still.url);
+        body.appendChild(newDivTag);
+        imgEvents(num, url);
+      };
+
+      function imgEvents(num, url) {
+        var img = document.querySelectorAll('img');
+        img[num].addEventListener('mouseover', function() {
+          img[num].setAttribute('src', url.downsized.url);
+        });
+        img[num].addEventListener('mouseout', function() {
+          img[num].setAttribute('src', url.downsized_still.url);
+        })
+      };
+
+
+
+
+    </script>
+
+  </body>
+</html>

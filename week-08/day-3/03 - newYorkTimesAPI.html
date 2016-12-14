@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <style>
+      li {margin-top: 5px }
+      p { margin-left: 5px; }
+      a { text-decoration: none; color: coral;}
+      a:hover { text-decoration: underline; }
+      strong { text-decoration: underline; font-size: 18px; }
+      em { margin-top: 4px; }
+    </style>
+
+
+    <ol class="article-list"></ol>
+
+    <script>
+
+    let xhr = new XMLHttpRequest();
+      xhr.open('GET', 'https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=ecf5a7de7cc04cb2b96621ac0933ae26&q=apollo+moon+landing', true);
+      xhr.send(null);
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          var apollo = JSON.parse(xhr.response);
+          articleLister(apollo);
+        }
+      };
+
+      function articleLister(apollo) {
+        var articles = apollo.response.docs;
+        articles.forEach(function(article, index) {
+          HTMLBuilder(index, articles);
+        });
+      }
+
+      var list = document.querySelector('ol');
+
+      function HTMLBuilder(num, article) {
+        var date = new Date(article[num].pub_date);
+        var year = date.getFullYear();
+        var month = function() {
+          if (date.getMonth() < 10) {
+            return "0" + date.getMonth();
+          } else { return date.getMonth(); }
+        }
+        var day = function() {
+          if (date.getDate() < 10) {
+            return "0" + date.getDate();
+          } else { return date.getDate(); }
+        };
+
+        var newLiTag = document.createElement('li');
+        var newPTag = document.createElement('p');
+        list.appendChild(newLiTag);
+        newLiTag.appendChild(newPTag).innerHTML =
+          `<strong>${article[num].headline.main}</strong></br>
+          ${article[num].snippet}</br>
+          Published: <em>${year}-${month()}-${day()}</em></br>
+          Link: <a href='${article[num].web_url}'><em>${article[num].headline.main.toLowerCase()}</em></a>`;
+      };
+
+    </script>
+
+  </body>
+</html>

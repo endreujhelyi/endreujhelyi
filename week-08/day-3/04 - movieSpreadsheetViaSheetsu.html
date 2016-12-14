@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <style>
+      body { background-color: #e3e0cf;}
+      form { width: 500px; margin: 60px auto; padding-top: 20px; padding-bottom: 20px; background-color: #9fa8a3; display: flex; flex-direction: column; align-items: center; }
+      input { width: 90%; height: 80px; margin: 10px; padding: 5px; border-radius: 4px; font-size: 30px; color: #3b3a36; }
+      input:focus { outline: tomato solid 2px; }
+      button { width: 60%; height: 70px; margin-top: 120px; color: #9fa8a3; font-family: helvetica; font-size: 40px; background-color: #3b3a36; border: 0; border-radius: 4px; transition: all .3s ease;}
+      button:hover { color: #fff; width: 64%; }
+      button:active { font-size: 39px; }
+    </style>
+
+    <form>
+      <input id="title" name="title" placeholder="Title">
+      <input id="rating" name="rating" placeholder="Rating">
+      <input id="name" name="name" placeholder="Name">
+      <button id="submit" type="submit">SEND</button>
+    </form>
+
+
+    <script>
+
+
+      // SELECTORS
+      var title = document.querySelector("#title");
+      var rating = document.querySelector("#rating");
+      var name = document.querySelector("#name");
+      var submit = document.querySelector("#submit");
+
+      // FORMS EVENTS
+      sumbit.addEventListener('click' function() {
+        var movieData = { MovieTitle: title.value, Rating: rating.value, Username: name.value };
+        collectingDatas(movieData);
+      });
+
+      // SEND TO SERVER
+      function collectingDatas(movie) {
+        let xhr = new XMLHttpRequest();
+        xhr.open('POST', https://sheetsu.com/apis/v1.0/7654fbe24554, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(JSON.stringify(movie));
+       }
+    </script>
+
+
+  </body>
+</html>
