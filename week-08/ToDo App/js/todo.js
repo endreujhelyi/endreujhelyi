@@ -107,7 +107,7 @@ var App = function(todos) {
 // AJAX OBJECT
 var Ajax = function() {
   this.list = function(callbackFunc) {
-    this.collector("GET", '/todos', false, callbackFunc);
+    this.collector("GET", '/todos', null, callbackFunc);
   }
   this.add = function(callbackFunc, data) {
     this.collector('POST', '/todos', data, callbackFunc);
@@ -116,7 +116,7 @@ var Ajax = function() {
     this.collector('PUT', '/todos/' + id, data, callbackFunc);
   }
   this.remove = function(callbackFunc, id) {
-    this.collector('DELETE', '/todos/' + id , false, callbackFunc);
+    this.collector('DELETE', '/todos/' + id , null, callbackFunc);
   }
 
 
