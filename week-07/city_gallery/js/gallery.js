@@ -47,89 +47,6 @@ function HTMLBuilder(num) {
 }
 
 
-// Full Screen HTML creator
-clickArea.addEventListener('click', function() {
-  if (backgroundImageIndex >= 0) {
-    var newDivTag = document.createElement('div');
-    body.appendChild(newDivTag).classList.add('full-screen');
-    var newImgTag = document.createElement('img');
-    newDivTag.appendChild(newImgTag).classList.add('full-screen-img');
-    newImgTag.setAttribute('src', gallery[backgroundImageIndex]['link']);
-    var newSpanTag = document.createElement('span');
-    newDivTag.appendChild(newSpanTag).classList.add('close');
-    newSpanTag.innerHTML = 'close';
-    arrowMaker(newDivTag);
-    newSpanTag.addEventListener('click', function() {
-      body.removeChild(newDivTag);
-    });
-  }
-});
-
-function arrowMaker(div) {
-  var newImgTag = document.createElement('img');
-  var newImgTag2 = document.createElement('img');
-  div.appendChild(newImgTag2);
-  div.appendChild(newImgTag);
-  newImgTag.classList.add('full-arrow', 'full-left', 'full-enable');
-  newImgTag.setAttribute('src', 'imgs/left-white.png');
-  newImgTag2.classList.add('full-arrow', 'full-right', 'full-enable');
-  newImgTag2.setAttribute('src', 'imgs/right-white.png');
-  arrowFullEventMaker()
-};
-
-
-// Arrow Event Setter in Full Mode
-function arrowFullEventMaker() {
-  var leftFullArrow = document.querySelector('.full-left');
-  var rightFullArrow = document.querySelector('.full-right');
-  leftArrowFullImage(leftFullArrow);
-  rightArrowFullImage(rightFullArrow);
-};
-
-function leftArrowFullImage(arrow) {
-  arrow.addEventListener('click', function() {
-    if (backgroundImageIndex > 0) {
-      backgroundImageIndex--;
-      fullScreenImgChanger(backgroundImageIndex);
-    }
-  });
-};
-
-function rightArrowFullImage(arrow) {
-  arrow.addEventListener('click', function() {
-    if (backgroundImageIndex < gallery.length) {
-      backgroundImageIndex++;
-      fullScreenImgChanger(backgroundImageIndex);
-    }
-  });
-};
-
-function fullScreenImgChanger(num) {
-  var fullImg = document.querySelector('.full-screen-img');
-  var background = 'url("' + gallery[num]['link'] + '")';
-  fullImg.setAttribute('src', gallery[num]['link']);
-  arrowFullEnableChecker();
-  mainImageShifter(background);
-};
-
-function arrowFullEnableChecker() {
-  var left = document.querySelector('.full-left');
-  var right = document.querySelector('.full-right');
-  // Left Arrow
-  if (backgroundImageIndex == 0) {
-    left.classList.remove('full-enable');
-  } else {
-    left.classList.add('full-enable');
-  }
-  // Right Arrow
-  if (backgroundImageIndex == gallery.length - 1) {
-    right.classList.remove('full-enable');
-  } else {
-    right.classList.add('full-enable');
-  }
-};
-
-
 arrowEnableChecker()
 function arrowEnableChecker() {
   // Left Arrow
@@ -229,6 +146,98 @@ function mainImageShifter(background) {
 };
 
 
+
+// Full Screen HTML creator
+clickArea.addEventListener('click', function() {
+  if (backgroundImageIndex >= 0) {
+    var newDivTag = document.createElement('div');
+    body.appendChild(newDivTag).classList.add('full-screen');
+    var newImgTag = document.createElement('img');
+    newDivTag.appendChild(newImgTag).classList.add('full-screen-img');
+    newImgTag.setAttribute('src', gallery[backgroundImageIndex]['link']);
+    var newSpanTag = document.createElement('span');
+    newDivTag.appendChild(newSpanTag).classList.add('close');
+    newSpanTag.innerHTML = 'close';
+    arrowMaker(newDivTag);
+    arrowFullEnableChecker();
+    newSpanTag.addEventListener('click', function() {
+      body.removeChild(newDivTag);
+    });
+  }
+});
+
+function arrowMaker(div) {
+  var newImgTag = document.createElement('img');
+  var newImgTag2 = document.createElement('img');
+  div.appendChild(newImgTag2);
+  div.appendChild(newImgTag);
+  newImgTag.classList.add('full-arrow', 'full-left', 'full-enable');
+  newImgTag.setAttribute('src', 'imgs/left-white.png');
+  newImgTag2.classList.add('full-arrow', 'full-right', 'full-enable');
+  newImgTag2.setAttribute('src', 'imgs/right-white.png');
+  arrowFullEventMaker()
+};
+
+
+// Arrow Event Setter in Full Mode
+function arrowFullEventMaker() {
+  var leftFullArrow = document.querySelector('.full-left');
+  var rightFullArrow = document.querySelector('.full-right');
+  leftArrowFullImage(leftFullArrow);
+  rightArrowFullImage(rightFullArrow);
+};
+
+function leftArrowFullImage(arrow) {
+  arrow.addEventListener('click', function() {
+    if (backgroundImageIndex > 0) {
+      backgroundImageIndex--;
+      fullImgEventRecaller(backgroundImageIndex);
+    }
+  });
+};
+
+function rightArrowFullImage(arrow) {
+  arrow.addEventListener('click', function() {
+    if (backgroundImageIndex < gallery.length) {
+      backgroundImageIndex++;
+      fullImgEventRecaller(backgroundImageIndex);
+    }
+  });
+};
+
+function fullImgEventRecaller(num) {
+  fullScreenImgChanger(num);
+  infoBoxRender(num);
+  arrowFullEnableChecker(num);
+}
+
+function fullScreenImgChanger(num) {
+  var fullImg = document.querySelector('.full-screen-img');
+  var background = 'url("' + gallery[num]['link'] + '")';
+  fullImg.setAttribute('src', gallery[num]['link']);
+  arrowFullEnableChecker();
+  mainImageShifter(background);
+};
+
+function arrowFullEnableChecker() {
+  var left = document.querySelector('.full-left');
+  var right = document.querySelector('.full-right');
+  // Left Arrow
+  if (backgroundImageIndex == 0) {
+    left.classList.remove('full-enable');
+  } else {
+    left.classList.add('full-enable');
+  }
+  // Right Arrow
+  if (backgroundImageIndex == gallery.length - 1) {
+    right.classList.remove('full-enable');
+  } else {
+    right.classList.add('full-enable');
+  }
+};
+
+
+
 // Updating thumbs & infobox
 function eventRecaller(thumbIndex){
   thumbRefresher(thumbIndex);
@@ -237,3 +246,23 @@ function eventRecaller(thumbIndex){
   infoBoxRender(thumbIndex);
   arrowEnableChecker();
 }
+
+
+// Thumbnails Rollin' Effect
+
+thumbnailsContainer.addEventListener('mousemove', function(event) {
+  var height = window.innerHeight;
+  var y = event.pageY;
+  var percentage = y / (height / 100);
+  var hidden = (gallery.length * 60 - height) / 2;
+  if (y < height / 2) {
+    thumbnailsContainer.style.transform = 'translateY(' + ((hidden / 100) * (100 - percentage * 2) + 2) + 'px)';
+  } else {
+    thumbnailsContainer.style.transform = 'translateY(-' + ((hidden / 100) * (percentage - 50) * 2 + 2) + 'px)';
+  }
+});
+
+thumbnailsContainer.addEventListener('mouseout', function() {
+  thumbnailsContainer.style.transform = 'translateX(-50px)';
+  console.log("hello");
+});
