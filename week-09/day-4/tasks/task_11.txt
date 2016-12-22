@@ -1,0 +1,935 @@
+to find the restaurants which does not prepare any cuisine of 'American' and achieved a score more than 70 and not located in the longitude less than -65.754168.
+
+db.restaurants.find({cuisine: {$ne: "American"}, "grades.score": {$gt: 70}, "address.coord.1": {$ne: -65.754168}}, {}).pretty()
+
+
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0a05"),
+	"address" : {
+		"building" : "65",
+		"coord" : [
+			-73.9782725,
+			40.7624022
+		],
+		"street" : "West   54 Street",
+		"zipcode" : "10019"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "American ",
+	"grades" : [
+		{
+			"date" : ISODate("2014-08-22T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		},
+		{
+			"date" : ISODate("2014-03-28T00:00:00Z"),
+			"grade" : "C",
+			"score" : 131
+		},
+		{
+			"date" : ISODate("2013-09-25T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		},
+		{
+			"date" : ISODate("2013-04-08T00:00:00Z"),
+			"grade" : "B",
+			"score" : 25
+		},
+		{
+			"date" : ISODate("2012-10-15T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		},
+		{
+			"date" : ISODate("2011-10-19T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		}
+	],
+	"name" : "Murals On 54/Randolphs'S",
+	"restaurant_id" : "40372466"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0aa6"),
+	"address" : {
+		"building" : "345",
+		"coord" : [
+			-73.9864626,
+			40.7266739
+		],
+		"street" : "East 6 Street",
+		"zipcode" : "10003"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Indian",
+	"grades" : [
+		{
+			"date" : ISODate("2014-09-15T00:00:00Z"),
+			"grade" : "A",
+			"score" : 5
+		},
+		{
+			"date" : ISODate("2014-01-14T00:00:00Z"),
+			"grade" : "A",
+			"score" : 8
+		},
+		{
+			"date" : ISODate("2013-05-30T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2013-04-24T00:00:00Z"),
+			"grade" : "P",
+			"score" : 2
+		},
+		{
+			"date" : ISODate("2012-10-01T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		},
+		{
+			"date" : ISODate("2012-04-06T00:00:00Z"),
+			"grade" : "C",
+			"score" : 92
+		},
+		{
+			"date" : ISODate("2011-11-03T00:00:00Z"),
+			"grade" : "C",
+			"score" : 41
+		}
+	],
+	"name" : "Gandhi",
+	"restaurant_id" : "40381295"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0b34"),
+	"address" : {
+		"building" : "14",
+		"coord" : [
+			-73.9883909,
+			40.740735
+		],
+		"street" : "East   23 Street",
+		"zipcode" : "10010"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "American ",
+	"grades" : [
+		{
+			"date" : ISODate("2014-10-28T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		},
+		{
+			"date" : ISODate("2014-04-10T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2013-08-08T00:00:00Z"),
+			"grade" : "C",
+			"score" : 58
+		},
+		{
+			"date" : ISODate("2013-02-14T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2012-06-15T00:00:00Z"),
+			"grade" : "C",
+			"score" : 71
+		}
+	],
+	"name" : "Live Bait Bar & Restaurant",
+	"restaurant_id" : "40387237"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0c09"),
+	"address" : {
+		"building" : "130",
+		"coord" : [
+			-73.984758,
+			40.7457939
+		],
+		"street" : "Madison Avenue",
+		"zipcode" : "10016"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Pizza/Italian",
+	"grades" : [
+		{
+			"date" : ISODate("2014-12-24T00:00:00Z"),
+			"grade" : "Z",
+			"score" : 31
+		},
+		{
+			"date" : ISODate("2014-06-17T00:00:00Z"),
+			"grade" : "C",
+			"score" : 98
+		},
+		{
+			"date" : ISODate("2013-12-12T00:00:00Z"),
+			"grade" : "C",
+			"score" : 32
+		},
+		{
+			"date" : ISODate("2013-05-22T00:00:00Z"),
+			"grade" : "B",
+			"score" : 21
+		},
+		{
+			"date" : ISODate("2012-05-02T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		}
+	],
+	"name" : "Bella Napoli",
+	"restaurant_id" : "40393488"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0c14"),
+	"address" : {
+		"building" : "101",
+		"coord" : [
+			-73.9243061,
+			40.8276297
+		],
+		"street" : "East 161 Street",
+		"zipcode" : "10451"
+	},
+	"borough" : "Bronx",
+	"cuisine" : "Latin (Cuban, Dominican, Puerto Rican, South & Central American)",
+	"grades" : [
+		{
+			"date" : ISODate("2014-04-10T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2013-10-01T00:00:00Z"),
+			"grade" : "A",
+			"score" : 6
+		},
+		{
+			"date" : ISODate("2013-04-11T00:00:00Z"),
+			"grade" : "B",
+			"score" : 25
+		},
+		{
+			"date" : ISODate("2012-10-25T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2012-10-10T00:00:00Z"),
+			"grade" : "P",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2012-05-25T00:00:00Z"),
+			"grade" : "B",
+			"score" : 14
+		},
+		{
+			"date" : ISODate("2011-09-14T00:00:00Z"),
+			"grade" : "B",
+			"score" : 26
+		},
+		{
+			"date" : ISODate("2011-04-25T00:00:00Z"),
+			"grade" : "C",
+			"score" : 76
+		}
+	],
+	"name" : "El Molino Rojo Restaurant",
+	"restaurant_id" : "40393688"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0d65"),
+	"address" : {
+		"building" : "289",
+		"coord" : [
+			-73.94610279999999,
+			40.7137587
+		],
+		"street" : "Manhattan Avenue",
+		"zipcode" : "11211"
+	},
+	"borough" : "Brooklyn",
+	"cuisine" : "Bakery",
+	"grades" : [
+		{
+			"date" : ISODate("2014-03-19T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2013-10-10T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2013-05-07T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2012-09-11T00:00:00Z"),
+			"grade" : "B",
+			"score" : 18
+		},
+		{
+			"date" : ISODate("2012-04-18T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		},
+		{
+			"date" : ISODate("2011-09-27T00:00:00Z"),
+			"grade" : "A",
+			"score" : 8
+		},
+		{
+			"date" : ISODate("2011-05-03T00:00:00Z"),
+			"grade" : "C",
+			"score" : 77
+		}
+	],
+	"name" : "Fortunato Bros Cafe & Bakery",
+	"restaurant_id" : "40400561"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1303"),
+	"address" : {
+		"building" : "243",
+		"coord" : [
+			-73.9889479,
+			40.7568894
+		],
+		"street" : "West   42 Street",
+		"zipcode" : "10036"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "American ",
+	"grades" : [
+		{
+			"date" : ISODate("2014-10-31T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		},
+		{
+			"date" : ISODate("2014-05-16T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		},
+		{
+			"date" : ISODate("2013-11-19T00:00:00Z"),
+			"grade" : "A",
+			"score" : 5
+		},
+		{
+			"date" : ISODate("2013-03-25T00:00:00Z"),
+			"grade" : "B",
+			"score" : 19
+		},
+		{
+			"date" : ISODate("2012-09-05T00:00:00Z"),
+			"grade" : "B",
+			"score" : 26
+		},
+		{
+			"date" : ISODate("2012-04-10T00:00:00Z"),
+			"grade" : "C",
+			"score" : 49
+		},
+		{
+			"date" : ISODate("2011-11-21T00:00:00Z"),
+			"grade" : "C",
+			"score" : 80
+		}
+	],
+	"name" : "B.B. Kings",
+	"restaurant_id" : "40704853"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1390"),
+	"address" : {
+		"building" : "231",
+		"coord" : [
+			-73.9772294,
+			40.7527262
+		],
+		"street" : "Grand Central Station",
+		"zipcode" : "10017"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Italian",
+	"grades" : [
+		{
+			"date" : ISODate("2015-01-07T00:00:00Z"),
+			"grade" : "Z",
+			"score" : 20
+		},
+		{
+			"date" : ISODate("2014-07-03T00:00:00Z"),
+			"grade" : "B",
+			"score" : 14
+		},
+		{
+			"date" : ISODate("2013-12-21T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2013-05-17T00:00:00Z"),
+			"grade" : "C",
+			"score" : 76
+		},
+		{
+			"date" : ISODate("2012-04-20T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		}
+	],
+	"name" : "Two Boots Grand Central",
+	"restaurant_id" : "40725591"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1478"),
+	"address" : {
+		"building" : "",
+		"coord" : [
+			-74.0163793,
+			40.7167671
+		],
+		"street" : "Hudson River",
+		"zipcode" : "10282"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "American ",
+	"grades" : [
+		{
+			"date" : ISODate("2014-06-27T00:00:00Z"),
+			"grade" : "C",
+			"score" : 89
+		},
+		{
+			"date" : ISODate("2013-06-06T00:00:00Z"),
+			"grade" : "A",
+			"score" : 6
+		},
+		{
+			"date" : ISODate("2012-06-19T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		}
+	],
+	"name" : "West 79Th Street Boat Basin Cafe",
+	"restaurant_id" : "40756344"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b19b6"),
+	"address" : {
+		"building" : "7705",
+		"coord" : [
+			-73.8878704,
+			40.7435875
+		],
+		"street" : "Woodside Avenue",
+		"zipcode" : "11373"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Thai",
+	"grades" : [
+		{
+			"date" : ISODate("2014-05-12T00:00:00Z"),
+			"grade" : "B",
+			"score" : 14
+		},
+		{
+			"date" : ISODate("2013-11-20T00:00:00Z"),
+			"grade" : "C",
+			"score" : 84
+		},
+		{
+			"date" : ISODate("2012-09-18T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		},
+		{
+			"date" : ISODate("2012-05-03T00:00:00Z"),
+			"grade" : "B",
+			"score" : 23
+		}
+	],
+	"name" : "Spicy Shallot",
+	"restaurant_id" : "40979431"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b19ea"),
+	"address" : {
+		"building" : "466",
+		"coord" : [
+			-73.9747277,
+			40.7536114
+		],
+		"street" : "Lexington Avenue",
+		"zipcode" : "10017"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "American ",
+	"grades" : [
+		{
+			"date" : ISODate("2014-10-14T00:00:00Z"),
+			"grade" : "C",
+			"score" : 84
+		},
+		{
+			"date" : ISODate("2014-02-14T00:00:00Z"),
+			"grade" : "A",
+			"score" : 5
+		},
+		{
+			"date" : ISODate("2013-07-11T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2013-01-29T00:00:00Z"),
+			"grade" : "C",
+			"score" : 36
+		},
+		{
+			"date" : ISODate("2012-08-15T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2012-03-22T00:00:00Z"),
+			"grade" : "B",
+			"score" : 27
+		}
+	],
+	"name" : "Bistro Caterers",
+	"restaurant_id" : "40987023"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1bed"),
+	"address" : {
+		"building" : "566",
+		"coord" : [
+			-73.987977,
+			40.75519500000001
+		],
+		"street" : "7 Avenue",
+		"zipcode" : "10018"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Chinese",
+	"grades" : [
+		{
+			"date" : ISODate("2014-09-23T00:00:00Z"),
+			"grade" : "A",
+			"score" : 7
+		},
+		{
+			"date" : ISODate("2013-11-20T00:00:00Z"),
+			"grade" : "B",
+			"score" : 23
+		},
+		{
+			"date" : ISODate("2013-04-29T00:00:00Z"),
+			"grade" : "C",
+			"score" : 77
+		},
+		{
+			"date" : ISODate("2012-10-23T00:00:00Z"),
+			"grade" : "B",
+			"score" : 21
+		},
+		{
+			"date" : ISODate("2012-05-14T00:00:00Z"),
+			"grade" : "B",
+			"score" : 21
+		},
+		{
+			"date" : ISODate("2011-10-26T00:00:00Z"),
+			"grade" : "B",
+			"score" : 23
+		}
+	],
+	"name" : "Midtown Buffet",
+	"restaurant_id" : "41038679"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1f18"),
+	"address" : {
+		"building" : "181",
+		"coord" : [
+			-73.97757399999999,
+			40.67127
+		],
+		"street" : "7 Avenue",
+		"zipcode" : "11215"
+	},
+	"borough" : "Brooklyn",
+	"cuisine" : "Pizza",
+	"grades" : [
+		{
+			"date" : ISODate("2014-09-23T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2014-04-16T00:00:00Z"),
+			"grade" : "B",
+			"score" : 27
+		},
+		{
+			"date" : ISODate("2013-08-22T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2012-12-27T00:00:00Z"),
+			"grade" : "B",
+			"score" : 22
+		},
+		{
+			"date" : ISODate("2012-06-22T00:00:00Z"),
+			"grade" : "C",
+			"score" : 77
+		},
+		{
+			"date" : ISODate("2011-11-22T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		}
+	],
+	"name" : "Pino'S La Forchetta",
+	"restaurant_id" : "41129343"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1f48"),
+	"address" : {
+		"building" : "137",
+		"coord" : [
+			-73.9331608,
+			40.6744168
+		],
+		"street" : "Schenectady Avenue",
+		"zipcode" : "11213"
+	},
+	"borough" : "Brooklyn",
+	"cuisine" : "American ",
+	"grades" : [
+		{
+			"date" : ISODate("2014-06-27T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2014-01-10T00:00:00Z"),
+			"grade" : "B",
+			"score" : 25
+		},
+		{
+			"date" : ISODate("2013-05-03T00:00:00Z"),
+			"grade" : "C",
+			"score" : 73
+		},
+		{
+			"date" : ISODate("2012-09-06T00:00:00Z"),
+			"grade" : "C",
+			"score" : 33
+		},
+		{
+			"date" : ISODate("2012-07-17T00:00:00Z"),
+			"grade" : "C",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2012-01-17T00:00:00Z"),
+			"grade" : "A",
+			"score" : 0
+		}
+	],
+	"name" : "New Heights Bar And Restaurant",
+	"restaurant_id" : "41135835"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2085"),
+	"address" : {
+		"building" : "499",
+		"coord" : [
+			-73.9651337,
+			40.6937213
+		],
+		"street" : "Myrtle Avenue",
+		"zipcode" : "11205"
+	},
+	"borough" : "Brooklyn",
+	"cuisine" : "Mexican",
+	"grades" : [
+		{
+			"date" : ISODate("2015-01-14T00:00:00Z"),
+			"grade" : "Z",
+			"score" : 17
+		},
+		{
+			"date" : ISODate("2014-05-08T00:00:00Z"),
+			"grade" : "C",
+			"score" : 73
+		},
+		{
+			"date" : ISODate("2013-04-01T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2012-08-24T00:00:00Z"),
+			"grade" : "B",
+			"score" : 25
+		},
+		{
+			"date" : ISODate("2012-02-29T00:00:00Z"),
+			"grade" : "A",
+			"score" : 8
+		}
+	],
+	"name" : "Los Pollitos Iii",
+	"restaurant_id" : "41163308"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2457"),
+	"address" : {
+		"building" : "366",
+		"coord" : [
+			-73.981843,
+			40.741207
+		],
+		"street" : "3 Avenue",
+		"zipcode" : "10016"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Japanese",
+	"grades" : [
+		{
+			"date" : ISODate("2014-02-27T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2013-09-10T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2013-03-08T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2012-08-13T00:00:00Z"),
+			"grade" : "B",
+			"score" : 26
+		},
+		{
+			"date" : ISODate("2012-02-02T00:00:00Z"),
+			"grade" : "B",
+			"score" : 18
+		},
+		{
+			"date" : ISODate("2011-09-28T00:00:00Z"),
+			"grade" : "C",
+			"score" : 76
+		},
+		{
+			"date" : ISODate("2011-05-12T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		}
+	],
+	"name" : "East Japanese Restaurant",
+	"restaurant_id" : "41242254"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b26e5"),
+	"address" : {
+		"building" : "104-11",
+		"coord" : [
+			-73.861317,
+			40.7502198
+		],
+		"street" : "Roosevelt Avenue",
+		"zipcode" : "11368"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Latin (Cuban, Dominican, Puerto Rican, South & Central American)",
+	"grades" : [
+		{
+			"date" : ISODate("2014-08-22T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		},
+		{
+			"date" : ISODate("2014-03-10T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		},
+		{
+			"date" : ISODate("2013-09-26T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		},
+		{
+			"date" : ISODate("2013-03-20T00:00:00Z"),
+			"grade" : "C",
+			"score" : 73
+		},
+		{
+			"date" : ISODate("2012-09-24T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2012-04-18T00:00:00Z"),
+			"grade" : "B",
+			"score" : 21
+		}
+	],
+	"name" : "Los Mismo Restaurant",
+	"restaurant_id" : "41288811"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2773"),
+	"address" : {
+		"building" : "3845",
+		"coord" : [
+			-73.94352959999999,
+			40.8361392
+		],
+		"street" : "Broadway",
+		"zipcode" : "10032"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Seafood",
+	"grades" : [
+		{
+			"date" : ISODate("2014-09-18T00:00:00Z"),
+			"grade" : "Z",
+			"score" : 11
+		},
+		{
+			"date" : ISODate("2014-01-10T00:00:00Z"),
+			"grade" : "B",
+			"score" : 27
+		},
+		{
+			"date" : ISODate("2013-07-05T00:00:00Z"),
+			"grade" : "C",
+			"score" : 5
+		},
+		{
+			"date" : ISODate("2013-01-16T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2012-07-17T00:00:00Z"),
+			"grade" : "B",
+			"score" : 26
+		},
+		{
+			"date" : ISODate("2012-03-14T00:00:00Z"),
+			"grade" : "C",
+			"score" : 77
+		}
+	],
+	"name" : "Brothers Fish Market",
+	"restaurant_id" : "41297769"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2b85"),
+	"address" : {
+		"building" : "320",
+		"coord" : [
+			-73.9934047,
+			40.7544014
+		],
+		"street" : "West   37 Street",
+		"zipcode" : "10018"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "American ",
+	"grades" : [
+		{
+			"date" : ISODate("2014-09-16T00:00:00Z"),
+			"grade" : "C",
+			"score" : 90
+		},
+		{
+			"date" : ISODate("2014-02-21T00:00:00Z"),
+			"grade" : "B",
+			"score" : 27
+		},
+		{
+			"date" : ISODate("2012-10-01T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2012-03-01T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		}
+	],
+	"name" : "Concrete Restaurant",
+	"restaurant_id" : "41363541"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2f73"),
+	"address" : {
+		"building" : "222",
+		"coord" : [
+			-73.9579033,
+			40.7332745
+		],
+		"street" : "Franklin Street",
+		"zipcode" : "11222"
+	},
+	"borough" : "Brooklyn",
+	"cuisine" : "Italian",
+	"grades" : [
+		{
+			"date" : ISODate("2014-12-11T00:00:00Z"),
+			"grade" : "Z",
+			"score" : 18
+		},
+		{
+			"date" : ISODate("2013-10-31T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2013-03-20T00:00:00Z"),
+			"grade" : "B",
+			"score" : 24
+		},
+		{
+			"date" : ISODate("2012-07-18T00:00:00Z"),
+			"grade" : "B",
+			"score" : 18
+		},
+		{
+			"date" : ISODate("2012-01-12T00:00:00Z"),
+			"grade" : "C",
+			"score" : 81
+		}
+	],
+	"name" : "Anella",
+	"restaurant_id" : "41410058"
+}

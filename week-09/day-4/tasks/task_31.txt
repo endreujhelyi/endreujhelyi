@@ -1,0 +1,243 @@
+to find the restaurant name, borough, longitude and latitude and cuisine for those restaurants which contains 'Mad' as first three letters of its name
+
+db.restaurants.find({name: {$regex: "Mad.*"}}, {name: true, borough: true, "address.coord": true, cuisine: true}).pretty()
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0ad1"),
+	"address" : {
+		"coord" : [
+			-74.158427,
+			40.626607
+		]
+	},
+	"borough" : "Staten Island",
+	"cuisine" : "Spanish",
+	"name" : "Real Madrid Restaurant"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0de4"),
+	"address" : {
+		"coord" : [
+			-73.9860597,
+			40.7431194
+		]
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "American ",
+	"name" : "Madison Square"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0e51"),
+	"address" : {
+		"coord" : [
+			-73.9860597,
+			40.7431194
+		]
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Café/Coffee/Tea",
+	"name" : "Cafe Madison"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0e66"),
+	"address" : {
+		"coord" : [
+			-73.989578,
+			40.7129199
+		]
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Latin (Cuban, Dominican, Puerto Rican, South & Central American)",
+	"name" : "El Castillo De Madison"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0eb2"),
+	"address" : {
+		"coord" : [
+			-73.98302199999999,
+			40.742313
+		]
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Indian",
+	"name" : "Madras Mahal"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1161"),
+	"address" : {
+		"coord" : [
+			-74.000002,
+			40.72735
+		]
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "American ",
+	"name" : "Madame X"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b11eb"),
+	"address" : {
+		"coord" : [
+			-73.9563202,
+			40.7846507
+		]
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "American ",
+	"name" : "Yura & Company On Madison"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1211"),
+	"address" : {
+		"coord" : [
+			-73.98171959999999,
+			40.7499406
+		]
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "French",
+	"name" : "Madison Bistro"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b129a"),
+	"address" : {
+		"coord" : [
+			-73.9717845,
+			40.6897199
+		]
+	},
+	"borough" : "Brooklyn",
+	"cuisine" : "African",
+	"name" : "Madiba"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b15a0"),
+	"address" : {
+		"coord" : [
+			-73.9040753,
+			40.9069011
+		]
+	},
+	"borough" : "Bronx",
+	"cuisine" : "Italian",
+	"name" : "Madison'S"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b161e"),
+	"address" : {
+		"coord" : [
+			-73.9886598,
+			40.7565811
+		]
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Hotdogs",
+	"name" : "Madame Tussaud'S"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1656"),
+	"address" : {
+		"coord" : [
+			-73.95623719999999,
+			40.7761697
+		]
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "American ",
+	"name" : "Mad River Bar & Grille"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1e0f"),
+	"address" : {
+		"coord" : [
+			-73.8885928,
+			40.8731713
+		]
+	},
+	"borough" : "Bronx",
+	"cuisine" : "American ",
+	"name" : "Maddens Pub"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1fd7"),
+	"address" : {
+		"coord" : [
+			-73.981973,
+			40.741028
+		]
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "American ",
+	"name" : "Mad Hatter Saloon"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2123"),
+	"address" : {
+		"coord" : [
+			-73.8077582,
+			40.7633975
+		]
+	},
+	"borough" : "Queens",
+	"cuisine" : "Korean",
+	"name" : "Mad For Chicken"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b25cc"),
+	"address" : {
+		"coord" : [
+			-73.9857545,
+			40.7498305
+		]
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Korean",
+	"name" : "Madangsui"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2803"),
+	"address" : {
+		"coord" : [
+			-73.97943400000001,
+			40.7521259
+		]
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "American ",
+	"name" : "Madison & Vine"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2844"),
+	"address" : {
+		"coord" : [
+			-74.0103118,
+			40.7042077
+		]
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Mexican",
+	"name" : "Mad Dog & Beans"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b29e2"),
+	"address" : {
+		"coord" : [
+			-73.96974890000001,
+			40.64353699999999
+		]
+	},
+	"borough" : "Brooklyn",
+	"cuisine" : "Indian",
+	"name" : "Madina Restaurant"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2c23"),
+	"address" : {
+		"coord" : [
+			-74.002191,
+			40.7076992
+		]
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Café/Coffee/Tea",
+	"name" : "Made Fresh Daily"
+}

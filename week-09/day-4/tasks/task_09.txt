@@ -1,0 +1,814 @@
+to find the restaurants which locates in latitude value less than -95.754168.
+
+db.restaurants.find({"address.coord.0": {$lt: -95.754168}}, {}).pretty()
+
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0ef0"),
+	"address" : {
+		"building" : "3707",
+		"coord" : [
+			-101.8945214,
+			33.5197474
+		],
+		"street" : "82 Street",
+		"zipcode" : "11372"
+	},
+	"borough" : "Queens",
+	"cuisine" : "American ",
+	"grades" : [
+		{
+			"date" : ISODate("2014-06-04T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2013-11-07T00:00:00Z"),
+			"grade" : "B",
+			"score" : 19
+		},
+		{
+			"date" : ISODate("2013-05-17T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		},
+		{
+			"date" : ISODate("2012-08-29T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		},
+		{
+			"date" : ISODate("2012-04-03T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2011-11-16T00:00:00Z"),
+			"grade" : "A",
+			"score" : 7
+		}
+	],
+	"name" : "Burger King",
+	"restaurant_id" : "40534067"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b125c"),
+	"address" : {
+		"building" : "15259",
+		"coord" : [
+			-119.6368672,
+			36.2504996
+		],
+		"street" : "10 Avenue",
+		"zipcode" : "11357"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Italian",
+	"grades" : [
+		{
+			"date" : ISODate("2014-09-04T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		},
+		{
+			"date" : ISODate("2014-03-26T00:00:00Z"),
+			"grade" : "A",
+			"score" : 8
+		},
+		{
+			"date" : ISODate("2013-03-04T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2012-09-27T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2012-04-20T00:00:00Z"),
+			"grade" : "A",
+			"score" : 7
+		},
+		{
+			"date" : ISODate("2011-11-23T00:00:00Z"),
+			"grade" : "C",
+			"score" : 34
+		}
+	],
+	"name" : "Cascarino'S",
+	"restaurant_id" : "40668681"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1703"),
+	"address" : {
+		"building" : "60",
+		"coord" : [
+			-111.9975205,
+			42.0970258
+		],
+		"street" : "West Side Highway",
+		"zipcode" : "10006"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Japanese",
+	"grades" : [
+		{
+			"date" : ISODate("2014-03-20T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		},
+		{
+			"date" : ISODate("2013-06-28T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		},
+		{
+			"date" : ISODate("2012-07-05T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2011-07-27T00:00:00Z"),
+			"grade" : "A",
+			"score" : 2
+		}
+	],
+	"name" : "Sports Center At Chelsea Piers (Sushi Bar)",
+	"restaurant_id" : "40882356"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b18ec"),
+	"address" : {
+		"building" : "524",
+		"coord" : [
+			-122.3870832,
+			37.7606086
+		],
+		"street" : "Beach   20 Street",
+		"zipcode" : "11691"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Pizza",
+	"grades" : [
+		{
+			"date" : ISODate("2014-09-24T00:00:00Z"),
+			"grade" : "Z",
+			"score" : 15
+		},
+		{
+			"date" : ISODate("2014-05-08T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2013-11-04T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2012-10-09T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2011-11-01T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		}
+	],
+	"name" : "Domino'S Pizza",
+	"restaurant_id" : "40949724"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1979"),
+	"address" : {
+		"building" : "6822",
+		"coord" : [
+			-115.2372343,
+			36.1836718
+		],
+		"street" : "Fresh Meadows Lane",
+		"zipcode" : "11365"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Pizza/Italian",
+	"grades" : [
+		{
+			"date" : ISODate("2014-03-08T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2013-02-13T00:00:00Z"),
+			"grade" : "A",
+			"score" : 5
+		},
+		{
+			"date" : ISODate("2012-07-16T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		},
+		{
+			"date" : ISODate("2011-07-12T00:00:00Z"),
+			"grade" : "A",
+			"score" : 5
+		}
+	],
+	"name" : "Angelo & Al'S Pizzeria",
+	"restaurant_id" : "40969851"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b20b9"),
+	"address" : {
+		"building" : "845",
+		"coord" : [
+			-120.4599938,
+			36.8606752
+		],
+		"street" : "U N Plaza",
+		"zipcode" : "10017"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Japanese",
+	"grades" : [
+		{
+			"date" : ISODate("2014-10-02T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		},
+		{
+			"date" : ISODate("2014-03-21T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		},
+		{
+			"date" : ISODate("2013-04-16T00:00:00Z"),
+			"grade" : "B",
+			"score" : 16
+		},
+		{
+			"date" : ISODate("2012-05-08T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		}
+	],
+	"name" : "Megu Midtown",
+	"restaurant_id" : "41167462"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b224d"),
+	"address" : {
+		"building" : "4902",
+		"coord" : [
+			-95.9220496,
+			36.0912513
+		],
+		"street" : "East 49 Street",
+		"zipcode" : "11203"
+	},
+	"borough" : "Brooklyn",
+	"cuisine" : "Caribbean",
+	"grades" : [
+		{
+			"date" : ISODate("2014-06-17T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2013-06-18T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		},
+		{
+			"date" : ISODate("2013-01-31T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		},
+		{
+			"date" : ISODate("2012-08-09T00:00:00Z"),
+			"grade" : "A",
+			"score" : 3
+		},
+		{
+			"date" : ISODate("2012-07-24T00:00:00Z"),
+			"grade" : "P",
+			"score" : 2
+		},
+		{
+			"date" : ISODate("2012-03-08T00:00:00Z"),
+			"grade" : "B",
+			"score" : 15
+		},
+		{
+			"date" : ISODate("2011-10-03T00:00:00Z"),
+			"grade" : "A",
+			"score" : 7
+		}
+	],
+	"name" : "A&P Roti & Pastry Shop",
+	"restaurant_id" : "41204137"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b25f6"),
+	"address" : {
+		"building" : "20915",
+		"coord" : [
+			-99.0640336,
+			40.7284015
+		],
+		"street" : "East   56 Street",
+		"zipcode" : "10022"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Italian",
+	"grades" : [
+		{
+			"date" : ISODate("2014-06-12T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2014-01-09T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2013-05-31T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2012-09-27T00:00:00Z"),
+			"grade" : "A",
+			"score" : 2
+		},
+		{
+			"date" : ISODate("2012-03-28T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2011-09-23T00:00:00Z"),
+			"grade" : "C",
+			"score" : 13
+		}
+	],
+	"name" : "Fiorini",
+	"restaurant_id" : "41270541"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b265b"),
+	"address" : {
+		"building" : "5602",
+		"coord" : [
+			-119.565005,
+			36.3924905
+		],
+		"street" : "6 Avenue",
+		"zipcode" : "11220"
+	},
+	"borough" : "Brooklyn",
+	"cuisine" : "Middle Eastern",
+	"grades" : [
+		{
+			"date" : ISODate("2014-06-11T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		},
+		{
+			"date" : ISODate("2013-09-21T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2012-06-16T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		}
+	],
+	"name" : "Widdi Hall",
+	"restaurant_id" : "41276825"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b27ef"),
+	"address" : {
+		"building" : "13620",
+		"coord" : [
+			-104.2081266,
+			39.6086401
+		],
+		"street" : "38 Avenue",
+		"zipcode" : "11354"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Café/Coffee/Tea",
+	"grades" : [
+		{
+			"date" : ISODate("2014-01-07T00:00:00Z"),
+			"grade" : "A",
+			"score" : 4
+		},
+		{
+			"date" : ISODate("2013-01-02T00:00:00Z"),
+			"grade" : "A",
+			"score" : 7
+		}
+	],
+	"name" : "Rose House",
+	"restaurant_id" : "41303891"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b294b"),
+	"address" : {
+		"building" : "13357",
+		"coord" : [
+			-108.306687,
+			38.0890517
+		],
+		"street" : "41 Road",
+		"zipcode" : "11355"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Bakery",
+	"grades" : [
+		{
+			"date" : ISODate("2014-04-14T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		},
+		{
+			"date" : ISODate("2013-04-10T00:00:00Z"),
+			"grade" : "A",
+			"score" : 5
+		},
+		{
+			"date" : ISODate("2012-04-05T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		},
+		{
+			"date" : ISODate("2011-11-09T00:00:00Z"),
+			"grade" : "A",
+			"score" : 8
+		},
+		{
+			"date" : ISODate("2011-06-22T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		}
+	],
+	"name" : "New Sun Mary Bakery",
+	"restaurant_id" : "41323353"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b340b"),
+	"address" : {
+		"building" : "24-28",
+		"coord" : [
+			-105.7857603,
+			39.9472999
+		],
+		"street" : "Hughes Avenue",
+		"zipcode" : "10458"
+	},
+	"borough" : "Bronx",
+	"cuisine" : "Mexican",
+	"grades" : [
+		{
+			"date" : ISODate("2014-12-04T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2014-06-28T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2013-05-02T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		}
+	],
+	"name" : "El Oasis Bar Restaurant",
+	"restaurant_id" : "41469687"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b379b"),
+	"address" : {
+		"building" : "13617",
+		"coord" : [
+			-104.8340205,
+			39.7691992
+		],
+		"street" : "38 Avenue",
+		"zipcode" : "11354"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Chinese/Japanese",
+	"grades" : [
+		{
+			"date" : ISODate("2014-12-04T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		},
+		{
+			"date" : ISODate("2014-06-25T00:00:00Z"),
+			"grade" : "A",
+			"score" : 8
+		},
+		{
+			"date" : ISODate("2013-12-11T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2013-06-19T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2012-06-27T00:00:00Z"),
+			"grade" : "A",
+			"score" : 7
+		},
+		{
+			"date" : ISODate("2011-12-07T00:00:00Z"),
+			"grade" : "B",
+			"score" : 17
+		}
+	],
+	"name" : "Minni Shabu Shabu",
+	"restaurant_id" : "41513285"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b3944"),
+	"address" : {
+		"building" : "5371",
+		"coord" : [
+			-119.6684796,
+			36.3280082
+		],
+		"street" : "Kings Plaza Mall",
+		"zipcode" : "11234"
+	},
+	"borough" : "Brooklyn",
+	"cuisine" : "Ice Cream, Gelato, Yogurt, Ices",
+	"grades" : [
+		{
+			"date" : ISODate("2014-12-08T00:00:00Z"),
+			"grade" : "B",
+			"score" : 14
+		},
+		{
+			"date" : ISODate("2014-06-26T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2013-05-23T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2012-06-05T00:00:00Z"),
+			"grade" : "A",
+			"score" : 7
+		}
+	],
+	"name" : "Everything Yogurt/Gretel'S Pretzels",
+	"restaurant_id" : "41539001"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b3ba6"),
+	"address" : {
+		"building" : "15059",
+		"coord" : [
+			-114.6787351,
+			33.4631523
+		],
+		"street" : "34 Avenue",
+		"zipcode" : "11354"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Delicatessen",
+	"grades" : [
+		{
+			"date" : ISODate("2014-09-04T00:00:00Z"),
+			"grade" : "A",
+			"score" : 7
+		},
+		{
+			"date" : ISODate("2013-08-29T00:00:00Z"),
+			"grade" : "A",
+			"score" : 3
+		},
+		{
+			"date" : ISODate("2013-04-08T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		}
+	],
+	"name" : "George'S Sidestreet Deli & Grill",
+	"restaurant_id" : "41563549"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b3e18"),
+	"address" : {
+		"building" : "30012",
+		"coord" : [
+			-100.707166,
+			47.13706149999999
+		],
+		"street" : "East   52 Street",
+		"zipcode" : "10022"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Mediterranean",
+	"grades" : [
+		{
+			"date" : ISODate("2014-06-26T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2013-12-10T00:00:00Z"),
+			"grade" : "A",
+			"score" : 5
+		},
+		{
+			"date" : ISODate("2013-05-01T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2012-02-23T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2011-10-18T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		}
+	],
+	"name" : "Pierre Loti Midtown",
+	"restaurant_id" : "41588029"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b440b"),
+	"address" : {
+		"building" : "7608",
+		"coord" : [
+			-121.4158208,
+			38.5319584
+		],
+		"street" : "21St Ave",
+		"zipcode" : "11370"
+	},
+	"borough" : "Bronx",
+	"cuisine" : "Italian",
+	"grades" : [
+		{
+			"date" : ISODate("2014-10-01T00:00:00Z"),
+			"grade" : "C",
+			"score" : 32
+		},
+		{
+			"date" : ISODate("2014-03-13T00:00:00Z"),
+			"grade" : "B",
+			"score" : 18
+		},
+		{
+			"date" : ISODate("2013-05-21T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		},
+		{
+			"date" : ISODate("2012-11-27T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2012-02-27T00:00:00Z"),
+			"grade" : "A",
+			"score" : 2
+		}
+	],
+	"name" : "Antonio'S",
+	"restaurant_id" : "41636621"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b489e"),
+	"address" : {
+		"building" : "1418",
+		"coord" : [
+			-97.40487,
+			27.7767669
+		],
+		"street" : "Elizabeth Street",
+		"zipcode" : "10013"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Chinese",
+	"grades" : [
+		{
+			"date" : ISODate("2014-03-17T00:00:00Z"),
+			"grade" : "A",
+			"score" : 8
+		},
+		{
+			"date" : ISODate("2013-09-20T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2013-04-08T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2012-09-25T00:00:00Z"),
+			"grade" : "A",
+			"score" : 5
+		}
+	],
+	"name" : "Mini Express",
+	"restaurant_id" : "41672159"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b48ba"),
+	"address" : {
+		"building" : "0",
+		"coord" : [
+			-157.8887924,
+			21.3158403
+		],
+		"street" : "Pier   86",
+		"zipcode" : "10036"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Sandwiches/Salads/Mixed Buffet",
+	"grades" : [
+		{
+			"date" : ISODate("2014-12-30T00:00:00Z"),
+			"grade" : "Z",
+			"score" : 24
+		},
+		{
+			"date" : ISODate("2014-06-27T00:00:00Z"),
+			"grade" : "A",
+			"score" : 3
+		},
+		{
+			"date" : ISODate("2013-06-05T00:00:00Z"),
+			"grade" : "A",
+			"score" : 2
+		},
+		{
+			"date" : ISODate("2012-07-23T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		}
+	],
+	"name" : "Au Bon Pain",
+	"restaurant_id" : "41673043"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b4977"),
+	"address" : {
+		"building" : "13933",
+		"coord" : [
+			-96.702326,
+			43.8332898
+		],
+		"street" : "245 Street",
+		"zipcode" : "11422"
+	},
+	"borough" : "Queens",
+	"cuisine" : "American ",
+	"grades" : [
+		{
+			"date" : ISODate("2014-11-19T00:00:00Z"),
+			"grade" : "A",
+			"score" : 4
+		},
+		{
+			"date" : ISODate("2014-05-30T00:00:00Z"),
+			"grade" : "A",
+			"score" : 5
+		},
+		{
+			"date" : ISODate("2013-03-27T00:00:00Z"),
+			"grade" : "A",
+			"score" : 8
+		},
+		{
+			"date" : ISODate("2012-10-17T00:00:00Z"),
+			"grade" : "A",
+			"score" : 4
+		}
+	],
+	"name" : "Checkers",
+	"restaurant_id" : "41679636"
+}

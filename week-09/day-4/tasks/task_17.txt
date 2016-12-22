@@ -1,0 +1,144 @@
+to find the restaurant Id, name, borough and cuisine for those restaurants which belongs to the borough Staten Island or Queens or Bronxor Brooklyn.
+
+db.restaurants.find({$or: [{borough: "Staten Island"}, {borough: "Queens"}, {borough: "Bronxor Brooklyn"}]}, {restaurant_id: true, name: true, borough: true, cuisine: true}).pretty()
+
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b08ab"),
+	"borough" : "Queens",
+	"cuisine" : "Jewish/Kosher",
+	"name" : "Tov Kosher Kitchen",
+	"restaurant_id" : "40356068"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b08ac"),
+	"borough" : "Queens",
+	"cuisine" : "American ",
+	"name" : "Brunos On The Boulevard",
+	"restaurant_id" : "40356151"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b08ad"),
+	"borough" : "Staten Island",
+	"cuisine" : "Jewish/Kosher",
+	"name" : "Kosher Island",
+	"restaurant_id" : "40356442"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b08b7"),
+	"borough" : "Queens",
+	"cuisine" : "Ice Cream, Gelato, Yogurt, Ices",
+	"name" : "Carvel Ice Cream",
+	"restaurant_id" : "40361322"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b08bb"),
+	"borough" : "Queens",
+	"cuisine" : "Delicatessen",
+	"name" : "Sal'S Deli",
+	"restaurant_id" : "40361618"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b08bd"),
+	"borough" : "Queens",
+	"cuisine" : "Delicatessen",
+	"name" : "Steve Chu'S Deli & Grocery",
+	"restaurant_id" : "40361998"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b08c2"),
+	"borough" : "Queens",
+	"cuisine" : "Chinese",
+	"name" : "Ho Mei Restaurant",
+	"restaurant_id" : "40362432"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b08cc"),
+	"borough" : "Queens",
+	"cuisine" : "Delicatessen",
+	"name" : "Tony'S Deli",
+	"restaurant_id" : "40363333"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b08ce"),
+	"borough" : "Staten Island",
+	"cuisine" : "Delicatessen",
+	"name" : "Bagels N Buns",
+	"restaurant_id" : "40363427"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b08cf"),
+	"borough" : "Queens",
+	"cuisine" : "Bagels/Pretzels",
+	"name" : "Hot Bagels",
+	"restaurant_id" : "40363565"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b08d0"),
+	"borough" : "Queens",
+	"cuisine" : "American ",
+	"name" : "Snack Time Grill",
+	"restaurant_id" : "40363590"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b08d5"),
+	"borough" : "Staten Island",
+	"cuisine" : "Ice Cream, Gelato, Yogurt, Ices",
+	"name" : "Carvel Ice Cream",
+	"restaurant_id" : "40363834"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b08da"),
+	"borough" : "Queens",
+	"cuisine" : "American ",
+	"name" : "Terminal Cafe/Yankee Clipper",
+	"restaurant_id" : "40364262"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b08db"),
+	"borough" : "Staten Island",
+	"cuisine" : "Delicatessen",
+	"name" : "Plaza Bagels & Deli",
+	"restaurant_id" : "40364286"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b08dd"),
+	"borough" : "Staten Island",
+	"cuisine" : "Delicatessen",
+	"name" : "B & M Hot Bagel & Grocery",
+	"restaurant_id" : "40364299"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b08ea"),
+	"borough" : "Queens",
+	"cuisine" : "German",
+	"name" : "Gottscheer Hall",
+	"restaurant_id" : "40364449"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b08ed"),
+	"borough" : "Queens",
+	"cuisine" : "Jewish/Kosher",
+	"name" : "Ben-Best Deli & Restaurant",
+	"restaurant_id" : "40364529"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b08f2"),
+	"borough" : "Staten Island",
+	"cuisine" : "American ",
+	"name" : "Great Kills Yacht Club",
+	"restaurant_id" : "40364610"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b08f7"),
+	"borough" : "Queens",
+	"cuisine" : "Pizza/Italian",
+	"name" : "New Park Pizzeria & Restaurant",
+	"restaurant_id" : "40364744"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b08f8"),
+	"borough" : "Queens",
+	"cuisine" : "American ",
+	"name" : "Douglaston Club",
+	"restaurant_id" : "40364858"
+}

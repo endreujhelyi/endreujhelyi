@@ -1,0 +1,345 @@
+to arrange the name of the restaurants in ascending order along with all the columns.
+
+db.restaurants.find({}, {}).sort({name: 1}).pretty()
+
+
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b69d5"),
+	"address" : {
+		"building" : "154",
+		"coord" : [
+			-73.9189064,
+			40.8654529
+		],
+		"street" : "Post Ave",
+		"zipcode" : "10034"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Other",
+	"grades" : [ ],
+	"name" : "",
+	"restaurant_id" : "50017887"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b69e2"),
+	"address" : {
+		"building" : "508",
+		"coord" : [
+			-73.999813,
+			40.683876
+		],
+		"street" : "Henry St",
+		"zipcode" : "11231"
+	},
+	"borough" : "Brooklyn",
+	"cuisine" : "Other",
+	"grades" : [ ],
+	"name" : "",
+	"restaurant_id" : "50017910"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b69e4"),
+	"address" : {
+		"building" : "15",
+		"coord" : [
+			-73.9966882,
+			40.7139264
+		],
+		"street" : "Division St",
+		"zipcode" : "10002"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Other",
+	"grades" : [ ],
+	"name" : "",
+	"restaurant_id" : "50017912"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b69eb"),
+	"address" : {
+		"building" : "4704",
+		"coord" : [
+			-74.013391,
+			40.64943
+		],
+		"street" : "3Rd Ave",
+		"zipcode" : "11220"
+	},
+	"borough" : "Brooklyn",
+	"cuisine" : "Other",
+	"grades" : [ ],
+	"name" : "",
+	"restaurant_id" : "50017925"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b69ef"),
+	"address" : {
+		"building" : "2145",
+		"coord" : [
+			-73.8668062,
+			40.8547454
+		],
+		"street" : "Cruger Ave",
+		"zipcode" : "10462"
+	},
+	"borough" : "Bronx",
+	"cuisine" : "Other",
+	"grades" : [ ],
+	"name" : "",
+	"restaurant_id" : "50017935"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b69f1"),
+	"address" : {
+		"building" : "567",
+		"coord" : [
+			-73.9521663,
+			40.7172388
+		],
+		"street" : "Union Ave",
+		"zipcode" : "11211"
+	},
+	"borough" : "Brooklyn",
+	"cuisine" : "Other",
+	"grades" : [ ],
+	"name" : "",
+	"restaurant_id" : "50017938"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b69f8"),
+	"address" : {
+		"building" : "947",
+		"coord" : [
+			-74.00435499999999,
+			40.653897
+		],
+		"street" : "4Th Ave",
+		"zipcode" : "11232"
+	},
+	"borough" : "Brooklyn",
+	"cuisine" : "Other",
+	"grades" : [ ],
+	"name" : "",
+	"restaurant_id" : "50017967"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b69f9"),
+	"address" : {
+		"building" : "1501",
+		"coord" : [
+			-73.815882,
+			40.787061
+		],
+		"street" : "149Th St",
+		"zipcode" : "11357"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Other",
+	"grades" : [ ],
+	"name" : "",
+	"restaurant_id" : "50017969"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b6a00"),
+	"address" : {
+		"building" : "208",
+		"coord" : [
+			-73.9187426,
+			40.8299958
+		],
+		"street" : "E 165Th St",
+		"zipcode" : "10456"
+	},
+	"borough" : "Bronx",
+	"cuisine" : "Other",
+	"grades" : [ ],
+	"name" : "",
+	"restaurant_id" : "50017982"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b6a08"),
+	"address" : {
+		"building" : "2478",
+		"coord" : [
+			-73.98764190000001,
+			40.597901
+		],
+		"street" : "86Th St",
+		"zipcode" : "11214"
+	},
+	"borough" : "Brooklyn",
+	"cuisine" : "Other",
+	"grades" : [ ],
+	"name" : "",
+	"restaurant_id" : "50018007"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b6a0b"),
+	"address" : {
+		"building" : "61",
+		"coord" : [
+			-73.9835112,
+			40.7408627
+		],
+		"street" : "Lexington Ave",
+		"zipcode" : "10010"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Other",
+	"grades" : [ ],
+	"name" : "",
+	"restaurant_id" : "50018012"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b6a1b"),
+	"address" : {
+		"building" : "98A",
+		"coord" : [
+			-73.96413,
+			40.7120375
+		],
+		"street" : "S 4Th St",
+		"zipcode" : "11249"
+	},
+	"borough" : "Brooklyn",
+	"cuisine" : "Other",
+	"grades" : [ ],
+	"name" : "",
+	"restaurant_id" : "50018042"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b6a1f"),
+	"address" : {
+		"building" : "2574",
+		"coord" : [
+			-73.961125,
+			40.594069
+		],
+		"street" : "Coney Island Ave",
+		"zipcode" : "11223"
+	},
+	"borough" : "Brooklyn",
+	"cuisine" : "Other",
+	"grades" : [ ],
+	"name" : "",
+	"restaurant_id" : "50018050"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b6a25"),
+	"address" : {
+		"building" : "1250",
+		"coord" : [
+			-73.92937599999999,
+			40.6421007
+		],
+		"street" : "Utica Ave",
+		"zipcode" : "11203"
+	},
+	"borough" : "Brooklyn",
+	"cuisine" : "Other",
+	"grades" : [ ],
+	"name" : "",
+	"restaurant_id" : "50018061"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b6a26"),
+	"address" : {
+		"building" : "76",
+		"coord" : [
+			-73.9964401,
+			40.6951679
+		],
+		"street" : "Montague St",
+		"zipcode" : "11201"
+	},
+	"borough" : "Brooklyn",
+	"cuisine" : "Other",
+	"grades" : [ ],
+	"name" : "",
+	"restaurant_id" : "50018062"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b6a2e"),
+	"address" : {
+		"building" : "420",
+		"coord" : [
+			-73.94310449999999,
+			40.8108763
+		],
+		"street" : "Lenox Ave",
+		"zipcode" : "10037"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Other",
+	"grades" : [ ],
+	"name" : "",
+	"restaurant_id" : "50018083"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b6a30"),
+	"address" : {
+		"building" : "2580",
+		"coord" : [
+			-73.970705,
+			40.7953768
+		],
+		"street" : "Broadway",
+		"zipcode" : "10025"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Other",
+	"grades" : [ ],
+	"name" : "",
+	"restaurant_id" : "50018085"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b6a32"),
+	"address" : {
+		"building" : "308",
+		"coord" : [
+			-73.9372612,
+			40.7966002
+		],
+		"street" : "E 116Th St",
+		"zipcode" : "10029"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Other",
+	"grades" : [ ],
+	"name" : "",
+	"restaurant_id" : "50018088"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b6a35"),
+	"address" : {
+		"building" : "3712",
+		"coord" : [
+			-73.870897,
+			40.751033
+		],
+		"street" : "Junction Blvd",
+		"zipcode" : "11368"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Other",
+	"grades" : [ ],
+	"name" : "",
+	"restaurant_id" : "50018095"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b6a37"),
+	"address" : {
+		"building" : "889",
+		"coord" : [
+			-73.9857624,
+			40.7684922
+		],
+		"street" : "9Th Ave",
+		"zipcode" : "10019"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Other",
+	"grades" : [ ],
+	"name" : "",
+	"restaurant_id" : "50018100"
+}

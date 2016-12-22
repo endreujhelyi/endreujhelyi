@@ -1,0 +1,284 @@
+to find the restaurant Id, name, address and geographical location for those restaurants where 2nd element of coord array contains a value which is more than 42 and upto 52..
+
+
+db.restaurants.find({$and: [{"address.coord.1": {$gt: 42}}, {"address.coord.1": {$lt: 52}}]}, {restaurant_id: true, name: true, address: true}).pretty()
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0b49"),
+	"address" : {
+		"building" : "47",
+		"coord" : [
+			-78.877224,
+			42.89546199999999
+		],
+		"street" : "Broadway @ Trinity Pl",
+		"zipcode" : "10006"
+	},
+	"name" : "T.G.I. Friday'S",
+	"restaurant_id" : "40387990"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0b75"),
+	"address" : {
+		"building" : "1",
+		"coord" : [
+			-0.7119979,
+			51.6514664
+		],
+		"street" : "Pennplaza E, Penn Sta",
+		"zipcode" : "10001"
+	},
+	"name" : "T.G.I. Fridays",
+	"restaurant_id" : "40388936"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0dcf"),
+	"address" : {
+		"building" : "3000",
+		"coord" : [
+			-87.86567699999999,
+			42.61150920000001
+		],
+		"street" : "47 Avenue",
+		"zipcode" : "11101"
+	},
+	"name" : "Di Luvio'S Deli",
+	"restaurant_id" : "40402284"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1004"),
+	"address" : {
+		"building" : "21972199",
+		"coord" : [
+			-78.589606,
+			42.8912372
+		],
+		"street" : "Broadway",
+		"zipcode" : "10024"
+	},
+	"name" : "La Caridad 78",
+	"restaurant_id" : "40568285"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b16d8"),
+	"address" : {
+		"building" : "7981",
+		"coord" : [
+			-84.9751215,
+			45.4713351
+		],
+		"street" : "Hoyt Street",
+		"zipcode" : "11201"
+	},
+	"name" : "Bijan'S",
+	"restaurant_id" : "40876618"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b16ed"),
+	"address" : {
+		"building" : "0",
+		"coord" : [
+			-88.0778799,
+			42.4154769
+		],
+		"street" : "& Grand Central",
+		"zipcode" : "10017"
+	},
+	"name" : "Hyatt, Ny Central/Room Service",
+	"restaurant_id" : "40879243"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1703"),
+	"address" : {
+		"building" : "60",
+		"coord" : [
+			-111.9975205,
+			42.0970258
+		],
+		"street" : "West Side Highway",
+		"zipcode" : "10006"
+	},
+	"name" : "Sports Center At Chelsea Piers (Sushi Bar)",
+	"restaurant_id" : "40882356"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1c80"),
+	"address" : {
+		"building" : "1",
+		"coord" : [
+			-72.4751457,
+			43.2956803
+		],
+		"street" : "Wall Street Court",
+		"zipcode" : "10005"
+	},
+	"name" : "Fino Ristorante",
+	"restaurant_id" : "41057286"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1d0b"),
+	"address" : {
+		"building" : "350",
+		"coord" : [
+			-93.2069217,
+			43.14769159999999
+		],
+		"street" : "5 Avenue",
+		"zipcode" : "10018"
+	},
+	"name" : "Heartland Brewery",
+	"restaurant_id" : "41073985"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1f8e"),
+	"address" : {
+		"building" : "0",
+		"coord" : [
+			-73.66037349999999,
+			42.4476886
+		],
+		"street" : "Concourse B",
+		"zipcode" : "11371"
+	},
+	"name" : "Dunkin' Donuts",
+	"restaurant_id" : "41142675"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1fa0"),
+	"address" : {
+		"building" : "1342",
+		"coord" : [
+			-73.8162457,
+			42.7025194
+		],
+		"street" : "Central Avenue",
+		"zipcode" : "11691"
+	},
+	"name" : "New Beijing Restaurant",
+	"restaurant_id" : "41144626"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2327"),
+	"address" : {
+		"building" : "350",
+		"coord" : [
+			-93.2069217,
+			43.14769159999999
+		],
+		"street" : "5 Avenue",
+		"zipcode" : "10018"
+	},
+	"name" : "Chipotle Mexican Grill",
+	"restaurant_id" : "41223834"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b237f"),
+	"address" : {
+		"building" : "350",
+		"coord" : [
+			-93.2069217,
+			43.14769159999999
+		],
+		"street" : "5 Avenue",
+		"zipcode" : "10018"
+	},
+	"name" : "Europa Cafe",
+	"restaurant_id" : "41229799"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b25be"),
+	"address" : {
+		"building" : "350",
+		"coord" : [
+			-93.2069217,
+			43.14769159999999
+		],
+		"street" : "5 Avenue",
+		"zipcode" : "10018"
+	},
+	"name" : "Ny Skyride",
+	"restaurant_id" : "41266025"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b278b"),
+	"address" : {
+		"building" : "1",
+		"coord" : [
+			-72.4751457,
+			43.2956803
+		],
+		"street" : "Wall Street Court",
+		"zipcode" : "10005"
+	},
+	"name" : "Haru",
+	"restaurant_id" : "41298810"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b288e"),
+	"address" : {
+		"building" : "1618",
+		"coord" : [
+			-77.6873462,
+			43.2236789
+		],
+		"street" : "Maiden Lane",
+		"zipcode" : "10038"
+	},
+	"name" : "Oka Sushi",
+	"restaurant_id" : "41312239"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2a4e"),
+	"address" : {
+		"building" : "7072",
+		"coord" : [
+			-85.70723199999999,
+			42.3625186
+		],
+		"street" : "North    6 Street",
+		"zipcode" : "11211"
+	},
+	"name" : "Black Bear Bar",
+	"restaurant_id" : "41343482"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2a98"),
+	"address" : {
+		"building" : "350",
+		"coord" : [
+			-93.2069217,
+			43.14769159999999
+		],
+		"street" : "5 Avenue",
+		"zipcode" : "10018"
+	},
+	"name" : "Starbucks Coffee",
+	"restaurant_id" : "41348358"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2bbb"),
+	"address" : {
+		"building" : "0",
+		"coord" : [
+			0.5595998999999999,
+			51.3940452
+		],
+		"street" : "Pier 78 West 38 Street",
+		"zipcode" : "10018"
+	},
+	"name" : "Pier Side Cafe",
+	"restaurant_id" : "41367417"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b37cf"),
+	"address" : {
+		"building" : "371113",
+		"coord" : [
+			-85.147576,
+			44.1418976
+		],
+		"street" : "30 Avenue",
+		"zipcode" : "11103"
+	},
+	"name" : "Mexi Q Kitchen",
+	"restaurant_id" : "41515837"
+}

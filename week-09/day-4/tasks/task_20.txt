@@ -1,0 +1,146 @@
+to find the restaurant Id, name, borough and cuisine for those restaurants which prepared dish except 'American' and 'Chinese' or restaurant's name begins with letter 'Wil'.
+
+
+db.restaurants.find({$nor: [{cuisine: "American"}, {cuisine: "Chinese"}], name: {$regex: "^Wil"}}, {restaurant_id: true, name: true, borough: true, cuisine: true}).pretty()
+
+
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b08ae"),
+	"borough" : "Brooklyn",
+	"cuisine" : "Delicatessen",
+	"name" : "Wilken'S Fine Food",
+	"restaurant_id" : "40356483"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b08b1"),
+	"borough" : "Bronx",
+	"cuisine" : "American ",
+	"name" : "Wild Asia",
+	"restaurant_id" : "40357217"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b16b9"),
+	"borough" : "Bronx",
+	"cuisine" : "Pizza",
+	"name" : "Wilbel Pizza",
+	"restaurant_id" : "40871979"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1809"),
+	"borough" : "Manhattan",
+	"cuisine" : "Seafood",
+	"name" : "Wild Edibles",
+	"restaurant_id" : "40928482"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2348"),
+	"borough" : "Brooklyn",
+	"cuisine" : "Bagels/Pretzels",
+	"name" : "Wild Bagels",
+	"restaurant_id" : "41225826"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2425"),
+	"borough" : "Bronx",
+	"cuisine" : "Latin (Cuban, Dominican, Puerto Rican, South & Central American)",
+	"name" : "Willie'S Steak House",
+	"restaurant_id" : "41239497"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b251d"),
+	"borough" : "Brooklyn",
+	"cuisine" : "American ",
+	"name" : "Willburg Cafe",
+	"restaurant_id" : "41255152"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b251e"),
+	"borough" : "Manhattan",
+	"cuisine" : "American ",
+	"name" : "Willis North America",
+	"restaurant_id" : "41255267"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2af0"),
+	"borough" : "Manhattan",
+	"cuisine" : "Café/Coffee/Tea",
+	"name" : "William Greenberg Jr Desserts",
+	"restaurant_id" : "41353639"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2be1"),
+	"borough" : "Brooklyn",
+	"cuisine" : "Vegetarian",
+	"name" : "Wild Ginger Vegan Cafe",
+	"restaurant_id" : "41369777"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2c17"),
+	"borough" : "Manhattan",
+	"cuisine" : "Irish",
+	"name" : "Wilfie & Nell",
+	"restaurant_id" : "41372275"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b312b"),
+	"borough" : "Manhattan",
+	"cuisine" : "Vegetarian",
+	"name" : "Wild Ginger Vegetarian Kitchen",
+	"restaurant_id" : "41433964"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b3219"),
+	"borough" : "Manhattan",
+	"cuisine" : "Pizza",
+	"name" : "Wild",
+	"restaurant_id" : "41447856"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b3e7e"),
+	"borough" : "Manhattan",
+	"cuisine" : "American ",
+	"name" : "William Barnacle",
+	"restaurant_id" : "41591881"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b3f01"),
+	"borough" : "Queens",
+	"cuisine" : "American ",
+	"name" : "William Hallet",
+	"restaurant_id" : "41597549"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b3f21"),
+	"borough" : "Brooklyn",
+	"cuisine" : "American ",
+	"name" : "Williams & Bailey",
+	"restaurant_id" : "41598951"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b3f51"),
+	"borough" : "Manhattan",
+	"cuisine" : "Asian",
+	"name" : "Wild Ginger",
+	"restaurant_id" : "41600577"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b470d"),
+	"borough" : "Manhattan",
+	"cuisine" : "Bakery",
+	"name" : "William Greenberg Dessert",
+	"restaurant_id" : "41657368"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b489d"),
+	"borough" : "Brooklyn",
+	"cuisine" : "Pizza/Italian",
+	"name" : "Williamsburg Pizza",
+	"restaurant_id" : "41672156"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b48f7"),
+	"borough" : "Queens",
+	"cuisine" : "Ice Cream, Gelato, Yogurt, Ices",
+	"name" : "Wild Cherry",
+	"restaurant_id" : "41675246"
+}

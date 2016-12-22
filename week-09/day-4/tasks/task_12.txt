@@ -1,0 +1,890 @@
+to find the restaurants which does not prepare any cuisine of 'American ' and achieved a grade point 'A' not belongs to the borough Brooklyn. The document must be displayed according to the cuisine in descending order.
+
+db.restaurants.find({cuisine: {$ne: "American"}, "grades.grade": "A", borough: {$ne: "Brooklyn"}}, {}).sort({cuisine: -1}).pretty()
+
+
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0fb4"),
+	"address" : {
+		"building" : "89",
+		"coord" : [
+			-73.9995899,
+			40.7168015
+		],
+		"street" : "Baxter Street",
+		"zipcode" : "10013"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Vietnamese/Cambodian/Malaysia",
+	"grades" : [
+		{
+			"date" : ISODate("2014-08-21T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2013-08-31T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2013-04-11T00:00:00Z"),
+			"grade" : "C",
+			"score" : 3
+		},
+		{
+			"date" : ISODate("2012-10-17T00:00:00Z"),
+			"grade" : "A",
+			"score" : 4
+		},
+		{
+			"date" : ISODate("2012-05-15T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		}
+	],
+	"name" : "Thai Son",
+	"restaurant_id" : "40559606"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b106d"),
+	"address" : {
+		"building" : "8278",
+		"coord" : [
+			-73.88143509999999,
+			40.7412552
+		],
+		"street" : "Broadway",
+		"zipcode" : "11373"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Vietnamese/Cambodian/Malaysia",
+	"grades" : [
+		{
+			"date" : ISODate("2014-06-12T00:00:00Z"),
+			"grade" : "B",
+			"score" : 21
+		},
+		{
+			"date" : ISODate("2013-05-20T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2012-12-26T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2012-12-03T00:00:00Z"),
+			"grade" : "P",
+			"score" : 5
+		},
+		{
+			"date" : ISODate("2012-05-04T00:00:00Z"),
+			"grade" : "B",
+			"score" : 27
+		}
+	],
+	"name" : "Pho Bac Vietnamese Seafood Cuisine",
+	"restaurant_id" : "40578058"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1457"),
+	"address" : {
+		"building" : "148",
+		"coord" : [
+			-74.000254,
+			40.7172727
+		],
+		"street" : "Centre Street",
+		"zipcode" : "10013"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Vietnamese/Cambodian/Malaysia",
+	"grades" : [
+		{
+			"date" : ISODate("2014-10-01T00:00:00Z"),
+			"grade" : "A",
+			"score" : 7
+		},
+		{
+			"date" : ISODate("2014-05-19T00:00:00Z"),
+			"grade" : "C",
+			"score" : 5
+		},
+		{
+			"date" : ISODate("2013-11-15T00:00:00Z"),
+			"grade" : "B",
+			"score" : 14
+		},
+		{
+			"date" : ISODate("2013-03-08T00:00:00Z"),
+			"grade" : "B",
+			"score" : 25
+		},
+		{
+			"date" : ISODate("2012-05-22T00:00:00Z"),
+			"grade" : "B",
+			"score" : 23
+		},
+		{
+			"date" : ISODate("2011-10-27T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		}
+	],
+	"name" : "Nha-Trang Centre Vietnam Restaurant",
+	"restaurant_id" : "40751226"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b176f"),
+	"address" : {
+		"building" : "158",
+		"coord" : [
+			-74.0025903,
+			40.7443077
+		],
+		"street" : "9 Avenue",
+		"zipcode" : "10011"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Vietnamese/Cambodian/Malaysia",
+	"grades" : [
+		{
+			"date" : ISODate("2014-07-15T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		},
+		{
+			"date" : ISODate("2014-01-14T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		},
+		{
+			"date" : ISODate("2013-04-16T00:00:00Z"),
+			"grade" : "B",
+			"score" : 18
+		},
+		{
+			"date" : ISODate("2012-02-15T00:00:00Z"),
+			"grade" : "A",
+			"score" : 7
+		}
+	],
+	"name" : "O-Mai",
+	"restaurant_id" : "40903063"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1a01"),
+	"address" : {
+		"building" : "87",
+		"coord" : [
+			-73.99961909999999,
+			40.7167408
+		],
+		"street" : "Baxter Street",
+		"zipcode" : "10013"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Vietnamese/Cambodian/Malaysia",
+	"grades" : [
+		{
+			"date" : ISODate("2015-01-06T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		},
+		{
+			"date" : ISODate("2014-01-23T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2013-01-08T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2012-06-05T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		}
+	],
+	"name" : "Nha Trang Restaurant",
+	"restaurant_id" : "40989220"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1aa6"),
+	"address" : {
+		"building" : "80",
+		"coord" : [
+			-73.99862900000001,
+			40.7158191
+		],
+		"street" : "Bayard Street",
+		"zipcode" : "10013"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Vietnamese/Cambodian/Malaysia",
+	"grades" : [
+		{
+			"date" : ISODate("2014-11-07T00:00:00Z"),
+			"grade" : "B",
+			"score" : 27
+		},
+		{
+			"date" : ISODate("2014-07-05T00:00:00Z"),
+			"grade" : "B",
+			"score" : 27
+		},
+		{
+			"date" : ISODate("2013-10-29T00:00:00Z"),
+			"grade" : "A",
+			"score" : 2
+		},
+		{
+			"date" : ISODate("2013-06-28T00:00:00Z"),
+			"grade" : "C",
+			"score" : 5
+		},
+		{
+			"date" : ISODate("2013-01-22T00:00:00Z"),
+			"grade" : "B",
+			"score" : 14
+		},
+		{
+			"date" : ISODate("2012-07-18T00:00:00Z"),
+			"grade" : "C",
+			"score" : 42
+		},
+		{
+			"date" : ISODate("2012-02-10T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		}
+	],
+	"name" : "New Bo Ky Restaurant",
+	"restaurant_id" : "41005330"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1b6d"),
+	"address" : {
+		"building" : "156-32",
+		"coord" : [
+			-73.8087286,
+			40.7639199
+		],
+		"street" : "Northern Boulevard",
+		"zipcode" : "11354"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Vietnamese/Cambodian/Malaysia",
+	"grades" : [
+		{
+			"date" : ISODate("2014-09-11T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2014-04-08T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		},
+		{
+			"date" : ISODate("2013-10-07T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2012-09-13T00:00:00Z"),
+			"grade" : "A",
+			"score" : 2
+		},
+		{
+			"date" : ISODate("2012-04-26T00:00:00Z"),
+			"grade" : "A",
+			"score" : 7
+		},
+		{
+			"date" : ISODate("2011-11-09T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		}
+	],
+	"name" : "Mekong Thai And Vietnamese Restaurant",
+	"restaurant_id" : "41022628"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1b8b"),
+	"address" : {
+		"building" : "2",
+		"coord" : [
+			-73.9862038,
+			40.747189
+		],
+		"street" : "West   32 Street",
+		"zipcode" : "10001"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Vietnamese/Cambodian/Malaysia",
+	"grades" : [
+		{
+			"date" : ISODate("2014-12-01T00:00:00Z"),
+			"grade" : "Z",
+			"score" : 18
+		},
+		{
+			"date" : ISODate("2014-05-27T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2013-10-01T00:00:00Z"),
+			"grade" : "B",
+			"score" : 17
+		},
+		{
+			"date" : ISODate("2012-09-21T00:00:00Z"),
+			"grade" : "A",
+			"score" : 7
+		},
+		{
+			"date" : ISODate("2012-03-05T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		}
+	],
+	"name" : "Pho 32 & Shabu",
+	"restaurant_id" : "41026002"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1cb4"),
+	"address" : {
+		"building" : "345",
+		"coord" : [
+			-74.0102595,
+			40.7184972
+		],
+		"street" : "Greenwich Street",
+		"zipcode" : "10013"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Vietnamese/Cambodian/Malaysia",
+	"grades" : [
+		{
+			"date" : ISODate("2014-08-22T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		},
+		{
+			"date" : ISODate("2014-03-15T00:00:00Z"),
+			"grade" : "B",
+			"score" : 18
+		},
+		{
+			"date" : ISODate("2012-10-17T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2012-05-08T00:00:00Z"),
+			"grade" : "B",
+			"score" : 19
+		},
+		{
+			"date" : ISODate("2011-12-16T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		}
+	],
+	"name" : "Viet Cafe",
+	"restaurant_id" : "41063946"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1fa7"),
+	"address" : {
+		"building" : "4107",
+		"coord" : [
+			-73.8293161,
+			40.7583823
+		],
+		"street" : "Kissena Boulevard",
+		"zipcode" : "11355"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Vietnamese/Cambodian/Malaysia",
+	"grades" : [
+		{
+			"date" : ISODate("2014-11-13T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2014-05-20T00:00:00Z"),
+			"grade" : "A",
+			"score" : 8
+		},
+		{
+			"date" : ISODate("2013-10-16T00:00:00Z"),
+			"grade" : "B",
+			"score" : 22
+		},
+		{
+			"date" : ISODate("2013-03-20T00:00:00Z"),
+			"grade" : "B",
+			"score" : 18
+		},
+		{
+			"date" : ISODate("2012-08-01T00:00:00Z"),
+			"grade" : "B",
+			"score" : 16
+		},
+		{
+			"date" : ISODate("2011-12-14T00:00:00Z"),
+			"grade" : "B",
+			"score" : 17
+		}
+	],
+	"name" : "Pho Bang Restaurant",
+	"restaurant_id" : "41145163"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2190"),
+	"address" : {
+		"building" : "342",
+		"coord" : [
+			-73.986646,
+			40.7264594
+		],
+		"street" : "East 6 Street",
+		"zipcode" : "10003"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Vietnamese/Cambodian/Malaysia",
+	"grades" : [
+		{
+			"date" : ISODate("2014-12-04T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		},
+		{
+			"date" : ISODate("2014-06-27T00:00:00Z"),
+			"grade" : "A",
+			"score" : 8
+		},
+		{
+			"date" : ISODate("2013-07-30T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2012-05-31T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		}
+	],
+	"name" : "Lan Cafe",
+	"restaurant_id" : "41184550"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2242"),
+	"address" : {
+		"building" : "18",
+		"coord" : [
+			-74.0034562,
+			40.7275645
+		],
+		"street" : "King Street",
+		"zipcode" : "10014"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Vietnamese/Cambodian/Malaysia",
+	"grades" : [
+		{
+			"date" : ISODate("2014-02-18T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2013-08-20T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2013-03-05T00:00:00Z"),
+			"grade" : "C",
+			"score" : 45
+		},
+		{
+			"date" : ISODate("2012-04-06T00:00:00Z"),
+			"grade" : "B",
+			"score" : 19
+		},
+		{
+			"date" : ISODate("2011-09-22T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		}
+	],
+	"name" : "New Mekong Restaurant",
+	"restaurant_id" : "41202673"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2309"),
+	"address" : {
+		"building" : "4010",
+		"coord" : [
+			-73.8915947,
+			40.746408
+		],
+		"street" : "74 Street",
+		"zipcode" : "11373"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Vietnamese/Cambodian/Malaysia",
+	"grades" : [
+		{
+			"date" : ISODate("2014-08-12T00:00:00Z"),
+			"grade" : "A",
+			"score" : 7
+		},
+		{
+			"date" : ISODate("2014-01-09T00:00:00Z"),
+			"grade" : "B",
+			"score" : 25
+		},
+		{
+			"date" : ISODate("2013-06-25T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2012-05-07T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2011-12-28T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		}
+	],
+	"name" : "Thai Son",
+	"restaurant_id" : "41221266"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2517"),
+	"address" : {
+		"building" : "369",
+		"coord" : [
+			-73.9959432,
+			40.7200254
+		],
+		"street" : "Broome Street",
+		"zipcode" : "10013"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Vietnamese/Cambodian/Malaysia",
+	"grades" : [
+		{
+			"date" : ISODate("2014-08-01T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		},
+		{
+			"date" : ISODate("2014-02-11T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2013-01-24T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2012-06-22T00:00:00Z"),
+			"grade" : "A",
+			"score" : 5
+		},
+		{
+			"date" : ISODate("2012-01-18T00:00:00Z"),
+			"grade" : "A",
+			"score" : 2
+		}
+	],
+	"name" : "Saigon Vietnamese Sandwich",
+	"restaurant_id" : "41254832"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2a24"),
+	"address" : {
+		"building" : "82-90",
+		"coord" : [
+			-73.8848687,
+			40.743896
+		],
+		"street" : "Broadway",
+		"zipcode" : "11373"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Vietnamese/Cambodian/Malaysia",
+	"grades" : [
+		{
+			"date" : ISODate("2014-07-02T00:00:00Z"),
+			"grade" : "B",
+			"score" : 26
+		},
+		{
+			"date" : ISODate("2013-10-23T00:00:00Z"),
+			"grade" : "B",
+			"score" : 18
+		},
+		{
+			"date" : ISODate("2013-05-30T00:00:00Z"),
+			"grade" : "B",
+			"score" : 22
+		},
+		{
+			"date" : ISODate("2012-12-18T00:00:00Z"),
+			"grade" : "A",
+			"score" : 7
+		},
+		{
+			"date" : ISODate("2012-09-04T00:00:00Z"),
+			"grade" : "C",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2012-02-24T00:00:00Z"),
+			"grade" : "B",
+			"score" : 17
+		}
+	],
+	"name" : "Pho Bang Restaurant",
+	"restaurant_id" : "41338955"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2c4d"),
+	"address" : {
+		"building" : "102",
+		"coord" : [
+			-73.99543899999999,
+			40.717846
+		],
+		"street" : "Bowery",
+		"zipcode" : "10013"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Vietnamese/Cambodian/Malaysia",
+	"grades" : [
+		{
+			"date" : ISODate("2014-12-20T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2014-07-08T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		},
+		{
+			"date" : ISODate("2013-11-25T00:00:00Z"),
+			"grade" : "A",
+			"score" : 6
+		},
+		{
+			"date" : ISODate("2013-04-04T00:00:00Z"),
+			"grade" : "B",
+			"score" : 15
+		},
+		{
+			"date" : ISODate("2012-08-21T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2012-03-22T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		}
+	],
+	"name" : "New Tu Do Restaurant",
+	"restaurant_id" : "41374711"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2c56"),
+	"address" : {
+		"building" : "277",
+		"coord" : [
+			-73.9927639,
+			40.717627
+		],
+		"street" : "Grand Street",
+		"zipcode" : "10002"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Vietnamese/Cambodian/Malaysia",
+	"grades" : [
+		{
+			"date" : ISODate("2014-04-09T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2013-09-09T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2013-04-24T00:00:00Z"),
+			"grade" : "C",
+			"score" : 0
+		},
+		{
+			"date" : ISODate("2012-06-22T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2011-11-18T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		},
+		{
+			"date" : ISODate("2011-04-20T00:00:00Z"),
+			"grade" : "B",
+			"score" : 15
+		}
+	],
+	"name" : "Pho Grand",
+	"restaurant_id" : "41375457"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2cb0"),
+	"address" : {
+		"building" : "3802",
+		"coord" : [
+			-73.83283279999999,
+			40.7600184
+		],
+		"street" : "Prince Street",
+		"zipcode" : "11354"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Vietnamese/Cambodian/Malaysia",
+	"grades" : [
+		{
+			"date" : ISODate("2014-06-02T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		},
+		{
+			"date" : ISODate("2013-12-03T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		},
+		{
+			"date" : ISODate("2012-07-19T00:00:00Z"),
+			"grade" : "A",
+			"score" : 7
+		},
+		{
+			"date" : ISODate("2012-03-06T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		}
+	],
+	"name" : "Pho Vietnamese Restaurant",
+	"restaurant_id" : "41379217"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2d4d"),
+	"address" : {
+		"building" : "85",
+		"coord" : [
+			-73.9904772,
+			40.7179481
+		],
+		"street" : "Orchard Street",
+		"zipcode" : "10002"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Vietnamese/Cambodian/Malaysia",
+	"grades" : [
+		{
+			"date" : ISODate("2014-12-18T00:00:00Z"),
+			"grade" : "A",
+			"score" : 5
+		},
+		{
+			"date" : ISODate("2013-12-03T00:00:00Z"),
+			"grade" : "A",
+			"score" : 4
+		},
+		{
+			"date" : ISODate("2013-06-19T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		},
+		{
+			"date" : ISODate("2012-11-21T00:00:00Z"),
+			"grade" : "B",
+			"score" : 20
+		},
+		{
+			"date" : ISODate("2012-05-09T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		}
+	],
+	"name" : "An Choi",
+	"restaurant_id" : "41386399"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2fbf"),
+	"address" : {
+		"building" : "120",
+		"coord" : [
+			-74.005578,
+			40.732983
+		],
+		"street" : "Christopher Street",
+		"zipcode" : "10014"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Vietnamese/Cambodian/Malaysia",
+	"grades" : [
+		{
+			"date" : ISODate("2014-09-16T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2014-04-28T00:00:00Z"),
+			"grade" : "C",
+			"score" : 2
+		},
+		{
+			"date" : ISODate("2013-02-28T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2012-10-19T00:00:00Z"),
+			"grade" : "C",
+			"score" : 5
+		},
+		{
+			"date" : ISODate("2012-05-02T00:00:00Z"),
+			"grade" : "B",
+			"score" : 20
+		},
+		{
+			"date" : ISODate("2011-11-14T00:00:00Z"),
+			"grade" : "A",
+			"score" : 7
+		}
+	],
+	"name" : "Baoguette Pho Sure",
+	"restaurant_id" : "41414673"
+}

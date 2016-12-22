@@ -1,0 +1,145 @@
+to find the restaurant Id, name, borough and cuisine for those restaurants which contains 'ces' as last three letters for its name.
+
+db.restaurants.find({name: {$regex: "ces$"}}, {restaurant_id: true, name: true, borough: true, cuisine: true}).pretty()
+
+
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0d3b"),
+	"borough" : "Manhattan",
+	"cuisine" : "American ",
+	"name" : "Pieces",
+	"restaurant_id" : "40399910"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0dfa"),
+	"borough" : "Queens",
+	"cuisine" : "American ",
+	"name" : "S.M.R Restaurant Services",
+	"restaurant_id" : "40403857"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0e00"),
+	"borough" : "Manhattan",
+	"cuisine" : "American ",
+	"name" : "Good Shepherd Services",
+	"restaurant_id" : "40403989"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b12b4"),
+	"borough" : "Queens",
+	"cuisine" : "Ice Cream, Gelato, Yogurt, Ices",
+	"name" : "The Ice Box-Ralph'S Famous Italian Ices",
+	"restaurant_id" : "40690899"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b14b7"),
+	"borough" : "Brooklyn",
+	"cuisine" : "Jewish/Kosher",
+	"name" : "Alices",
+	"restaurant_id" : "40782042"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b16d3"),
+	"borough" : "Manhattan",
+	"cuisine" : "American ",
+	"name" : "Re: Sources",
+	"restaurant_id" : "40876068"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b195e"),
+	"borough" : "Staten Island",
+	"cuisine" : "Ice Cream, Gelato, Yogurt, Ices",
+	"name" : "Cange'S Italian Ices",
+	"restaurant_id" : "40966018"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1a17"),
+	"borough" : "Brooklyn",
+	"cuisine" : "American ",
+	"name" : "B.A.M. Cafe/Great Performances",
+	"restaurant_id" : "40992170"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1ba9"),
+	"borough" : "Brooklyn",
+	"cuisine" : "American ",
+	"name" : "Barbara Blum Residence / Good Shepherd Services",
+	"restaurant_id" : "41029591"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2192"),
+	"borough" : "Brooklyn",
+	"cuisine" : "Soul Food",
+	"name" : "Berts Restaurant & Catering Services",
+	"restaurant_id" : "41184590"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2511"),
+	"borough" : "Staten Island",
+	"cuisine" : "Ice Cream, Gelato, Yogurt, Ices",
+	"name" : "Ralph'S Famous Italian Ices",
+	"restaurant_id" : "41254301"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b28e0"),
+	"borough" : "Queens",
+	"cuisine" : "Ice Cream, Gelato, Yogurt, Ices",
+	"name" : "Ralph'S Famous Italian Ices",
+	"restaurant_id" : "41316785"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2a8d"),
+	"borough" : "Staten Island",
+	"cuisine" : "Ice Cream, Gelato, Yogurt, Ices",
+	"name" : "Ralph'S Famous Italian Ices",
+	"restaurant_id" : "41347936"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2bef"),
+	"borough" : "Manhattan",
+	"cuisine" : "American ",
+	"name" : "International Flavors  & Fragrances",
+	"restaurant_id" : "41370481"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2f71"),
+	"borough" : "Staten Island",
+	"cuisine" : "Ice Cream, Gelato, Yogurt, Ices",
+	"name" : "Ralph'S Ices",
+	"restaurant_id" : "41410016"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b309b"),
+	"borough" : "Manhattan",
+	"cuisine" : "American ",
+	"name" : "New York Stock Exchange Executive Services",
+	"restaurant_id" : "41426518"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b316a"),
+	"borough" : "Queens",
+	"cuisine" : "Pizza",
+	"name" : "Slices And Ices",
+	"restaurant_id" : "41437112"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b332f"),
+	"borough" : "Staten Island",
+	"cuisine" : "Ice Cream, Gelato, Yogurt, Ices",
+	"name" : "Ralph'S Famous Italian Ices",
+	"restaurant_id" : "41459709"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b3ca9"),
+	"borough" : "Manhattan",
+	"cuisine" : "Ice Cream, Gelato, Yogurt, Ices",
+	"name" : "Ralph'S Famous Italian Ices",
+	"restaurant_id" : "41573883"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b3dba"),
+	"borough" : "Bronx",
+	"cuisine" : "Caribbean",
+	"name" : "7 Spices",
+	"restaurant_id" : "41584120"
+}

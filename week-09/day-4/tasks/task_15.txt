@@ -1,0 +1,52 @@
+to find the restaurant Id, name, borough and cuisine for those restaurants which contains 'Reg' as three letters somewhere in its name.
+
+db.restaurants.find({name: {$regex: ".Reg."}}, {restaurant_id: true, name: true, borough: true, cuisine: true}).pretty()
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b09ac"),
+	"borough" : "Manhattan",
+	"cuisine" : "Café/Coffee/Tea",
+	"name" : "Caffe Reggio",
+	"restaurant_id" : "40369418"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1a85"),
+	"borough" : "Brooklyn",
+	"cuisine" : "Café/Coffee/Tea",
+	"name" : "Cafe Regular",
+	"restaurant_id" : "41003435"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b29e5"),
+	"borough" : "Brooklyn",
+	"cuisine" : "American ",
+	"name" : "Sheepshead Bay Regal Cinemas Theatre",
+	"restaurant_id" : "41335396"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b3024"),
+	"borough" : "Manhattan",
+	"cuisine" : "American ",
+	"name" : "St Regis New York - 20Th Floor Roof Ballroom",
+	"restaurant_id" : "41420313"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b3e8c"),
+	"borough" : "Brooklyn",
+	"cuisine" : "Café/Coffee/Tea",
+	"name" : "Cafe Regular",
+	"restaurant_id" : "41592595"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b477b"),
+	"borough" : "Manhattan",
+	"cuisine" : "Thai",
+	"name" : "V {Iv} Regional Thai Cuisine",
+	"restaurant_id" : "41661174"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b5fd8"),
+	"borough" : "Manhattan",
+	"cuisine" : "Spanish",
+	"name" : "La Regi Restaurant",
+	"restaurant_id" : "50009724"
+}

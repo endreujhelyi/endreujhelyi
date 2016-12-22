@@ -1,0 +1,726 @@
+to arranged the name of the cuisine in ascending order and for those same cuisine borough should be in descending order.
+
+
+db.restaurants.find({}, {}).sort({cuisine: 1, borough: -1}).pretty()
+
+
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b390c"),
+	"address" : {
+		"building" : "259-11",
+		"coord" : [
+			-73.708831,
+			40.73748399999999
+		],
+		"street" : "Hillside Avenue",
+		"zipcode" : "11004"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Afghan",
+	"grades" : [
+		{
+			"date" : ISODate("2014-09-15T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2013-09-18T00:00:00Z"),
+			"grade" : "A",
+			"score" : 7
+		},
+		{
+			"date" : ISODate("2013-04-18T00:00:00Z"),
+			"grade" : "B",
+			"score" : 21
+		},
+		{
+			"date" : ISODate("2012-08-29T00:00:00Z"),
+			"grade" : "A",
+			"score" : 2
+		},
+		{
+			"date" : ISODate("2012-02-09T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		}
+	],
+	"name" : "Afghan Kebob House",
+	"restaurant_id" : "41535706"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b3b3c"),
+	"address" : {
+		"building" : "68-16",
+		"coord" : [
+			-73.79474420000001,
+			40.7332144
+		],
+		"street" : "Fresh Meadow Lane",
+		"zipcode" : "11365"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Afghan",
+	"grades" : [
+		{
+			"date" : ISODate("2013-11-23T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2013-06-01T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2012-02-27T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2011-09-03T00:00:00Z"),
+			"grade" : "C",
+			"score" : 34
+		}
+	],
+	"name" : "Bakhter Afghan Halal Kabab",
+	"restaurant_id" : "41559771"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b3c39"),
+	"address" : {
+		"building" : "43-27",
+		"coord" : [
+			-73.8260645,
+			40.751886
+		],
+		"street" : "Main Street",
+		"zipcode" : "11355"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Afghan",
+	"grades" : [
+		{
+			"date" : ISODate("2014-02-25T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2013-08-29T00:00:00Z"),
+			"grade" : "B",
+			"score" : 15
+		},
+		{
+			"date" : ISODate("2013-03-05T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2013-02-13T00:00:00Z"),
+			"grade" : "P",
+			"score" : 5
+		},
+		{
+			"date" : ISODate("2012-06-28T00:00:00Z"),
+			"grade" : "B",
+			"score" : 17
+		},
+		{
+			"date" : ISODate("2011-06-18T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		}
+	],
+	"name" : "Choopan Kabab Restaurant",
+	"restaurant_id" : "41569155"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b477c"),
+	"address" : {
+		"building" : "6729",
+		"coord" : [
+			-73.8204147,
+			40.724243
+		],
+		"street" : "Main St",
+		"zipcode" : "11367"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Afghan",
+	"grades" : [
+		{
+			"date" : ISODate("2014-08-20T00:00:00Z"),
+			"grade" : "A",
+			"score" : 4
+		},
+		{
+			"date" : ISODate("2013-07-31T00:00:00Z"),
+			"grade" : "A",
+			"score" : 5
+		},
+		{
+			"date" : ISODate("2012-08-04T00:00:00Z"),
+			"grade" : "A",
+			"score" : 5
+		}
+	],
+	"name" : "Bakhtar Kabab",
+	"restaurant_id" : "41661199"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b55ab"),
+	"address" : {
+		"building" : "110-23",
+		"coord" : [
+			-73.8374947,
+			40.696891
+		],
+		"street" : "Jamaica Avenue",
+		"zipcode" : "11418"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Afghan",
+	"grades" : [
+		{
+			"date" : ISODate("2014-07-09T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2014-01-02T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		}
+	],
+	"name" : "New Bkhatar Afghan Halal Kabab & Gyro King",
+	"restaurant_id" : "50001906"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b5d73"),
+	"address" : {
+		"building" : "2310",
+		"coord" : [
+			-73.91336969999999,
+			40.7742674
+		],
+		"street" : "31St St",
+		"zipcode" : "11105"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Afghan",
+	"grades" : [
+		{
+			"date" : ISODate("2014-03-27T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		}
+	],
+	"name" : "Balkh Shish Kabab House",
+	"restaurant_id" : "50007432"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b5e93"),
+	"address" : {
+		"building" : "33-35",
+		"coord" : [
+			-73.7896131,
+			40.7666136
+		],
+		"street" : "Francis Lewis Boulevard",
+		"zipcode" : "11358"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Afghan",
+	"grades" : [
+		{
+			"date" : ISODate("2014-06-25T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		}
+	],
+	"name" : "Arya Kabob House",
+	"restaurant_id" : "50008452"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b610c"),
+	"address" : {
+		"building" : "72-55",
+		"coord" : [
+			-73.812895,
+			40.7276946
+		],
+		"street" : "Kissena Boulevard",
+		"zipcode" : "11367"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Afghan",
+	"grades" : [
+		{
+			"date" : ISODate("2014-08-28T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		}
+	],
+	"name" : "Tariq Afghan Kabab",
+	"restaurant_id" : "50010806"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b610e"),
+	"address" : {
+		"building" : "68-16",
+		"coord" : [
+			-73.79474420000001,
+			40.7332144
+		],
+		"street" : "Fresh Meadow Lane",
+		"zipcode" : "11365"
+	},
+	"borough" : "Queens",
+	"cuisine" : "Afghan",
+	"grades" : [
+		{
+			"date" : ISODate("2015-01-12T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2014-06-26T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		}
+	],
+	"name" : "Bakhter Afghan Halal Kabab",
+	"restaurant_id" : "50010813"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0f93"),
+	"address" : {
+		"building" : "1345",
+		"coord" : [
+			-73.959249,
+			40.768076
+		],
+		"street" : "2 Avenue",
+		"zipcode" : "10021"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Afghan",
+	"grades" : [
+		{
+			"date" : ISODate("2014-10-07T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		},
+		{
+			"date" : ISODate("2013-10-23T00:00:00Z"),
+			"grade" : "A",
+			"score" : 8
+		},
+		{
+			"date" : ISODate("2012-10-26T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2012-04-26T00:00:00Z"),
+			"grade" : "A",
+			"score" : 7
+		},
+		{
+			"date" : ISODate("2012-01-12T00:00:00Z"),
+			"grade" : "P",
+			"score" : 10
+		}
+	],
+	"name" : "Afghan Kebab House",
+	"restaurant_id" : "40552806"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b10bf"),
+	"address" : {
+		"building" : "34",
+		"coord" : [
+			-73.9883612,
+			40.7286391
+		],
+		"street" : "St Marks Place",
+		"zipcode" : "10003"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Afghan",
+	"grades" : [
+		{
+			"date" : ISODate("2014-02-20T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2013-08-06T00:00:00Z"),
+			"grade" : "B",
+			"score" : 17
+		},
+		{
+			"date" : ISODate("2013-01-31T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2012-05-24T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2011-12-13T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2011-08-25T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		}
+	],
+	"name" : "Khyber Pass",
+	"restaurant_id" : "40589545"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1178"),
+	"address" : {
+		"building" : "764",
+		"coord" : [
+			-73.9880435,
+			40.7641423
+		],
+		"street" : "9 Avenue",
+		"zipcode" : "10019"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Afghan",
+	"grades" : [
+		{
+			"date" : ISODate("2014-12-30T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2013-10-10T00:00:00Z"),
+			"grade" : "B",
+			"score" : 19
+		},
+		{
+			"date" : ISODate("2013-02-25T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2012-08-09T00:00:00Z"),
+			"grade" : "C",
+			"score" : 2
+		},
+		{
+			"date" : ISODate("2012-02-16T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		}
+	],
+	"name" : "Afghan Kebab House #1",
+	"restaurant_id" : "40616799"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b169c"),
+	"address" : {
+		"building" : "787",
+		"coord" : [
+			-73.9880886,
+			40.7651331
+		],
+		"street" : "9 Avenue",
+		"zipcode" : "10019"
+	},
+	"borough" : "Manhattan",
+	"cuisine" : "Afghan",
+	"grades" : [
+		{
+			"date" : ISODate("2014-07-22T00:00:00Z"),
+			"grade" : "A",
+			"score" : 3
+		},
+		{
+			"date" : ISODate("2013-07-08T00:00:00Z"),
+			"grade" : "A",
+			"score" : 2
+		},
+		{
+			"date" : ISODate("2013-02-05T00:00:00Z"),
+			"grade" : "A",
+			"score" : 2
+		},
+		{
+			"date" : ISODate("2011-11-28T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		}
+	],
+	"name" : "Ariana Kebab House",
+	"restaurant_id" : "40868400"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b4860"),
+	"address" : {
+		"building" : "984",
+		"coord" : [
+			-73.9673814,
+			40.63341399999999
+		],
+		"street" : "Coney Island Avenue",
+		"zipcode" : "11230"
+	},
+	"borough" : "Brooklyn",
+	"cuisine" : "Afghan",
+	"grades" : [
+		{
+			"date" : ISODate("2014-09-19T00:00:00Z"),
+			"grade" : "C",
+			"score" : 38
+		},
+		{
+			"date" : ISODate("2014-03-27T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2014-02-12T00:00:00Z"),
+			"grade" : "P",
+			"score" : 6
+		},
+		{
+			"date" : ISODate("2013-06-18T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2012-06-05T00:00:00Z"),
+			"grade" : "A",
+			"score" : 6
+		}
+	],
+	"name" : "Bahar Masala",
+	"restaurant_id" : "41670224"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b4785"),
+	"address" : {
+		"building" : "358",
+		"coord" : [
+			-74.0850586,
+			40.6183936
+		],
+		"street" : "Targee Street",
+		"zipcode" : "10304"
+	},
+	"borough" : "Staten Island",
+	"cuisine" : "African",
+	"grades" : [
+		{
+			"date" : ISODate("2014-06-18T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		},
+		{
+			"date" : ISODate("2013-10-02T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2012-09-13T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		}
+	],
+	"name" : "Mona'S Cuisine",
+	"restaurant_id" : "41661732"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b5566"),
+	"address" : {
+		"building" : "611",
+		"coord" : [
+			-74.07564099999999,
+			40.627075
+		],
+		"street" : "Bay Street",
+			"zipcode" : "10304"
+	},
+	"borough" : "Staten Island",
+	"cuisine" : "African",
+	"grades" : [
+		{
+			"date" : ISODate("2014-11-19T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		},
+		{
+			"date" : ISODate("2013-11-07T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		}
+	],
+	"name" : "Wazobia Restaurant",
+	"restaurant_id" : "50001806"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1511"),
+	"address" : {
+		"building" : "14612",
+		"coord" : [
+			-73.8057078,
+			40.6948408
+		],
+		"street" : "Liberty Avenue",
+		"zipcode" : "11435"
+	},
+	"borough" : "Queens",
+	"cuisine" : "African",
+	"grades" : [
+		{
+			"date" : ISODate("2014-04-16T00:00:00Z"),
+			"grade" : "A",
+			"score" : 4
+		},
+		{
+			"date" : ISODate("2013-09-16T00:00:00Z"),
+			"grade" : "A",
+			"score" : 2
+		},
+		{
+			"date" : ISODate("2012-08-23T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2012-02-21T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		},
+		{
+			"date" : ISODate("2011-06-30T00:00:00Z"),
+			"grade" : "B",
+			"score" : 19
+		}
+	],
+	"name" : "Africana Restaurant",
+	"restaurant_id" : "40798504"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b255d"),
+	"address" : {
+		"building" : "138-24",
+		"coord" : [
+			-73.76439599999999,
+			40.6721779
+		],
+		"street" : "Farmers Boulevard",
+		"zipcode" : "11434"
+	},
+	"borough" : "Queens",
+	"cuisine" : "African",
+	"grades" : [
+		{
+			"date" : ISODate("2014-02-20T00:00:00Z"),
+			"grade" : "A",
+			"score" : 9
+		},
+		{
+			"date" : ISODate("2013-08-13T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2013-03-19T00:00:00Z"),
+			"grade" : "A",
+			"score" : 3
+		},
+		{
+			"date" : ISODate("2012-01-19T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		}
+	],
+	"name" : "Aso Rock Lounge And Restaurant",
+	"restaurant_id" : "41260089"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b3656"),
+	"address" : {
+		"building" : "14407",
+		"coord" : [
+			-73.8112644,
+			40.7023682
+		],
+		"street" : "Jamaica Avenue",
+		"zipcode" : "11435"
+	},
+	"borough" : "Queens",
+	"cuisine" : "African",
+	"grades" : [
+		{
+			"date" : ISODate("2014-07-19T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2014-01-02T00:00:00Z"),
+			"grade" : "A",
+			"score" : 13
+		},
+		{
+			"date" : ISODate("2013-07-09T00:00:00Z"),
+			"grade" : "A",
+			"score" : 10
+		},
+		{
+			"date" : ISODate("2012-12-03T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		},
+		{
+			"date" : ISODate("2012-05-31T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		}
+	],
+	"name" : "Mataheko African Restaurant And Lounge",
+	"restaurant_id" : "41495376"
+}
+{
+	"_id" : ObjectId("585b9f8e4a3fc0b7bc9b4d15"),
+	"address" : {
+		"building" : "153-41",
+		"coord" : [
+			-73.78218799999999,
+			40.669525
+		],
+		"street" : "Rockaway Boulevard",
+		"zipcode" : "11434"
+	},
+	"borough" : "Queens",
+	"cuisine" : "African",
+	"grades" : [
+		{
+			"date" : ISODate("2014-08-21T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		},
+		{
+			"date" : ISODate("2014-04-03T00:00:00Z"),
+			"grade" : "B",
+			"score" : 26
+		},
+		{
+			"date" : ISODate("2013-03-05T00:00:00Z"),
+			"grade" : "A",
+			"score" : 11
+		}
+	],
+	"name" : "Tropical Grill",
+	"restaurant_id" : "41702543"
+}

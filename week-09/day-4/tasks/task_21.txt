@@ -1,0 +1,472 @@
+to find the restaurant Id, name and grades for those restaurants which achieved a grade of "A" and scored 11 on an ISODate "2014-08-11T00:00:00Z" among many of survey dates..
+
+db.restaurants.find({"grades.grade": "A", "grades.score": 11, "grades.date": ISODate("2014-08-11T00:00:00Z")}, {restaurant_id: true, name: true, "grades.grade": true}).pretty()
+
+
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0925"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Neary'S Pub",
+	"restaurant_id" : "40365871"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0a00"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Don Filippo Restaurant",
+	"restaurant_id" : "40372417"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0cc7"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "C"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Mustang Sally'S Restaurant",
+	"restaurant_id" : "40397374"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0ed3"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Club Macanudo (Cigar Bar)",
+	"restaurant_id" : "40526406"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0fc8"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "B"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "B"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Marino'S Pizza & Restaurant",
+	"restaurant_id" : "40560917"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1171"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "B"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Gene'S Coffee Shop",
+	"restaurant_id" : "40614916"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b12df"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "P"
+		}
+	],
+	"name" : "Union Cafe Restaurant",
+	"restaurant_id" : "40698823"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b174d"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Jojo'S Pizza",
+	"restaurant_id" : "40892913"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1799"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Cosi Sandwich Bar",
+	"restaurant_id" : "40912833"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b17da"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Cosi",
+	"restaurant_id" : "40922983"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b17fd"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "B"
+		},
+		{
+			"grade" : "B"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Isla Of Verde",
+	"restaurant_id" : "40927513"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b197b"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Bamboo Garden Chinese Restaurant",
+	"restaurant_id" : "40970116"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1cca"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Tina'S Cuban Cuisine",
+	"restaurant_id" : "41067289"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1e20"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Bar Americain",
+	"restaurant_id" : "41101050"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2389"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Subway",
+	"restaurant_id" : "41230741"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b23e8"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "C"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Pizza & Pita",
+	"restaurant_id" : "41236336"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b27c7"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Shoolbred'S",
+	"restaurant_id" : "41302014"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2866"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Cabana",
+	"restaurant_id" : "41309951"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b29a8"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "B"
+		}
+	],
+	"name" : "Mike'S Island Grill Restaurant",
+	"restaurant_id" : "41330799"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2b9d"),
+	"grades" : [
+		{
+			"grade" : "B"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Mansions Catering",
+	"restaurant_id" : "41365614"
+}

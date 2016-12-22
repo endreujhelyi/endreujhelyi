@@ -1,0 +1,439 @@
+to find the restaurant Id, name and grades for those restaurants where 2nd element of grades array contains a grade of "A" and score 9 on an ISODate "2014-08-11T00:00:00Z".
+
+db.restaurants.find({"grades.1.grade": "A", "grades.score": 9, "grades.date": ISODate("2014-08-11T00:00:00Z")}, {restaurant_id: true, name: true, "grades.grade": true}).pretty()
+
+
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b08f9"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Serendipity 3",
+	"restaurant_id" : "40364863"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0925"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Neary'S Pub",
+	"restaurant_id" : "40365871"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0a00"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Don Filippo Restaurant",
+	"restaurant_id" : "40372417"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0aaa"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Pietros",
+	"restaurant_id" : "40381595"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0b64"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "The Cornell Center Of New York",
+	"restaurant_id" : "40388640"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0ce5"),
+	"grades" : [
+		{
+			"grade" : "B"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Paddy Quinns",
+	"restaurant_id" : "40398138"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0d83"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "B"
+		},
+		{
+			"grade" : "B"
+		},
+		{
+			"grade" : "B"
+		}
+	],
+	"name" : "Naim Kosher Pizza",
+	"restaurant_id" : "40401060"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0e06"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Mutual Of America",
+	"restaurant_id" : "40404069"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0ed3"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Club Macanudo (Cigar Bar)",
+	"restaurant_id" : "40526406"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b0f70"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Roy Rogers",
+	"restaurant_id" : "40547249"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1171"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "B"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Gene'S Coffee Shop",
+	"restaurant_id" : "40614916"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b171f"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "B"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Roca Tone Seafood Restaurant",
+	"restaurant_id" : "40885478"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b174d"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Jojo'S Pizza",
+	"restaurant_id" : "40892913"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1799"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Cosi Sandwich Bar",
+	"restaurant_id" : "40912833"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b185b"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Fried Frank Cafeteria",
+	"restaurant_id" : "40935583"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b197b"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Bamboo Garden Chinese Restaurant",
+	"restaurant_id" : "40970116"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1b69"),
+	"grades" : [
+		{
+			"grade" : "B"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "C"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "The Fork Bar & Grill",
+	"restaurant_id" : "41022471"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1c77"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Nook Restaurant",
+	"restaurant_id" : "41056188"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1cca"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Tina'S Cuban Cuisine",
+	"restaurant_id" : "41067289"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1ed6"),
+	"grades" : [
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		},
+		{
+			"grade" : "A"
+		}
+	],
+	"name" : "Subway",
+	"restaurant_id" : "41120478"
+}

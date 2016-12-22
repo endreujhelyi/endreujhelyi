@@ -1,0 +1,145 @@
+to find the restaurant Id, name, borough and cuisine for those restaurants which contains 'Wil' as first three letters for its name.
+
+db.restaurants.find({name: {$regex: ".*Wil.*"}}, {restaurant_id: true, name: true, borough: true, cuisine: true}).pretty()
+
+
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b08ae"),
+	"borough" : "Brooklyn",
+	"cuisine" : "Delicatessen",
+	"name" : "Wilken'S Fine Food",
+	"restaurant_id" : "40356483"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b08b1"),
+	"borough" : "Bronx",
+	"cuisine" : "American ",
+	"name" : "Wild Asia",
+	"restaurant_id" : "40357217"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b162b"),
+	"borough" : "Bronx",
+	"cuisine" : "American ",
+	"name" : "The Williamsbridge Tavern",
+	"restaurant_id" : "40852754"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b16b9"),
+	"borough" : "Bronx",
+	"cuisine" : "Pizza",
+	"name" : "Wilbel Pizza",
+	"restaurant_id" : "40871979"
+}
+{
+	"_id" : ObjectId("585b9f8c4a3fc0b7bc9b1809"),
+	"borough" : "Manhattan",
+	"cuisine" : "Seafood",
+	"name" : "Wild Edibles",
+	"restaurant_id" : "40928482"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b232c"),
+	"borough" : "Brooklyn",
+	"cuisine" : "Chicken",
+	"name" : "Buffalo Wild Wings Grill & Bar",
+	"restaurant_id" : "41224360"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2348"),
+	"borough" : "Brooklyn",
+	"cuisine" : "Bagels/Pretzels",
+	"name" : "Wild Bagels",
+	"restaurant_id" : "41225826"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2380"),
+	"borough" : "Manhattan",
+	"cuisine" : "American ",
+	"name" : "Wicked Willy'S",
+	"restaurant_id" : "41230004"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2425"),
+	"borough" : "Bronx",
+	"cuisine" : "Latin (Cuban, Dominican, Puerto Rican, South & Central American)",
+	"name" : "Willie'S Steak House",
+	"restaurant_id" : "41239497"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b251d"),
+	"borough" : "Brooklyn",
+	"cuisine" : "American ",
+	"name" : "Willburg Cafe",
+	"restaurant_id" : "41255152"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b251e"),
+	"borough" : "Manhattan",
+	"cuisine" : "American ",
+	"name" : "Willis North America",
+	"restaurant_id" : "41255267"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2659"),
+	"borough" : "Brooklyn",
+	"cuisine" : "American ",
+	"name" : "Music Hall Of Williamsburg",
+	"restaurant_id" : "41276811"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2af0"),
+	"borough" : "Manhattan",
+	"cuisine" : "Café/Coffee/Tea",
+	"name" : "William Greenberg Jr Desserts",
+	"restaurant_id" : "41353639"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2be1"),
+	"borough" : "Brooklyn",
+	"cuisine" : "Vegetarian",
+	"name" : "Wild Ginger Vegan Cafe",
+	"restaurant_id" : "41369777"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b2c17"),
+	"borough" : "Manhattan",
+	"cuisine" : "Irish",
+	"name" : "Wilfie & Nell",
+	"restaurant_id" : "41372275"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b312b"),
+	"borough" : "Manhattan",
+	"cuisine" : "Vegetarian",
+	"name" : "Wild Ginger Vegetarian Kitchen",
+	"restaurant_id" : "41433964"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b3219"),
+	"borough" : "Manhattan",
+	"cuisine" : "Pizza",
+	"name" : "Wild",
+	"restaurant_id" : "41447856"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b348c"),
+	"borough" : "Manhattan",
+	"cuisine" : "American ",
+	"name" : "The Williams Memorial Residence",
+	"restaurant_id" : "41474875"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b38b7"),
+	"borough" : "Manhattan",
+	"cuisine" : "American ",
+	"name" : "August Wilson Theatre",
+	"restaurant_id" : "41531136"
+}
+{
+	"_id" : ObjectId("585b9f8d4a3fc0b7bc9b3b26"),
+	"borough" : "Manhattan",
+	"cuisine" : "American ",
+	"name" : "Roger Williams Hotel",
+	"restaurant_id" : "41558918"
+}

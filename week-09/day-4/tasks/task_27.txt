@@ -1,0 +1,6 @@
+to know whether all the addresses contains the street or not.
+
+db.restaurants.find({"address.street": {"$exists": false}}, {}).count()
+
+
+0
