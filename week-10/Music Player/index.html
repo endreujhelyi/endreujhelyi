@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width">
+  <title>Kiev Rocks</title>
+
+  <link href="css/reset.css" type="text/css" rel="stylesheet">
+  <link href="css/style.css" type="text/css" rel="stylesheet">
+
+</head>
+<body>
+
+  <div class="player-box">
+
+    <div class="playlist-container">
+      <div class="left-container">
+        <div class="left-container__header">
+
+          <img id="player_logo" src="imgs/logo.png" alt="Music Player Logo" />
+
+
+          <div class="left-container__header__title">
+            <h1>Playlists</h1>
+            <img class="icon add-playlist" src="imgs/cross.png" alt="cross">
+          </div>
+
+          <div class="left-container__header__imgbox">
+            <img src="imgs/musicPlaceholder.png" class="artwork" alt="Album Artwork" />
+          </div>
+
+        </div>
+
+        <div class="left-container__playlist">
+          <ul>
+            <!-- <li>
+              <h1>All Tracks</h1>
+            </li>
+            <li class="even">
+              <h1>Favorites</h1>
+            </li> -->
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="right-container">
+
+        <div class="right-container__title">
+          <h1 class="current-artist"></h1>
+          <h2 class="current-song"></h2>
+          <img class="icon add-song" src="imgs/cross.png" alt="cross" />
+          <img class="icon favorite" src="imgs/star.png" alt="star" />
+        </div>
+
+
+        <div class="right-container__songs">
+          <ol>
+            <!-- <li>
+              <h1>Saramona Said</h2>
+              <h2>3:32</h2>
+            </li>
+            <li>
+              <h1>Fight My Regret</h2>
+              <h2>3:56</h2>
+            </li>
+            <li>
+              <h1>Uhmm Tiss Uhmm Tiss</h2>
+              <h2>4:42</h2>
+            </li>
+            <li>
+              <h1>Hot Pants</h2>
+              <h2>2:14</h2>
+            </li> -->
+          </ol>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="control-panel">
+      <audio controls> </audio>
+
+      <img class="controls rewind" src="imgs/rewind.png" alt="Rewind" />
+      <img class="controls forward"src="imgs/fast_forward.png" alt="Fast Forward" />
+
+    </div>
+
+  </div>
+
+  <script src="js/library.js"></script>
+  <script src="js/musicPlayer.js"></script>
+
+</body>
+</html>
