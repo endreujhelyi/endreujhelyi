@@ -1,16 +1,22 @@
 
 
-var songList = document.querySelector("ol");
-var playlistList = document.querySelector("ul");
-var actualSong = document.querySelector("audio");
-var artwork = document.querySelector(".artwork");
-var currentArtist = document.querySelector(".current-artist");
-var currentSongTitle = document.querySelector(".current-song");
-var favoriteStar = document.querySelector('.favorite');
+var songList = document.querySelector("ol"),
+    playlistList = document.querySelector("ul"),
+    actualSong = document.querySelector("audio"),
+    artwork = document.querySelector(".artwork"),
+    currentArtist = document.querySelector(".current-artist"),
+    currentSongTitle = document.querySelector(".current-song"),
+    favoriteStar = document.querySelector('.favorite'),
+    addSongToPlaylist = document.querySelector('.add_new_song'),
+    addNewPlaylist = document.querySelector('.add_new_playlist'),
+    plusAddSong = document.querySelector('.add-song'),
+    plusAddPlaylist = document.querySelector('.add-playlist'),
+    cancelPlaylist = document.querySelector('.cancel-playlist'),
+    cancelSong = document.querySelector('.cancel-song');
 
-var songNumber = 0;
-var listNumber = 0;
-var songID = 0;
+var songNumber = 0,
+    listNumber = 0,
+    songID = 0;
 
 
 // Main Loop
@@ -21,8 +27,8 @@ for (var i = 0; i < playlists.length; i++) {
 
 // HTMLBuilder :: playlists
 function playlistMaker(listIndex) {
-  var newLiTag = document.createElement('li');
-  var newH1Tag = document.createElement('h1');
+  var newLiTag = document.createElement('li'),
+      newH1Tag = document.createElement('h1');
   playlistList.appendChild(newLiTag);
   newLiTag.appendChild(newH1Tag).innerHTML = playlists[listIndex].name;
 
@@ -38,6 +44,7 @@ function playlistMaker(listIndex) {
     songs.forEach(function(song) {
       song.remove();
     });
+    selected(playlistList, "playlists");
     songSelector(listIndex);
   });
 };
@@ -55,17 +62,16 @@ function songSelector(listIndex) {
       });
     });
   } else { // set favorite tracklist
+    playlists[listIndex].songs = [];
     var favSongsList = musicLibrary.filter(function(song) {
       return song.fav;
     });
-    var favSongsId = [];
-    favSongsList.forEach(function(song) {
-      favSongsId.push(song.id);
+    favSongsList.forEach(function(song, songIndex) {
+      playlists[listIndex].songs.push(song.id);
     });
     favSongsList.forEach(function(song, songIndex) {
-      playlists[listIndex].songs =
       listMaker(song, songIndex, listIndex);
-    });
+    })
   }
 };
 
@@ -74,9 +80,9 @@ function songSelector(listIndex) {
 
 // HTMLBuilder :: tracklist
 function listMaker(song, songIndex, listIndex) {
-  var newLiTag = document.createElement('li');
-  var newH1Tag = document.createElement('h1');
-  var newH2Tag = document.createElement('h2');
+  var newLiTag = document.createElement('li'),
+      newH1Tag = document.createElement('h1'),
+      newH2Tag = document.createElement('h2');
   songList.appendChild(newLiTag);
   newLiTag.appendChild(newH1Tag).textContent = song.title;
   newLiTag.appendChild(newH2Tag);
@@ -88,24 +94,23 @@ function listMaker(song, songIndex, listIndex) {
   newLiTag.addEventListener('click', function() {
     songID = song.id;
     songNumber = songIndex;
-    console.log(songNumber);
     trackFinder();
-    songSelected();
+    selected(songList, "songs");
   });
 };
 
 
 
 // rewind & fast forward events
-var rewind = document.querySelector('.rewind');
-var fastForward = document.querySelector('.forward');
+var rewind = document.querySelector('.rewind'),
+    fastForward = document.querySelector('.forward');
 
 rewind.addEventListener('click', function() {
   if (songNumber > 0) {
     songNumber--;
     songID = playlists[listNumber].songs[songNumber];
     trackFinder();
-    songSelected();
+    selected(songList, "songs");
   };
 });
 
@@ -114,7 +119,7 @@ fastForward.addEventListener('click', function() {
     songNumber++;
     songID = playlists[listNumber].songs[songNumber];
     trackFinder();
-    songSelected();
+    selected(songList, "songs");
   };
 });
 
@@ -142,17 +147,41 @@ function setFavoriteStar(song) {
 
 
 
+// event listeners to ADD buttons
+plusAddPlaylist.addEventListener('click', function() {
+  addNewPlaylist.classList.remove('pop-off');
+});
+cancelPlaylist.addEventListener('click', function() {
+  addNewPlaylist.classList.add('pop-off');
+});
+
+plusAddSong.addEventListener('click', function() {
+  addSongToPlaylist.classList.remove('pop-off');
+});
+cancelSong.addEventListener('click', function() {
+  addSongToPlaylist.classList.add('pop-off');
+});
+
+
+
+
 
 // set selected class to the track
-function songSelected() {
-  unselector(songList);
-  var songs = songList.querySelectorAll('li');
-  songs.forEach(function(song, index) {
-    if (index == songNumber) {
-      song.classList.add('selected');
+function selected(list, key) {
+  unselector(list);
+  var lines = list.querySelectorAll('li');
+  lines.forEach(function(line, index) {
+    if (key === "songs") {
+      if (index === songNumber) {
+        line.classList.add('selected');
+      }
+    } else {
+      if (index === listNumber) {
+        line.classList.add('selected');
+      }
     }
-  })
-}
+  });
+};
 
 // remove selected class from the track
 function unselector(list) {

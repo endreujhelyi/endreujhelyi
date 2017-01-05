@@ -9,6 +9,6 @@ const musicLibrary = [
 ];
 
 const playlists = [
-  {name: 'All Tracks', songs: [0, 1, 2, 3]},
-  {name: 'Favorites', songs: []}
+  {id: 0, name: 'All Tracks', songs: [0, 1, 2, 3]},
+  {id: 1, name: 'Favorites', songs: []}
 ];
