@@ -7,74 +7,83 @@ var songList = document.querySelector("ol"),
     currentArtist = document.querySelector(".current-artist"),
     currentSongTitle = document.querySelector(".current-song"),
     favoriteStar = document.querySelector('.favorite'),
+    inputField = document.querySelector('.new-list'),
+    selectField = document.querySelector('.playlist-selector');
     addSongToPlaylist = document.querySelector('.add_new_song'),
     addNewPlaylist = document.querySelector('.add_new_playlist'),
     plusAddSong = document.querySelector('.add-song'),
+    addSongTo = document.querySelector('.add-song-to'),
     plusAddPlaylist = document.querySelector('.add-playlist'),
     cancelPlaylist = document.querySelector('.cancel-playlist'),
     cancelSong = document.querySelector('.cancel-song');
 
 var songNumber = 0,
     listNumber = 0,
-    songID = 0;
+    songID = 0,
+    actualList = [],
+    actualPlaylists = [];
+
+ajax.listPlaylist(mainLoop);
+
 
 
 // Main Loop
-for (var i = 0; i < playlists.length; i++) {
-  playlistMaker(i)
-}
+function mainLoop(playlistData) {
+  actualPlaylists = playlistData;
+  var allLiElements = playlistList.querySelectorAll('li');
+  allLiElements.forEach(function(elem) {
+    playlistList.removeChild(elem);
+  })
+  for (var i = 0; i < actualPlaylists.length; i++) {
+    playlistMaker(actualPlaylists[i], i)
+  }
+};
 
 
 // HTMLBuilder :: playlists
-function playlistMaker(listIndex) {
+function playlistMaker(listData, listIndex) {
   var newLiTag = document.createElement('li'),
-      newH1Tag = document.createElement('h1');
+      newH1Tag = document.createElement('h1'),
+      newImgTag = document.createElement('img');
   playlistList.appendChild(newLiTag);
-  newLiTag.appendChild(newH1Tag).innerHTML = playlists[listIndex].name;
+  newLiTag.appendChild(newH1Tag).innerHTML = listData.name;
 
   if (listIndex % 2 == 1) {
     newLiTag.classList.add('odd');
   }
 
+  if (listIndex > 1) {
+    newLiTag.appendChild(newImgTag).classList.add('delete-list');
+    newImgTag.setAttribute('src', 'imgs/cross.png');
+  }
+
   newLiTag.addEventListener('click', function() {
     songNumber = 0;
-    listNumber = listIndex;
+    listNumber = listData.id;
     unselector(playlistList);
+    ajax.list(songSelector, listIndex);
     var songs = songList.querySelectorAll('li');
     songs.forEach(function(song) {
       song.remove();
     });
     selected(playlistList, "playlists");
-    songSelector(listIndex);
+  });
+
+  newImgTag.addEventListener('click', function() {
+    listNumber = listData.id;
+    playlistList.removeChild(newLiTag);
+    ajax.removeList(listNumber);
   });
 };
 
 
 
 // create actual tracklist
-function songSelector(listIndex) {
-  if (listIndex !== 1) {
-    playlists[listIndex].songs.forEach(function(id, songIndex) {
-      musicLibrary.forEach(function(song) {
-        if (id === song.id) {
-          listMaker(song, songIndex, listIndex);
-        }
-      });
-    });
-  } else { // set favorite tracklist
-    playlists[listIndex].songs = [];
-    var favSongsList = musicLibrary.filter(function(song) {
-      return song.fav;
-    });
-    favSongsList.forEach(function(song, songIndex) {
-      playlists[listIndex].songs.push(song.id);
-    });
-    favSongsList.forEach(function(song, songIndex) {
-      listMaker(song, songIndex, listIndex);
-    })
-  }
+function songSelector(songData) {
+  songData.forEach(function(song, songIndex) {
+    listMaker(song, songIndex, listNumber);
+  });
 };
-
 
 
 
@@ -94,7 +103,7 @@ function listMaker(song, songIndex, listIndex) {
   newLiTag.addEventListener('click', function() {
     songID = song.id;
     songNumber = songIndex;
-    trackFinder();
+    trackFinder(song);
     selected(songList, "songs");
   });
 };
@@ -108,17 +117,17 @@ var rewind = document.querySelector('.rewind'),
 rewind.addEventListener('click', function() {
   if (songNumber > 0) {
     songNumber--;
-    songID = playlists[listNumber].songs[songNumber];
-    trackFinder();
+    songID = actualList[songNumber].track_id;
+    trackFinder(actualList[songNumber]);
     selected(songList, "songs");
   };
 });
 
 fastForward.addEventListener('click', function() {
-  if (songNumber < playlists[listNumber].songs.length - 1) {
+  if (songNumber < actualList.length - 1) {
     songNumber++;
-    songID = playlists[listNumber].songs[songNumber];
-    trackFinder();
+    songID = actualList[songNumber].track_id;
+    trackFinder(actualList[songNumber]);
     selected(songList, "songs");
   };
 });
@@ -128,28 +137,36 @@ fastForward.addEventListener('click', function() {
 
 // event listener to favorite star sign
 favoriteStar.addEventListener('click', function() {
-  musicLibrary.forEach(function(song, index) {
-    if (songID === song.id) {
-      song.fav = !song.fav;
+  ajax.update(songID);
+  actualList.forEach(function(song) {
+    if (song.trackID === songID) {
+      if (song.fav === 1) {
+        song.fav = 0;
+        ajax.removeSong(1, songID);
+      } else {
+        song.fav = 1;
+        ajax.addTrack(1, songID);
+      }
+      trackFinder(song);
     };
   });
-  trackFinder();
 });
 
-// set favorite star on-off
-function setFavoriteStar(song) {
-  if (song.fav) {
-    favoriteStar.setAttribute('src', 'imgs/star_full.png');
-  } else {
-    favoriteStar.setAttribute('src', 'imgs/star.png');
-  }
-};
 
 
-
-// event listeners to ADD buttons
+// event listeners to ADD PLAYLIST button
 plusAddPlaylist.addEventListener('click', function() {
   addNewPlaylist.classList.remove('pop-off');
+  inputField.value = "";
+});
+addNewPlaylist.addEventListener('click', function() {
+  if (inputField.value.length !== 0) {
+    ajax.addList(function() {
+      ajax.listPlaylist(mainLoop);
+    }, {text: inputField.value});
+    inputField.value = "";
+    addNewPlaylist.classList.add('pop-off');
+  }
 });
 cancelPlaylist.addEventListener('click', function() {
   addNewPlaylist.classList.add('pop-off');
@@ -157,12 +174,42 @@ cancelPlaylist.addEventListener('click', function() {
 
 plusAddSong.addEventListener('click', function() {
   addSongToPlaylist.classList.remove('pop-off');
+  selectMenuSetUp();
 });
+
+addSongTo.addEventListener('click', function() {
+  actualPlaylists.forEach(function(list) {
+    if (list.id == selectField.value) {
+      ajax.addTrack(list.id, songNumber);
+    }
+  });
+  addSongToPlaylist.classList.add('pop-off');
+});
+
 cancelSong.addEventListener('click', function() {
   addSongToPlaylist.classList.add('pop-off');
 });
 
 
+
+function selectMenuSetUp() {
+  var selectorContainer = document.querySelector('.selector-container');
+      playlistSelector = document.querySelector('.playlist-selector');
+  selectorContainer.removeChild(playlistSelector);
+
+  var newSelectTag = document.createElement('select');
+
+  selectorContainer.appendChild(newSelectTag).classList.add('playlist-selector');
+
+  actualPlaylists.forEach(function(list, listIndex) {
+    var newOptionTag = document.createElement('option');
+    playlistSelector = document.querySelector('.playlist-selector');
+    newOptionTag.value = list.id;
+    if (listIndex > 1) {
+      playlistSelector.appendChild(newOptionTag).innerHTML = list.name;
+    }
+  });
+};
 
 
 
@@ -192,21 +239,18 @@ function unselector(list) {
 
 
 // current track finder
-function trackFinder() {
-  musicLibrary.forEach(function(song) {
-    if (song.id === songID) {
-      setCurrentSong(song);
-      setActualSong(song);
-      setFavoriteStar(song);
-    }
-  })
-}
+function trackFinder(song) {
+  setCurrentSong(song);
+  setActualSong(song);
+  setFavoriteStar(song);
+};
+
 
 
 // set title and artist visible
 function setCurrentSong(song) {
-  currentArtist.textContent = song.artist;
-  currentSongTitle.innerHTML = song.title;
+  currentArtist.textContent = song.title;
+  currentSongTitle.innerHTML = song.artist;
 };
 
 
@@ -215,3 +259,12 @@ function setActualSong(song) {
   actualSong.setAttribute('src', song.src);
   artwork.setAttribute('src', song.artwork);
 }
+
+// set favorite star
+function setFavoriteStar(song) {
+  if (song.fav === 1) {
+    favoriteStar.setAttribute('src', 'imgs/star_full.png');
+  } else {
+    favoriteStar.setAttribute('src', 'imgs/star.png');
+  }
+};

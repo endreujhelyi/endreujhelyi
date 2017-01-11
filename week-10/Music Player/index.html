@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width">
   <title>Kiev Rocks</title>
 
+  <link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
   <link href="css/reset.css" type="text/css" rel="stylesheet">
   <link href="css/style.css" type="text/css" rel="stylesheet">
 
@@ -13,85 +14,74 @@
 <body>
 
   <div class="player-box">
+    <div class="container">
 
-    <div class="playlist-container">
-      <div class="left-container">
-        <div class="left-container__header">
+      <div class="playlist-container">
+        <div class="left-container">
+          <div class="left-container__header">
 
-          <img id="player_logo" src="imgs/logo.png" alt="Music Player Logo" />
+            <img id="player_logo" src="imgs/jellyfish.png" alt="Music Player Logo" />
 
 
-          <div class="left-container__header__title">
-            <h1>Playlists</h1>
-            <img class="icon add-playlist" src="imgs/cross.png" alt="cross">
+            <div class="left-container__header__title">
+              <h1>Playlists</h1>
+              <img class="icon add-playlist" src="imgs/cross.png" alt="cross">
+            </div>
+
+            <div class="left-container__header__imgbox">
+              <img src="imgs/musicPlaceholder.png" class="artwork" alt="Album Artwork" />
+            </div>
+
           </div>
 
-          <div class="left-container__header__imgbox">
-            <img src="imgs/musicPlaceholder.png" class="artwork" alt="Album Artwork" />
+          <div class="left-container__playlist">
+            <ul>
+              <!-- <li>
+                <h1>All Tracks</h1>
+              </li> -->
+            </ul>
           </div>
 
         </div>
 
-        <div class="left-container__playlist">
-          <ul>
-            <!-- <li>
-              <h1>All Tracks</h1>
-            </li>
-            <li class="even">
-              <h1>Favorites</h1>
-            </li> -->
-          </ul>
+        <div class="right-container">
+
+          <div class="right-container__title">
+            <h1 class="current-artist"></h1>
+            <h2 class="current-song"></h2>
+            <img class="icon add-song" src="imgs/cross.png" alt="cross" />
+            <img class="icon favorite" src="imgs/star.png" alt="star" />
+          </div>
+
+
+          <div class="right-container__songs">
+            <ol>
+              <!-- <li>
+                <h1>Saramona Said</h2>
+                <h2>3:32</h2>
+              </li> -->
+            </ol>
+          </div>
+
         </div>
 
       </div>
 
-      <div class="right-container">
 
-        <div class="right-container__title">
-          <h1 class="current-artist"></h1>
-          <h2 class="current-song"></h2>
-          <img class="icon add-song" src="imgs/cross.png" alt="cross" />
-          <img class="icon favorite" src="imgs/star.png" alt="star" />
-        </div>
+      <div class="control-panel">
+        <audio controls> </audio>
 
-
-        <div class="right-container__songs">
-          <ol>
-            <!-- <li>
-              <h1>Saramona Said</h2>
-              <h2>3:32</h2>
-            </li>
-            <li>
-              <h1>Fight My Regret</h2>
-              <h2>3:56</h2>
-            </li>
-            <li>
-              <h1>Uhmm Tiss Uhmm Tiss</h2>
-              <h2>4:42</h2>
-            </li>
-            <li>
-              <h1>Hot Pants</h2>
-              <h2>2:14</h2>
-            </li> -->
-          </ol>
-        </div>
-
+        <img class="controls rewind" src="imgs/rewind.png" alt="Rewind" />
+        <img class="controls forward"src="imgs/fast_forward.png" alt="Fast Forward" />
       </div>
 
     </div>
 
-
-    <div class="control-panel">
-      <audio controls> </audio>
-
-      <img class="controls rewind" src="imgs/rewind.png" alt="Rewind" />
-      <img class="controls forward"src="imgs/fast_forward.png" alt="Fast Forward" />
-
-    </div>
+    <h1 class="brand">Medusa</h1>
 
     <div class="add_new_playlist pop-up pop-off">
       <div class="new_playlist__content">
-        <input type="search" placeholder="name" maxlength="20"/>
+        <input class="new-list" type="search" placeholder="name" autofocus="" maxlength="20"/>
         <div class="buttons">
           <button class="add-button">Add</button>
           <button class="cancel-button cancel-playlist">Cancel</button>
@@ -100,10 +90,14 @@
     </div>
 
     <div class="add_new_song pop-up pop-off">
-      <div class="new_playlist__content">
-        <input type="search" placeholder="path" maxlength="20"/>
+      <div class="new_playlist__content roll">
+        <div class="selector-container">
+          <select class="playlist-selector">
+            <!-- option tags here -->
+          </select>
+        </div>
         <div class="buttons">
-          <button class="add-button">Add</button>
+          <button class="add-button add-song-to">Add</button>
           <button class="cancel-button cancel-song">Cancel</button>
         </div>
       </div>
@@ -111,11 +105,9 @@
 
   </div>
 
-  <script src="js/library.js"></script>
-  <script src="js/musicPlayer.js"></script>
-  <script src="js/server/server.js"></script>
+
   <script src="js/server/ajax.js"></script>
-  <script src="js/background.js"></script>
+  <script src="js/musicPlayer.js"></script>
 
 </body>
 </html>

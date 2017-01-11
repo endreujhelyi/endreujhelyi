@@ -21,7 +21,7 @@ var connection = mysql.createConnection({
 // REQUEST TO PLAYLISTS
 library.get('/playlists', function(req, res) {
   connection.query(
-    `SELECT name FROM playlists;`, function(err, rows, fields) {
+    `SELECT id, name FROM playlists;`, function(err, rows, fields) {
   		if (err) throw err;
     		res.send(rows);
   });
@@ -53,7 +53,7 @@ library.delete('/playlists/:playlist_id', function(req, res) {
 // REQUESTS TO PLAYLIST TRACKS
 library.get('/playlist-tracks/:playlist_id', function(req, res) {
   connection.query(
-    `SELECT artist FROM musicLibrary
+    `SELECT * FROM musicLibrary
     LEFT JOIN connections
       ON musicLibrary.id = connections.trackID
     WHERE playlistID = ${req.params.playlist_id};`, function(err, rows, fields) {
@@ -62,32 +62,33 @@ library.get('/playlist-tracks/:playlist_id', function(req, res) {
   });
 });
 
-library.post('/playlist-tracks/:playlist_id', function(req, res) {
+library.post('/playlist-tracks/:playlist_id/:track_id', function(req, res) {
   connection.query(
-    `INSERT INTO musicLibrary(artist)
-    VALUES ${req.body.text};`, function(err, rows, fields) {
+    `INSERT INTO connections(playlistID, trackID)
+      VALUES (${req.params.playlist_id}, ${req.params.track_id});`, function(err, rows, fields) {
   		if (err) throw err;
     		res.send(rows);
   });
 });
 
-library.delete('/playlists/:playlist_id/:track_id', function(req, res) {
-  connection.query(
-    `DELETE FROM connections
-    WHERE trackID = ${req.params.id};`, function(err, rows, fields) {
-  		if (err) throw err;
-    		res.send(rows);
-	});
-});
-
-library.put('/playlist-tracks/:playlist_id',
+library.put('/playlist-tracks/:track_id',
 function(req, res) {
   connection.query(
     `UPDATE musicLibrary
     SET fav = !fav
-    WHERE id = ${req.params.id};`, function(err, rows, fields) {
-  		if (err) throw err;
-    		res.send(rows);
+    WHERE id = ${req.params.track_id};`, function(err, rows, fields) {
+      if (err) throw err;
+      res.send(rows);
+    });
+  });
+
+library.delete('/playlists/:playlist_id/:track_id', function(req, res) {
+  connection.query(
+    `DELETE FROM connections
+    WHERE trackID = ${req.params.track_id}
+      AND playlistID = ${req.params.playlist_id};`, function(err, rows, fields) {
+  		    if (err) throw err;
+    		    res.send(rows);
 	});
 });
 
