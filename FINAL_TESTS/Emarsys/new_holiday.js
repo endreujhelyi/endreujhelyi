@@ -3,6 +3,15 @@ const optimalHolidayFinder = destinations => {
     return 'Error with destinations!';
   }
 
+  if(destinations) {
+    let error = false;
+    destinations.forEach(city => {
+      city.length > 2 || typeof city[0] !== 'string' || !city[0] ? error = true : null;
+    })
+    if(error) {
+      return 'Error with destinations!';
+    }
+  }
 
   let final = [];
   let cities = [];
@@ -31,7 +40,7 @@ const optimalHolidayFinder = destinations => {
 
 
 const holidays = [
-  [ 'Los Angeles', 'Dallas' ],
+  [ 'Los Angeles', 'Dallas'],
   [ 'Dallas', null ],
   [ 'New York', 'Los Angeles' ],
   [ 'Phoenix', 'New York' ],
@@ -40,4 +49,4 @@ const holidays = [
 console.log(optimalHolidayFinder(holidays));
 
 
-module.exports = optimalHolidayFinder;
+module.exports = { optimalHolidayFinder };
