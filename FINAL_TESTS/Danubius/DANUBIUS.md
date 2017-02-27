@@ -1,9 +1,9 @@
 Válaszolj az alábbi kérdésekre minél részletesebben!
 1.	Mi a különbség a <span>, <div>, és az <article> elemek között?
 
-  `<span`: inline container, foleg akkor hasznaljuk ha egy szovegresznek, mas style-t szeretnenk beallitani
-  `<div>`: nincs hozzaadott szemantikus jelentese, legvegso esetben hasznaljuk
-  `<article`: foleg erre hasznaljuk -> ujsagcikk, forum post, comment egy cikken, van headingje
+  ..* `<span>`: inline container, foleg akkor hasznaljuk ha egy szovegresznek, mas style-t szeretnenk beallitani
+  ..* `<div>`: nincs hozzaadott szemantikus jelentese, legvegso esetben hasznaljuk
+  ..* `<article`: foleg erre hasznaljuk -> ujsagcikk, forum post, comment egy cikken, van headingje
 
 2.	Milyen különbségeket és hasonlóságokat ismersz a cookie-k és a localStorage között?
 
@@ -14,10 +14,10 @@ Válaszolj az alábbi kérdésekre minél részletesebben!
 
 3.	Milyen http metódusokat ismersz és melyiket milyen célra használják?
 
-  `GET`: csak adatfogadasra szolgal a szervertol
-  `POST`: adatkuldesre hasznaljuk, legtobbszor megvaltoztatjuk a szerver state-jet
-  `PUT`: felulirja az megadott celpontot, modosit egy meglevo adatot
-  `DELETE`: letorli a megadott forrast
+  ..* `GET`: csak adatfogadasra szolgal a szervertol
+  ..* `POST`: adatkuldesre hasznaljuk, legtobbszor megvaltoztatjuk a szerver state-jet
+  ..* `PUT`: felulirja az megadott celpontot, modosit egy meglevo adatot
+  ..* `DELETE`: letorli a megadott forrast
 
 
 4.	Mi lesz az ’x’ értéke és miért?
@@ -159,24 +159,27 @@ Braun A1800 hajszárító
 A cél tehát olyan adatstruktúrát kialakítani, hogy ha ezentúl notebookoknál a kijelző felbontását is tárolni szeretnénk, akkor ehhez ne kelljen az adattáblák struktúráját módosítani. Ha több alternatív megoldást is találsz, írhatsz többet is. Az adatstruktúrát bármilyen formában leírhatod – csak értsük meg ☺
 
 
-TABLA 1 - termekek
-oszlop A: primary
-oszlop B: marka
-oszlop C: tipus
-oszlop D: cikk(pl notebook)
+**TABLA 1** | termekek
+oszlop A: | primary
+oszlop B: | marka
+oszlop C: | tipus
+oszlop D: | cikk(pl notebook)
+---|---
 
-TABLA 2 - notebook
-oszlop A: primary
-oszlop B: marka
-oszlop C: tipus
-oszlop D: memoria
-oszlop E: pr. magok szamolva
-oszlop F: bec. ideje
+**TABLA 2** | notebook
+oszlop A: | primary
+oszlop B: | marka
+oszlop C: | tipus
+oszlop D: | memoria
+oszlop E: | pr. magok szamolva
+oszlop F: | bec. ideje
+---|---
 
-TABLA 3 - hajszarito
-oszlop A: primary
-oszlop B: marka
-oszlop C: tipus
-oszlop D: erosseg
-oszlop E: hideglevego fujas
-oszlop F: gar. h. szama
+**TABLA 3** | hajszarito
+oszlop A: | primary
+oszlop B: | marka
+oszlop C: | tipus
+oszlop D: | erosseg
+oszlop E: | hideglevego fujas
+oszlop F: | gar. h. szama
+---|---
