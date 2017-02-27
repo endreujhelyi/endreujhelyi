@@ -160,26 +160,28 @@ A cél tehát olyan adatstruktúrát kialakítani, hogy ha ezentúl notebookokn�
 
 
 **TABLA 1** | termekek
+--- | ---
 oszlop A: | primary
 oszlop B: | marka
 oszlop C: | tipus
 oszlop D: | cikk(pl notebook)
---- | ---
+
 
 **TABLA 2** | notebook
+--- | ---
 oszlop A: | primary
 oszlop B: | marka
 oszlop C: | tipus
 oszlop D: | memoria
 oszlop E: | pr. magok szamolva
 oszlop F: | bec. ideje
---- | ---
+
 
 **TABLA 3** | hajszarito
+--- | ---
 oszlop A: | primary
 oszlop B: | marka
 oszlop C: | tipus
 oszlop D: | erosseg
 oszlop E: | hideglevego fujas
 oszlop F: | gar. h. szama
---- | ---
