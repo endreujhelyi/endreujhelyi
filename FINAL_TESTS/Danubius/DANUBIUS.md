@@ -1,9 +1,9 @@
 Válaszolj az alábbi kérdésekre minél részletesebben!
 1.	Mi a különbség a <span>, <div>, és az <article> elemek között?
 
-  ⋅⋅* `<span>`: inline container, foleg akkor hasznaljuk ha egy szovegresznek, mas style-t szeretnenk beallitani
-  ⋅⋅* `<div>`: nincs hozzaadott szemantikus jelentese, legvegso esetben hasznaljuk
-  ⋅⋅* `<article`: foleg erre hasznaljuk -> ujsagcikk, forum post, comment egy cikken, van headingje
+  * `<span>`: inline container, foleg akkor hasznaljuk ha egy szovegresznek, mas style-t szeretnenk beallitani
+  * `<div>`: nincs hozzaadott szemantikus jelentese, legvegso esetben hasznaljuk
+  * `<article`: foleg erre hasznaljuk -> ujsagcikk, forum post, comment egy cikken, van headingje
 
 2.	Milyen különbségeket és hasonlóságokat ismersz a cookie-k és a localStorage között?
 
@@ -14,10 +14,10 @@ Válaszolj az alábbi kérdésekre minél részletesebben!
 
 3.	Milyen http metódusokat ismersz és melyiket milyen célra használják?
 
-  ⋅⋅* `GET`: csak adatfogadasra szolgal a szervertol
-  ⋅⋅* `POST`: adatkuldesre hasznaljuk, legtobbszor megvaltoztatjuk a szerver state-jet
-  ⋅⋅* `PUT`: felulirja az megadott celpontot, modosit egy meglevo adatot
-  ⋅⋅* `DELETE`: letorli a megadott forrast
+  * `GET`: csak adatfogadasra szolgal a szervertol
+  * `POST`: adatkuldesre hasznaljuk, legtobbszor megvaltoztatjuk a szerver state-jet
+  * `PUT`: felulirja az megadott celpontot, modosit egy meglevo adatot
+  * `DELETE`: letorli a megadott forrast
 
 
 4.	Mi lesz az ’x’ értéke és miért?
@@ -110,10 +110,10 @@ Válaszolj az alábbi kérdésekre minél részletesebben!
   `.element .symbol {}
   .element.large .symbol {}`
 
-  ⋅⋅* Az elsovel kijelolok, minden `.symbol` classal jelolt elemet, ami az `.element` classal
+  * Az elsovel kijelolok, minden `.symbol` classal jelolt elemet, ami az `.element` classal
   jelolt elemeken belul talalhato.
 
-  ⋅⋅* A masodik esetben, viszont azokat a `.symbol` classokkal rendelkezo elemeket jelolom
+  * A masodik esetben, viszont azokat a `.symbol` classokkal rendelkezo elemeket jelolom
   ki, amelyeknek a olyan elemeken belul vannak, amik mind az `.element`, mind a `.large`
   classal rendelkeznek.
 
