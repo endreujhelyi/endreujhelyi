@@ -43,7 +43,7 @@ test('Dream Holiday', t => {
 })
 
 
-test('I don\'t wanna got to Dömsöd', t => {
+test('I don\'t wanna go to Dömsöd', t => {
   const actual = vacation.optimalHolidayFinder(falsyHoliday);
   const expected = 'Error with destinations!';
 
@@ -52,7 +52,7 @@ test('I don\'t wanna got to Dömsöd', t => {
 })
 
 
-test('null is not good place', t => {
+test('null is not a good place', t => {
   const actual = vacation.optimalHolidayFinder(falsyHolidayNumberTwo);
   const expected = 'Error with destinations!';
 
