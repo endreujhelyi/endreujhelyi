@@ -1,9 +1,9 @@
 Válaszolj az alábbi kérdésekre minél részletesebben!
 1.	Mi a különbség a <span>, <div>, és az <article> elemek között?
 
-  ..* `<span>`: inline container, foleg akkor hasznaljuk ha egy szovegresznek, mas style-t szeretnenk beallitani
-  ..* `<div>`: nincs hozzaadott szemantikus jelentese, legvegso esetben hasznaljuk
-  ..* `<article`: foleg erre hasznaljuk -> ujsagcikk, forum post, comment egy cikken, van headingje
+  ⋅⋅* `<span>`: inline container, foleg akkor hasznaljuk ha egy szovegresznek, mas style-t szeretnenk beallitani
+  ⋅⋅* `<div>`: nincs hozzaadott szemantikus jelentese, legvegso esetben hasznaljuk
+  ⋅⋅* `<article`: foleg erre hasznaljuk -> ujsagcikk, forum post, comment egy cikken, van headingje
 
 2.	Milyen különbségeket és hasonlóságokat ismersz a cookie-k és a localStorage között?
 
@@ -14,10 +14,10 @@ Válaszolj az alábbi kérdésekre minél részletesebben!
 
 3.	Milyen http metódusokat ismersz és melyiket milyen célra használják?
 
-  ..* `GET`: csak adatfogadasra szolgal a szervertol
-  ..* `POST`: adatkuldesre hasznaljuk, legtobbszor megvaltoztatjuk a szerver state-jet
-  ..* `PUT`: felulirja az megadott celpontot, modosit egy meglevo adatot
-  ..* `DELETE`: letorli a megadott forrast
+  ⋅⋅* `GET`: csak adatfogadasra szolgal a szervertol
+  ⋅⋅* `POST`: adatkuldesre hasznaljuk, legtobbszor megvaltoztatjuk a szerver state-jet
+  ⋅⋅* `PUT`: felulirja az megadott celpontot, modosit egy meglevo adatot
+  ⋅⋅* `DELETE`: letorli a megadott forrast
 
 
 4.	Mi lesz az ’x’ értéke és miért?
@@ -110,10 +110,10 @@ Válaszolj az alábbi kérdésekre minél részletesebben!
   `.element .symbol {}
   .element.large .symbol {}`
 
-  Az elsovel kijelolok, minden `.symbol` classal jelolt elemet, ami az `.element` classal
+  ⋅⋅* Az elsovel kijelolok, minden `.symbol` classal jelolt elemet, ami az `.element` classal
   jelolt elemeken belul talalhato.
 
-  A masodik esetben, viszont azokat a `.symbol` classokkal rendelkezo elemeket jelolom
+  ⋅⋅* A masodik esetben, viszont azokat a `.symbol` classokkal rendelkezo elemeket jelolom
   ki, amelyeknek a olyan elemeken belul vannak, amik mind az `.element`, mind a `.large`
   classal rendelkeznek.
 
@@ -142,46 +142,47 @@ Válaszolj az alábbi kérdésekre minél részletesebben!
 
 
 13.	Adatbázis tervezési feladat
-Tervezd meg egy webáruház adatbázis sémáját – relációs adatbázisban (táblákban gondolkodj)!
-Termékeket szeretnénk tárolni úgy, hogy az adminok a felületen vehessék fel a termékeket. A termékhez bármennyi, különböző típusú attribútum tartozhat. Új terméktípus, vagy új termék-attribútum felvételéhez ne kelljen sémát módosítani!
-Példa a termékekre és attribútumaikra:
 
-Dell Vostro X500
-- memória: 16gb
-- processzor magok száma: 4
-- bevezetés ideje: 2015-12-31
-Braun A1800 hajszárító
-- szín: fekete, fehér
-- erősség: 1800W
-- hideglevegő fújás: igen
-- garanciális hónapok száma: 12
+  Tervezd meg egy webáruház adatbázis sémáját – relációs adatbázisban (táblákban gondolkodj)!
+  Termékeket szeretnénk tárolni úgy, hogy az adminok a felületen vehessék fel a termékeket. A termékhez bármennyi, különböző típusú attribútum tartozhat. Új terméktípus, vagy új termék-attribútum felvételéhez ne kelljen sémát módosítani!
+  Példa a termékekre és attribútumaikra:
 
-A cél tehát olyan adatstruktúrát kialakítani, hogy ha ezentúl notebookoknál a kijelző felbontását is tárolni szeretnénk, akkor ehhez ne kelljen az adattáblák struktúráját módosítani. Ha több alternatív megoldást is találsz, írhatsz többet is. Az adatstruktúrát bármilyen formában leírhatod – csak értsük meg ☺
+  Dell Vostro X500
+  - memória: 16gb
+  - processzor magok száma: 4
+  - bevezetés ideje: 2015-12-31
+  Braun A1800 hajszárító
+  - szín: fekete, fehér
+  - erősség: 1800W
+  - hideglevegő fújás: igen
+  - garanciális hónapok száma: 12
 
-
-**TABLA 1** | termekek
---- | ---
-oszlop A: | primary
-oszlop B: | marka
-oszlop C: | tipus
-oszlop D: | cikk(pl notebook)
+  A cél tehát olyan adatstruktúrát kialakítani, hogy ha ezentúl notebookoknál a kijelző felbontását is tárolni szeretnénk, akkor ehhez ne kelljen az adattáblák struktúráját módosítani. Ha több alternatív megoldást is találsz, írhatsz többet is. Az adatstruktúrát bármilyen formában leírhatod – csak értsük meg ☺
 
 
-**TABLA 2** | notebook
---- | ---
-oszlop A: | primary
-oszlop B: | marka
-oszlop C: | tipus
-oszlop D: | memoria
-oszlop E: | pr. magok szamolva
-oszlop F: | bec. ideje
+  **TABLA 1** | termekek
+  --- | ---
+  oszlop A: | primary
+  oszlop B: | marka
+  oszlop C: | tipus
+  oszlop D: | cikk(pl notebook)
 
 
-**TABLA 3** | hajszarito
---- | ---
-oszlop A: | primary
-oszlop B: | marka
-oszlop C: | tipus
-oszlop D: | erosseg
-oszlop E: | hideglevego fujas
-oszlop F: | gar. h. szama
+  **TABLA 2** | notebook
+  --- | ---
+  oszlop A: | primary
+  oszlop B: | marka
+  oszlop C: | tipus
+  oszlop D: | memoria
+  oszlop E: | pr. magok szamolva
+  oszlop F: | bec. ideje
+
+
+  **TABLA 3** | hajszarito
+  --- | ---
+  oszlop A: | primary
+  oszlop B: | marka
+  oszlop C: | tipus
+  oszlop D: | erosseg
+  oszlop E: | hideglevego fujas
+  oszlop F: | gar. h. szama
