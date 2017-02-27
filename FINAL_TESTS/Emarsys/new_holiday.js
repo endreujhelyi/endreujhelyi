@@ -29,7 +29,7 @@ const optimalHolidayFinder = destinations => {
   }
 
   while (cities.length !== 0) {
-    final.map((city, index) => {
+    final.map(city => {
       cities.map((cityDep, indexDep) => {
         city === cityDep[1] ? finalPusher(cityDep[0], indexDep) : null;
       })
@@ -43,10 +43,8 @@ const holidays = [
   [ 'Los Angeles', 'Dallas'],
   [ 'Dallas', null ],
   [ 'New York', 'Los Angeles' ],
-  [ 'Phoenix', 'New York' ],
+  [ 'Phoenix', 'New York' ]
 ]
-
-console.log(optimalHolidayFinder(holidays));
 
 
 module.exports = { optimalHolidayFinder };
